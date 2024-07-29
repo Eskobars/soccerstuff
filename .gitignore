@@ -1,0 +1,2 @@
+# Ignore config.py where API keys and other sensitive information are stored
+config.py
