@@ -1,28 +1,27 @@
-import http.client
 import json
-from config import API_KEY
+import os    
+from config import INJURIES_DIR
+from date_helper import is_data_up_to_date
+from fetchers import fetch_players_for_fixture
+from config import PLAYERS_DIR
 
-def fetch_players_for_fixture(fixture_id):
-    conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+def get_player_data(fixture_id):
+    filename = os.path.join(PLAYERS_DIR, f'players_data_{fixture_id}.json')
 
-    headers = {
-        'x-rapidapi-host': "v3.football.api-sports.io",
-        'x-rapidapi-key': API_KEY
-    }
+    if is_data_up_to_date(filename):
+        with open(filename, 'r') as f:
+            players = json.load(f)
+    else:
+        print(f"Fetching new player data for fixture {fixture_id}...")
+        players = fetch_players_for_fixture(fixture_id)
+        with open(filename, 'w') as f:
+            json.dump(players, f, indent=4)
+    
+    # Extract home and away team players
+    home_team_players = players.get('home_team_players', [])
+    away_team_players = players.get('away_team_players', [])
 
-    url = f"/fixtures/players?fixture={fixture_id}"
-    conn.request("GET", url, headers=headers)
-    res = conn.getresponse()
-    data = res.read()
-    
-    if res.status != 200:
-        print(f"Error fetching players: {res.status} - {res.reason}")
-        return None
-    
-    # Decode the JSON data
-    parsed_data = json.loads(data.decode("utf-8"))
-    
-    return parsed_data
+    return home_team_players, away_team_players
 
 def get_key_players_by_team(player_data, rating_threshold=7.0):
     home_team_players = []

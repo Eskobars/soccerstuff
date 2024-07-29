@@ -1,0 +1,929 @@
+{
+    "get": "standings",
+    "parameters": {
+        "league": "72",
+        "season": "2024"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "league": {
+                "id": 72,
+                "name": "Serie B",
+                "country": "Brazil",
+                "logo": "https://media.api-sports.io/football/leagues/72.png",
+                "flag": "https://media.api-sports.io/flags/br.svg",
+                "season": 2024,
+                "standings": [
+                    [
+                        {
+                            "rank": 1,
+                            "team": {
+                                "id": 128,
+                                "name": "Santos",
+                                "logo": "https://media.api-sports.io/football/teams/128.png"
+                            },
+                            "points": 33,
+                            "goalsDiff": 16,
+                            "group": "Serie B",
+                            "form": "DWDWW",
+                            "status": "same",
+                            "description": "Promotion - Serie A",
+                            "all": {
+                                "played": 18,
+                                "win": 10,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 29,
+                                    "against": 13
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 7,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 10,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 10
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 2,
+                            "team": {
+                                "id": 7848,
+                                "name": "Mirassol",
+                                "logo": "https://media.api-sports.io/football/teams/7848.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 4,
+                            "group": "Serie B",
+                            "form": "WDWLW",
+                            "status": "same",
+                            "description": "Promotion - Serie A",
+                            "all": {
+                                "played": 18,
+                                "win": 8,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 18,
+                                    "against": 14
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 7,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 3,
+                            "team": {
+                                "id": 142,
+                                "name": "Vila Nova",
+                                "logo": "https://media.api-sports.io/football/teams/142.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 1,
+                            "group": "Serie B",
+                            "form": "DLDWW",
+                            "status": "same",
+                            "description": "Promotion - Serie A",
+                            "all": {
+                                "played": 18,
+                                "win": 8,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 19
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 7,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 4,
+                            "team": {
+                                "id": 125,
+                                "name": "America Mineiro",
+                                "logo": "https://media.api-sports.io/football/teams/125.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 7,
+                            "group": "Serie B",
+                            "form": "DDDDW",
+                            "status": "same",
+                            "description": "Promotion - Serie A",
+                            "all": {
+                                "played": 18,
+                                "win": 7,
+                                "draw": 8,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 23,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 10,
+                                "win": 6,
+                                "draw": 4,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 10
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 5,
+                            "team": {
+                                "id": 123,
+                                "name": "Sport Recife",
+                                "logo": "https://media.api-sports.io/football/teams/123.png"
+                            },
+                            "points": 28,
+                            "goalsDiff": 6,
+                            "group": "Serie B",
+                            "form": "WDDWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 16,
+                                "win": 8,
+                                "draw": 4,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 21,
+                                    "against": 15
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 6,
+                            "team": {
+                                "id": 7834,
+                                "name": "Novorizontino",
+                                "logo": "https://media.api-sports.io/football/teams/7834.png"
+                            },
+                            "points": 27,
+                            "goalsDiff": 2,
+                            "group": "Serie B",
+                            "form": "DWDWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 7,
+                                "draw": 6,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 15
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 7,
+                            "team": {
+                                "id": 129,
+                                "name": "Ceara",
+                                "logo": "https://media.api-sports.io/football/teams/129.png"
+                            },
+                            "points": 26,
+                            "goalsDiff": 5,
+                            "group": "Serie B",
+                            "form": "DWWLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 18,
+                                "win": 7,
+                                "draw": 5,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 28,
+                                    "against": 23
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 14
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 8,
+                            "team": {
+                                "id": 1223,
+                                "name": "Operario-PR",
+                                "logo": "https://media.api-sports.io/football/teams/1223.png"
+                            },
+                            "points": 26,
+                            "goalsDiff": 1,
+                            "group": "Serie B",
+                            "form": "LDWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 7,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 10
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 9,
+                            "team": {
+                                "id": 151,
+                                "name": "Goias",
+                                "logo": "https://media.api-sports.io/football/teams/151.png"
+                            },
+                            "points": 25,
+                            "goalsDiff": 7,
+                            "group": "Serie B",
+                            "form": "DWLLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 7,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 24,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 10,
+                            "team": {
+                                "id": 146,
+                                "name": "CRB",
+                                "logo": "https://media.api-sports.io/football/teams/146.png"
+                            },
+                            "points": 24,
+                            "goalsDiff": 3,
+                            "group": "Serie B",
+                            "form": "DDWWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 6,
+                                "draw": 6,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 22,
+                                    "against": 19
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 6,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 15
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 11,
+                            "team": {
+                                "id": 145,
+                                "name": "Avai",
+                                "logo": "https://media.api-sports.io/football/teams/145.png"
+                            },
+                            "points": 24,
+                            "goalsDiff": 1,
+                            "group": "Serie B",
+                            "form": "DLLLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 6,
+                                "draw": 6,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 13
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 4,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 12,
+                            "team": {
+                                "id": 139,
+                                "name": "Ponte Preta",
+                                "logo": "https://media.api-sports.io/football/teams/139.png"
+                            },
+                            "points": 23,
+                            "goalsDiff": -1,
+                            "group": "Serie B",
+                            "form": "LWLWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 18,
+                                "win": 6,
+                                "draw": 5,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 22,
+                                    "against": 23
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 6,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 10,
+                                "win": 0,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 15
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 13,
+                            "team": {
+                                "id": 147,
+                                "name": "Coritiba",
+                                "logo": "https://media.api-sports.io/football/teams/147.png"
+                            },
+                            "points": 23,
+                            "goalsDiff": -1,
+                            "group": "Serie B",
+                            "form": "WLLLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 18,
+                                "win": 6,
+                                "draw": 5,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 10,
+                                "win": 6,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 14,
+                            "team": {
+                                "id": 149,
+                                "name": "Paysandu",
+                                "logo": "https://media.api-sports.io/football/teams/149.png"
+                            },
+                            "points": 23,
+                            "goalsDiff": 2,
+                            "group": "Serie B",
+                            "form": "LWWDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 5,
+                                "draw": 8,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 9,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 15,
+                            "team": {
+                                "id": 10862,
+                                "name": "Amazonas",
+                                "logo": "https://media.api-sports.io/football/teams/10862.png"
+                            },
+                            "points": 21,
+                            "goalsDiff": -3,
+                            "group": "Serie B",
+                            "form": "DDWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 17,
+                                "win": 5,
+                                "draw": 6,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 16,
+                            "team": {
+                                "id": 132,
+                                "name": "Chapecoense-sc",
+                                "logo": "https://media.api-sports.io/football/teams/132.png"
+                            },
+                            "points": 19,
+                            "goalsDiff": -3,
+                            "group": "Serie B",
+                            "form": "LDLDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 18,
+                                "win": 4,
+                                "draw": 7,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 5,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 10,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 17,
+                            "team": {
+                                "id": 2618,
+                                "name": "Botafogo SP",
+                                "logo": "https://media.api-sports.io/football/teams/2618.png"
+                            },
+                            "points": 18,
+                            "goalsDiff": -10,
+                            "group": "Serie B",
+                            "form": "LDLLL",
+                            "status": "same",
+                            "description": "Relegation - Serie C (First stage: )",
+                            "all": {
+                                "played": 17,
+                                "win": 4,
+                                "draw": 6,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 25
+                                }
+                            },
+                            "home": {
+                                "played": 9,
+                                "win": 2,
+                                "draw": 5,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 19
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 18,
+                            "team": {
+                                "id": 1211,
+                                "name": "Brusque",
+                                "logo": "https://media.api-sports.io/football/teams/1211.png"
+                            },
+                            "points": 18,
+                            "goalsDiff": -8,
+                            "group": "Serie B",
+                            "form": "LWDDD",
+                            "status": "same",
+                            "description": "Relegation - Serie C (First stage: )",
+                            "all": {
+                                "played": 18,
+                                "win": 3,
+                                "draw": 9,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 22
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 10,
+                                "win": 0,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 19
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 19,
+                            "team": {
+                                "id": 7779,
+                                "name": "Ituano",
+                                "logo": "https://media.api-sports.io/football/teams/7779.png"
+                            },
+                            "points": 13,
+                            "goalsDiff": -16,
+                            "group": "Serie B",
+                            "form": "DDLLW",
+                            "status": "same",
+                            "description": "Relegation - Serie C (First stage: )",
+                            "all": {
+                                "played": 18,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 35
+                                }
+                            },
+                            "home": {
+                                "played": 10,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 14
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 21
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 20,
+                            "team": {
+                                "id": 138,
+                                "name": "Guarani Campinas",
+                                "logo": "https://media.api-sports.io/football/teams/138.png"
+                            },
+                            "points": 11,
+                            "goalsDiff": -13,
+                            "group": "Serie B",
+                            "form": "WDLDL",
+                            "status": "same",
+                            "description": "Relegation - Serie C (First stage: )",
+                            "all": {
+                                "played": 18,
+                                "win": 2,
+                                "draw": 5,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 28
+                                }
+                            },
+                            "home": {
+                                "played": 10,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 12
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 16
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

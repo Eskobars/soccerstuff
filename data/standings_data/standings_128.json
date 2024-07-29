@@ -1,0 +1,1289 @@
+{
+    "get": "standings",
+    "parameters": {
+        "league": "128",
+        "season": "2024"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "league": {
+                "id": 128,
+                "name": "Liga Profesional Argentina",
+                "country": "Argentina",
+                "logo": "https://media.api-sports.io/football/leagues/128.png",
+                "flag": "https://media.api-sports.io/flags/ar.svg",
+                "season": 2024,
+                "standings": [
+                    [
+                        {
+                            "rank": 1,
+                            "team": {
+                                "id": 445,
+                                "name": "Huracan",
+                                "logo": "https://media.api-sports.io/football/teams/445.png"
+                            },
+                            "points": 18,
+                            "goalsDiff": 7,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WDDWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 3
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 1
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 2
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 2,
+                            "team": {
+                                "id": 436,
+                                "name": "Racing Club",
+                                "logo": "https://media.api-sports.io/football/teams/436.png"
+                            },
+                            "points": 16,
+                            "goalsDiff": 9,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WLWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 8
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 4,
+                                "draw": 0,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 1
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 3,
+                            "team": {
+                                "id": 456,
+                                "name": "Talleres Cordoba",
+                                "logo": "https://media.api-sports.io/football/teams/456.png"
+                            },
+                            "points": 15,
+                            "goalsDiff": 4,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DDLWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 5,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 4,
+                            "team": {
+                                "id": 478,
+                                "name": "Instituto Cordoba",
+                                "logo": "https://media.api-sports.io/football/teams/478.png"
+                            },
+                            "points": 14,
+                            "goalsDiff": 4,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DLWWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 0,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 3
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 5,
+                            "team": {
+                                "id": 441,
+                                "name": "Union Santa Fe",
+                                "logo": "https://media.api-sports.io/football/teams/441.png"
+                            },
+                            "points": 14,
+                            "goalsDiff": 4,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LDWWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 4
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 1
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 3
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 6,
+                            "team": {
+                                "id": 473,
+                                "name": "Independ. Rivadavia",
+                                "logo": "https://media.api-sports.io/football/teams/473.png"
+                            },
+                            "points": 14,
+                            "goalsDiff": 3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WDWLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 2
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 1
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 1
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 7,
+                            "team": {
+                                "id": 435,
+                                "name": "River Plate",
+                                "logo": "https://media.api-sports.io/football/teams/435.png"
+                            },
+                            "points": 13,
+                            "goalsDiff": 5,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WLDLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 1,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 8
+                                }
+                            },
+                            "home": {
+                                "played": 5,
+                                "win": 4,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 0,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 8,
+                            "team": {
+                                "id": 450,
+                                "name": "Estudiantes L.P.",
+                                "logo": "https://media.api-sports.io/football/teams/450.png"
+                            },
+                            "points": 12,
+                            "goalsDiff": 3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WDDLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 9,
+                            "team": {
+                                "id": 446,
+                                "name": "Lanus",
+                                "logo": "https://media.api-sports.io/football/teams/446.png"
+                            },
+                            "points": 12,
+                            "goalsDiff": 2,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WDWDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 10,
+                            "team": {
+                                "id": 438,
+                                "name": "Velez Sarsfield",
+                                "logo": "https://media.api-sports.io/football/teams/438.png"
+                            },
+                            "points": 11,
+                            "goalsDiff": 3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WWLDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 1
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 11,
+                            "team": {
+                                "id": 440,
+                                "name": "Belgrano Cordoba",
+                                "logo": "https://media.api-sports.io/football/teams/440.png"
+                            },
+                            "points": 11,
+                            "goalsDiff": -1,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LWDWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 13
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 12,
+                            "team": {
+                                "id": 457,
+                                "name": "Newells Old Boys",
+                                "logo": "https://media.api-sports.io/football/teams/457.png"
+                            },
+                            "points": 11,
+                            "goalsDiff": -1,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DDWLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 13,
+                            "team": {
+                                "id": 434,
+                                "name": "Gimnasia L.P.",
+                                "logo": "https://media.api-sports.io/football/teams/434.png"
+                            },
+                            "points": 10,
+                            "goalsDiff": 0,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LLLWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 14,
+                            "team": {
+                                "id": 455,
+                                "name": "Atletico Tucuman",
+                                "logo": "https://media.api-sports.io/football/teams/455.png"
+                            },
+                            "points": 10,
+                            "goalsDiff": 0,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WDDDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 15,
+                            "team": {
+                                "id": 474,
+                                "name": "Sarmiento Junin",
+                                "logo": "https://media.api-sports.io/football/teams/474.png"
+                            },
+                            "points": 10,
+                            "goalsDiff": -1,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LWLWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 2,
+                                "draw": 0,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 16,
+                            "team": {
+                                "id": 437,
+                                "name": "Rosario Central",
+                                "logo": "https://media.api-sports.io/football/teams/437.png"
+                            },
+                            "points": 9,
+                            "goalsDiff": 2,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LWDDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 17,
+                            "team": {
+                                "id": 451,
+                                "name": "Boca Juniors",
+                                "logo": "https://media.api-sports.io/football/teams/451.png"
+                            },
+                            "points": 9,
+                            "goalsDiff": 1,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DDWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 6
+                                }
+                            },
+                            "home": {
+                                "played": 2,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 0
+                                }
+                            },
+                            "away": {
+                                "played": 5,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 18,
+                            "team": {
+                                "id": 476,
+                                "name": "Deportivo Riestra",
+                                "logo": "https://media.api-sports.io/football/teams/476.png"
+                            },
+                            "points": 9,
+                            "goalsDiff": -1,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WLWLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 7
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 0,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 19,
+                            "team": {
+                                "id": 458,
+                                "name": "Argentinos JRS",
+                                "logo": "https://media.api-sports.io/football/teams/458.png"
+                            },
+                            "points": 9,
+                            "goalsDiff": -5,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LLWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 0,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 0,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 20,
+                            "team": {
+                                "id": 1064,
+                                "name": "Platense",
+                                "logo": "https://media.api-sports.io/football/teams/1064.png"
+                            },
+                            "points": 8,
+                            "goalsDiff": -2,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LWLWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 7
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 2
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 21,
+                            "team": {
+                                "id": 453,
+                                "name": "Independiente",
+                                "logo": "https://media.api-sports.io/football/teams/453.png"
+                            },
+                            "points": 7,
+                            "goalsDiff": -4,
+                            "group": "Liga Profesional Argentina",
+                            "form": "LDLWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 22,
+                            "team": {
+                                "id": 460,
+                                "name": "San Lorenzo",
+                                "logo": "https://media.api-sports.io/football/teams/460.png"
+                            },
+                            "points": 6,
+                            "goalsDiff": -2,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DWDLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 7
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 1,
+                                "draw": 0,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 3
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 23,
+                            "team": {
+                                "id": 449,
+                                "name": "Banfield",
+                                "logo": "https://media.api-sports.io/football/teams/449.png"
+                            },
+                            "points": 6,
+                            "goalsDiff": -3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DDLWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 0,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 24,
+                            "team": {
+                                "id": 452,
+                                "name": "Tigre",
+                                "logo": "https://media.api-sports.io/football/teams/452.png"
+                            },
+                            "points": 6,
+                            "goalsDiff": -5,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DWDLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 25,
+                            "team": {
+                                "id": 442,
+                                "name": "Defensa Y Justicia",
+                                "logo": "https://media.api-sports.io/football/teams/442.png"
+                            },
+                            "points": 5,
+                            "goalsDiff": -3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DDDDL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 0,
+                                "draw": 5,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 9
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 26,
+                            "team": {
+                                "id": 2432,
+                                "name": "Barracas Central",
+                                "logo": "https://media.api-sports.io/football/teams/2432.png"
+                            },
+                            "points": 5,
+                            "goalsDiff": -5,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DLLLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 8
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 27,
+                            "team": {
+                                "id": 439,
+                                "name": "Godoy Cruz",
+                                "logo": "https://media.api-sports.io/football/teams/439.png"
+                            },
+                            "points": 3,
+                            "goalsDiff": -3,
+                            "group": "Liga Profesional Argentina",
+                            "form": "WLDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 6,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 7
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 28,
+                            "team": {
+                                "id": 1065,
+                                "name": "Central Cordoba de Santiago",
+                                "logo": "https://media.api-sports.io/football/teams/1065.png"
+                            },
+                            "points": 1,
+                            "goalsDiff": -11,
+                            "group": "Liga Profesional Argentina",
+                            "form": "DLLLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 7,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 3,
+                                "win": 0,
+                                "draw": 0,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 4,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-29T00:00:00+00:00"
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

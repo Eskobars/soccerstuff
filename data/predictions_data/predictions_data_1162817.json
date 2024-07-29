@@ -1,0 +1,659 @@
+{
+    "get": "predictions",
+    "parameters": {
+        "fixture": "1162817"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "predictions": {
+                "winner": {
+                    "id": 2765,
+                    "name": "Suwon Bluewings",
+                    "comment": "Win or draw"
+                },
+                "win_or_draw": true,
+                "under_over": null,
+                "goals": {
+                    "home": "-1.5",
+                    "away": "-2.5"
+                },
+                "advice": "Double chance : draw or Suwon Bluewings",
+                "percent": {
+                    "home": "10%",
+                    "draw": "45%",
+                    "away": "45%"
+                }
+            },
+            "league": {
+                "id": 293,
+                "name": "K League 2",
+                "country": "South-Korea",
+                "logo": "https://media.api-sports.io/football/leagues/293.png",
+                "flag": "https://media.api-sports.io/flags/kr.svg",
+                "season": 2024
+            },
+            "teams": {
+                "home": {
+                    "id": 7078,
+                    "name": "Gimpo Citizen",
+                    "logo": "https://media.api-sports.io/football/teams/7078.png",
+                    "last_5": {
+                        "played": 5,
+                        "form": "13%",
+                        "att": "35%",
+                        "def": "35%",
+                        "goals": {
+                            "for": {
+                                "total": 6,
+                                "average": "1.2"
+                            },
+                            "against": {
+                                "total": 11,
+                                "average": "2.2"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "LWLDDLWWLDWWWLWWDDDLLL",
+                        "fixtures": {
+                            "played": {
+                                "home": 10,
+                                "away": 12,
+                                "total": 22
+                            },
+                            "wins": {
+                                "home": 3,
+                                "away": 5,
+                                "total": 8
+                            },
+                            "draws": {
+                                "home": 3,
+                                "away": 3,
+                                "total": 6
+                            },
+                            "loses": {
+                                "home": 4,
+                                "away": 4,
+                                "total": 8
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 12,
+                                    "away": 13,
+                                    "total": 25
+                                },
+                                "average": {
+                                    "home": "1.2",
+                                    "away": "1.1",
+                                    "total": "1.1"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "4.00%"
+                                    },
+                                    "16-30": {
+                                        "total": 2,
+                                        "percentage": "8.00%"
+                                    },
+                                    "31-45": {
+                                        "total": 4,
+                                        "percentage": "16.00%"
+                                    },
+                                    "46-60": {
+                                        "total": 7,
+                                        "percentage": "28.00%"
+                                    },
+                                    "61-75": {
+                                        "total": 2,
+                                        "percentage": "8.00%"
+                                    },
+                                    "76-90": {
+                                        "total": 6,
+                                        "percentage": "24.00%"
+                                    },
+                                    "91-105": {
+                                        "total": 3,
+                                        "percentage": "12.00%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 15,
+                                    "away": 14,
+                                    "total": 29
+                                },
+                                "average": {
+                                    "home": "1.5",
+                                    "away": "1.2",
+                                    "total": "1.3"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 3,
+                                        "percentage": "10.34%"
+                                    },
+                                    "16-30": {
+                                        "total": 3,
+                                        "percentage": "10.34%"
+                                    },
+                                    "31-45": {
+                                        "total": 2,
+                                        "percentage": "6.90%"
+                                    },
+                                    "46-60": {
+                                        "total": 5,
+                                        "percentage": "17.24%"
+                                    },
+                                    "61-75": {
+                                        "total": 6,
+                                        "percentage": "20.69%"
+                                    },
+                                    "76-90": {
+                                        "total": 6,
+                                        "percentage": "20.69%"
+                                    },
+                                    "91-105": {
+                                        "total": 4,
+                                        "percentage": "13.79%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 3,
+                                "draws": 3,
+                                "loses": 1
+                            },
+                            "wins": {
+                                "home": "2-1",
+                                "away": "1-3"
+                            },
+                            "loses": {
+                                "home": "2-5",
+                                "away": "4-0"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 3,
+                                    "away": 3
+                                },
+                                "against": {
+                                    "home": 5,
+                                    "away": 4
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 2,
+                            "away": 3,
+                            "total": 5
+                        },
+                        "failed_to_score": {
+                            "home": 2,
+                            "away": 4,
+                            "total": 6
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 1,
+                                "percentage": "100.00%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 1
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": 3,
+                                    "percentage": "6.52%"
+                                },
+                                "16-30": {
+                                    "total": 6,
+                                    "percentage": "13.04%"
+                                },
+                                "31-45": {
+                                    "total": 7,
+                                    "percentage": "15.22%"
+                                },
+                                "46-60": {
+                                    "total": 8,
+                                    "percentage": "17.39%"
+                                },
+                                "61-75": {
+                                    "total": 10,
+                                    "percentage": "21.74%"
+                                },
+                                "76-90": {
+                                    "total": 7,
+                                    "percentage": "15.22%"
+                                },
+                                "91-105": {
+                                    "total": 5,
+                                    "percentage": "10.87%"
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": 1,
+                                    "percentage": "100.00%"
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "away": {
+                    "id": 2765,
+                    "name": "Suwon Bluewings",
+                    "logo": "https://media.api-sports.io/football/teams/2765.png",
+                    "last_5": {
+                        "played": 5,
+                        "form": "60%",
+                        "att": "41%",
+                        "def": "82%",
+                        "goals": {
+                            "for": {
+                                "total": 7,
+                                "average": "1.4"
+                            },
+                            "against": {
+                                "total": 3,
+                                "average": "0.6"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "WLWLWWWWDLLLLLDDWDDWDW",
+                        "fixtures": {
+                            "played": {
+                                "home": 11,
+                                "away": 11,
+                                "total": 22
+                            },
+                            "wins": {
+                                "home": 4,
+                                "away": 5,
+                                "total": 9
+                            },
+                            "draws": {
+                                "home": 3,
+                                "away": 3,
+                                "total": 6
+                            },
+                            "loses": {
+                                "home": 4,
+                                "away": 3,
+                                "total": 7
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 15,
+                                    "away": 14,
+                                    "total": 29
+                                },
+                                "average": {
+                                    "home": "1.4",
+                                    "away": "1.3",
+                                    "total": "1.3"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "3.57%"
+                                    },
+                                    "16-30": {
+                                        "total": 3,
+                                        "percentage": "10.71%"
+                                    },
+                                    "31-45": {
+                                        "total": 3,
+                                        "percentage": "10.71%"
+                                    },
+                                    "46-60": {
+                                        "total": 2,
+                                        "percentage": "7.14%"
+                                    },
+                                    "61-75": {
+                                        "total": 6,
+                                        "percentage": "21.43%"
+                                    },
+                                    "76-90": {
+                                        "total": 6,
+                                        "percentage": "21.43%"
+                                    },
+                                    "91-105": {
+                                        "total": 7,
+                                        "percentage": "25.00%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 11,
+                                    "away": 9,
+                                    "total": 20
+                                },
+                                "average": {
+                                    "home": "1.0",
+                                    "away": "0.8",
+                                    "total": "0.9"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 2,
+                                        "percentage": "9.52%"
+                                    },
+                                    "16-30": {
+                                        "total": 1,
+                                        "percentage": "4.76%"
+                                    },
+                                    "31-45": {
+                                        "total": 2,
+                                        "percentage": "9.52%"
+                                    },
+                                    "46-60": {
+                                        "total": 7,
+                                        "percentage": "33.33%"
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "4.76%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "4.76%"
+                                    },
+                                    "91-105": {
+                                        "total": 7,
+                                        "percentage": "33.33%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 4,
+                                "draws": 2,
+                                "loses": 5
+                            },
+                            "wins": {
+                                "home": "5-1",
+                                "away": "0-3"
+                            },
+                            "loses": {
+                                "home": "1-3",
+                                "away": "2-1"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 5,
+                                    "away": 3
+                                },
+                                "against": {
+                                    "home": 3,
+                                    "away": 2
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 2,
+                            "away": 4,
+                            "total": 6
+                        },
+                        "failed_to_score": {
+                            "home": 4,
+                            "away": 2,
+                            "total": 6
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 1,
+                                "percentage": "100.00%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 1
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": 2,
+                                    "percentage": "5.88%"
+                                },
+                                "16-30": {
+                                    "total": 2,
+                                    "percentage": "5.88%"
+                                },
+                                "31-45": {
+                                    "total": 3,
+                                    "percentage": "8.82%"
+                                },
+                                "46-60": {
+                                    "total": 4,
+                                    "percentage": "11.76%"
+                                },
+                                "61-75": {
+                                    "total": 8,
+                                    "percentage": "23.53%"
+                                },
+                                "76-90": {
+                                    "total": 10,
+                                    "percentage": "29.41%"
+                                },
+                                "91-105": {
+                                    "total": 5,
+                                    "percentage": "14.71%"
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": 2,
+                                    "percentage": "50.00%"
+                                },
+                                "46-60": {
+                                    "total": 1,
+                                    "percentage": "25.00%"
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": 1,
+                                    "percentage": "25.00%"
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "comparison": {
+                "form": {
+                    "home": "18%",
+                    "away": "82%"
+                },
+                "att": {
+                    "home": "46%",
+                    "away": "54%"
+                },
+                "def": {
+                    "home": "21%",
+                    "away": "79%"
+                },
+                "poisson_distribution": {
+                    "home": "36%",
+                    "away": "64%"
+                },
+                "h2h": {
+                    "home": "0%",
+                    "away": "100%"
+                },
+                "goals": {
+                    "home": "33%",
+                    "away": "67%"
+                },
+                "total": {
+                    "home": "30.8%",
+                    "away": "69.2%"
+                }
+            },
+            "h2h": [
+                {
+                    "fixture": {
+                        "id": 1162708,
+                        "referee": "Choi Gwang-Ho",
+                        "timezone": "UTC",
+                        "date": "2024-04-14T07:30:00+00:00",
+                        "timestamp": 1713079800,
+                        "periods": {
+                            "first": 1713079800,
+                            "second": 1713083400
+                        },
+                        "venue": {
+                            "id": 1018,
+                            "name": "Suwon World Cup Stadium",
+                            "city": "Suwon"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 293,
+                        "name": "K League 2",
+                        "country": "South-Korea",
+                        "logo": "https://media.api-sports.io/football/leagues/293.png",
+                        "flag": "https://media.api-sports.io/flags/kr.svg",
+                        "season": 2024,
+                        "round": "Regular Season - 7"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2765,
+                            "name": "Suwon Bluewings",
+                            "logo": "https://media.api-sports.io/football/teams/2765.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 7078,
+                            "name": "Gimpo Citizen",
+                            "logo": "https://media.api-sports.io/football/teams/7078.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 1,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

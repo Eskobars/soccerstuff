@@ -1,0 +1,863 @@
+{
+    "get": "predictions",
+    "parameters": {
+        "fixture": "1211939"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "predictions": {
+                "winner": {
+                    "id": 19048,
+                    "name": "Myawady",
+                    "comment": "Win or draw"
+                },
+                "win_or_draw": true,
+                "under_over": null,
+                "goals": {
+                    "home": "-1.5",
+                    "away": "-1.5"
+                },
+                "advice": "Double chance : Myawady or draw",
+                "percent": {
+                    "home": "45%",
+                    "draw": "45%",
+                    "away": "10%"
+                }
+            },
+            "league": {
+                "id": 588,
+                "name": "National League",
+                "country": "Myanmar",
+                "logo": "https://media.api-sports.io/football/leagues/588.png",
+                "flag": "https://media.api-sports.io/flags/mm.svg",
+                "season": 2024
+            },
+            "teams": {
+                "home": {
+                    "id": 19048,
+                    "name": "Myawady",
+                    "logo": "https://media.api-sports.io/football/teams/19048.png",
+                    "last_5": {
+                        "played": 3,
+                        "form": "33%",
+                        "att": "7%",
+                        "def": "57%",
+                        "goals": {
+                            "for": {
+                                "total": 1,
+                                "average": "0.3"
+                            },
+                            "against": {
+                                "total": 6,
+                                "average": "2.0"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "LLW",
+                        "fixtures": {
+                            "played": {
+                                "home": 0,
+                                "away": 3,
+                                "total": 3
+                            },
+                            "wins": {
+                                "home": 0,
+                                "away": 1,
+                                "total": 1
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 2,
+                                "total": 2
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 1,
+                                    "total": 1
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "0.3",
+                                    "total": "0.3"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": 1,
+                                        "percentage": "100.00%"
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 6,
+                                    "total": 6
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "2.0",
+                                    "total": "2.0"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "16-30": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 2,
+                                        "percentage": "33.33%"
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 0,
+                                "draws": 0,
+                                "loses": 2
+                            },
+                            "wins": {
+                                "home": null,
+                                "away": "0-1"
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": "5-0"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 0,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 0,
+                                    "away": 5
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 0,
+                            "away": 1,
+                            "total": 1
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 2,
+                            "total": 2
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "away": {
+                    "id": 12527,
+                    "name": "Rakhine United",
+                    "logo": "https://media.api-sports.io/football/teams/12527.png",
+                    "last_5": {
+                        "played": 3,
+                        "form": "0%",
+                        "att": "14%",
+                        "def": "21%",
+                        "goals": {
+                            "for": {
+                                "total": 2,
+                                "average": "0.7"
+                            },
+                            "against": {
+                                "total": 11,
+                                "average": "3.7"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "LLL",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 2,
+                                "total": 3
+                            },
+                            "wins": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 1,
+                                "away": 2,
+                                "total": 3
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 1,
+                                    "away": 1,
+                                    "total": 2
+                                },
+                                "average": {
+                                    "home": "1.0",
+                                    "away": "0.5",
+                                    "total": "0.7"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "50.00%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "50.00%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 4,
+                                    "away": 7,
+                                    "total": 11
+                                },
+                                "average": {
+                                    "home": "4.0",
+                                    "away": "3.5",
+                                    "total": "3.7"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "9.09%"
+                                    },
+                                    "16-30": {
+                                        "total": 4,
+                                        "percentage": "36.36%"
+                                    },
+                                    "31-45": {
+                                        "total": 2,
+                                        "percentage": "18.18%"
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "9.09%"
+                                    },
+                                    "61-75": {
+                                        "total": 2,
+                                        "percentage": "18.18%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "9.09%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 0,
+                                "draws": 0,
+                                "loses": 3
+                            },
+                            "wins": {
+                                "home": null,
+                                "away": null
+                            },
+                            "loses": {
+                                "home": "1-4",
+                                "away": "5-1"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 1,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 4,
+                                    "away": 5
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 1,
+                            "total": 1
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "comparison": {
+                "form": {
+                    "home": "100%",
+                    "away": "0%"
+                },
+                "att": {
+                    "home": "33%",
+                    "away": "67%"
+                },
+                "def": {
+                    "home": "65%",
+                    "away": "35%"
+                },
+                "poisson_distribution": {
+                    "home": "0%",
+                    "away": "0%"
+                },
+                "h2h": {
+                    "home": "75%",
+                    "away": "25%"
+                },
+                "goals": {
+                    "home": "64%",
+                    "away": "36%"
+                },
+                "total": {
+                    "home": "59.3%",
+                    "away": "40.8%"
+                }
+            },
+            "h2h": [
+                {
+                    "fixture": {
+                        "id": 1003734,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-10-29T09:30:00+00:00",
+                        "timestamp": 1698571800,
+                        "periods": {
+                            "first": 1698571800,
+                            "second": 1698575400
+                        },
+                        "venue": {
+                            "id": 19697,
+                            "name": "Thuwunna Stadium",
+                            "city": "Yangon"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 588,
+                        "name": "National League",
+                        "country": "Myanmar",
+                        "logo": "https://media.api-sports.io/football/leagues/588.png",
+                        "flag": "https://media.api-sports.io/flags/mm.svg",
+                        "season": 2023,
+                        "round": "Regular Season - 18"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 19048,
+                            "name": "Myawady",
+                            "logo": "https://media.api-sports.io/football/teams/19048.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 12527,
+                            "name": "Rakhine United",
+                            "logo": "https://media.api-sports.io/football/teams/12527.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 3
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 1,
+                            "away": 2
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 3
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 1003674,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-06-07T09:15:00+00:00",
+                        "timestamp": 1686129300,
+                        "periods": {
+                            "first": 1686129300,
+                            "second": 1686132900
+                        },
+                        "venue": {
+                            "id": 5712,
+                            "name": "Yangon United Sport Complex",
+                            "city": "Yangon"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 588,
+                        "name": "National League",
+                        "country": "Myanmar",
+                        "logo": "https://media.api-sports.io/football/leagues/588.png",
+                        "flag": "https://media.api-sports.io/flags/mm.svg",
+                        "season": 2023,
+                        "round": "Regular Season - 8"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 12527,
+                            "name": "Rakhine United",
+                            "logo": "https://media.api-sports.io/football/teams/12527.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 19048,
+                            "name": "Myawady",
+                            "logo": "https://media.api-sports.io/football/teams/19048.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 1,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 1,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 877854,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2022-11-14T09:00:00+00:00",
+                        "timestamp": 1668416400,
+                        "periods": {
+                            "first": 1668416400,
+                            "second": 1668420000
+                        },
+                        "venue": {
+                            "id": 3895,
+                            "name": "Thuwanna YTC Stadium",
+                            "city": "Yangon"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 588,
+                        "name": "National League",
+                        "country": "Myanmar",
+                        "logo": "https://media.api-sports.io/football/leagues/588.png",
+                        "flag": "https://media.api-sports.io/flags/mm.svg",
+                        "season": 2022,
+                        "round": "Regular Season - 13"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 12527,
+                            "name": "Rakhine United",
+                            "logo": "https://media.api-sports.io/football/teams/12527.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 19048,
+                            "name": "Myawady",
+                            "logo": "https://media.api-sports.io/football/teams/19048.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 0,
+                        "away": 3
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 2
+                        },
+                        "fulltime": {
+                            "home": 0,
+                            "away": 3
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 877811,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2022-07-21T08:30:00+00:00",
+                        "timestamp": 1658392200,
+                        "periods": {
+                            "first": 1658392200,
+                            "second": 1658395800
+                        },
+                        "venue": {
+                            "id": 3895,
+                            "name": "Thuwanna YTC Stadium",
+                            "city": "Yangon"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 588,
+                        "name": "National League",
+                        "country": "Myanmar",
+                        "logo": "https://media.api-sports.io/football/leagues/588.png",
+                        "flag": "https://media.api-sports.io/flags/mm.svg",
+                        "season": 2022,
+                        "round": "Regular Season - 4"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 19048,
+                            "name": "Myawady",
+                            "logo": "https://media.api-sports.io/football/teams/19048.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 12527,
+                            "name": "Rakhine United",
+                            "logo": "https://media.api-sports.io/football/teams/12527.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}
