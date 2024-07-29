@@ -1,27 +1,44 @@
 import json
 import os
-from date_helper import is_data_up_to_date
+from datetime import datetime
 from fetchers import fetch_fixtures_for_day
 from config import FIXTURES_DIR
 
 def get_fixtures_data():
-    fixtures_dir = os.path.join('soccerstuff', 'data', 'fixtures_data')
-    filename = os.path.join(fixtures_dir, 'fixtures.json')
-    
-    # Ensure the directory exists
-    os.makedirs(fixtures_dir, exist_ok=True)
+    filename = os.path.join(FIXTURES_DIR, 'fixtures_data.json')
+    metadata_file = os.path.join(FIXTURES_DIR, 'metadata.json')
 
-    if is_data_up_to_date(filename):
+    # Ensure the directory exists
+    os.makedirs(FIXTURES_DIR, exist_ok=True)
+
+    # Fetch the current date in 'YYYY-MM-DD' format
+    current_date = datetime.now().strftime('%Y-%m-%d')
+
+    # Function to check if the data is up to date
+    def is_data_up_to_date():
+        if not os.path.isfile(metadata_file):
+            return False
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+        stored_date = metadata.get('date')
+        return stored_date == current_date
+
+    if is_data_up_to_date():
         with open(filename, 'r') as f:
             all_fixtures_data = json.load(f)
     else:
         all_fixtures_data = fetch_fixtures_for_day()
+
         with open(filename, 'w') as f:
             json.dump(all_fixtures_data, f, indent=4)
+        
+        # Update metadata file with the current date
+        with open(metadata_file, 'w') as f:
+            json.dump({'date': current_date}, f, indent=4)
+        
         print("Fixtures data fetched and stored successfully")
-    
-    return all_fixtures_data
 
+    return all_fixtures_data
 
 def filter_fixtures(all_fixtures, leagues, statuses):
     filtered_fixtures = []

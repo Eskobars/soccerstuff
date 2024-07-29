@@ -4,8 +4,13 @@ from date_helper import is_data_up_to_date
 from fetchers import fetch_league_standings
 
 def get_standings_data(league_id):
-    filename = os.path.join('standings_data', f'standings_{league_id}.json')
+    # Define the directory and file path
+    standings_dir = os.path.join('soccerstuff', 'data', 'standings_data')
+    filename = os.path.join(standings_dir, f'standings_{league_id}.json')
     
+    # Ensure the directory exists
+    os.makedirs(standings_dir, exist_ok=True)
+
     if is_data_up_to_date(filename):
         print(f"Standings data for league {league_id} is up to date, loading from file.")
         with open(filename, 'r') as f:

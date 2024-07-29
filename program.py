@@ -1,4 +1,3 @@
-import json
 import os
 
 from services.fixtures import filter_fixtures, get_fixtures_data
