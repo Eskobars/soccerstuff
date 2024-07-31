@@ -41,8 +41,8 @@ def fetch_data_with_rate_limit(fetch_function, *args, max_requests_per_minute=10
 
             # Rate limit check
             if request_count >= max_requests_per_minute:
-                print("Request limit reached. Waiting for 70 seconds...")
-                time.sleep(61)  # Wait for 70 seconds before retrying
+                print("Request limit reached. Waiting for 61 seconds...")
+                time.sleep(61)  # Wait for 61 seconds before retrying
                 request_count = 0  # Reset request count after waiting
 
             # Attempt to fetch data
@@ -52,14 +52,14 @@ def fetch_data_with_rate_limit(fetch_function, *args, max_requests_per_minute=10
                 # Check for rate limit error in the response
                 if 'errors' in data and 'rateLimit' in data['errors']:
                     print("Rate limit error detected. Waiting for 60 seconds...")
-                    time.sleep(60)  # Wait for 60 seconds if rate limit error is detected
+                    time.sleep(61)  # Wait for 61 seconds if rate limit error is detected
                     continue  # Retry fetching data
                 
                 return data  # Return data if no error is detected
             except Exception as e:
                 print(f"Error fetching data: {e}")
-                print("Retrying in 70 seconds...")
-                time.sleep(70)  # Wait before retrying in case of error
+                print("Retrying in 61 seconds...")
+                time.sleep(61)  # Wait before retrying in case of error
 
     return wrapper()
 
