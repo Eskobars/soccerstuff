@@ -1,12 +1,13 @@
 import json
 import http.client
 from config import API_KEY
+from config import BASE_URL
 from datetime import datetime
 
 def fetch_league_standings(league_id):
-    conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+    conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
-        'x-rapidapi-host': "v3.football.api-sports.io",
+        'x-rapidapi-host': BASE_URL,
         'x-rapidapi-key': API_KEY
     }
     url = f"/standings?league={league_id}&season=2024"  # Adjust endpoint as needed
@@ -17,9 +18,9 @@ def fetch_league_standings(league_id):
     return json.loads(data.decode("utf-8"))
 
 def fetch_match_predictions(fixture_id):
-    conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+    conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
-        'x-rapidapi-host': "v3.football.api-sports.io",
+        'x-rapidapi-host': BASE_URL,
         'x-rapidapi-key': API_KEY
     }
     url = f"/predictions?fixture={fixture_id}"
@@ -29,10 +30,10 @@ def fetch_match_predictions(fixture_id):
     return json.loads(data.decode("utf-8"))
 
 def fetch_players_for_fixture(fixture_id):
-    conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+    conn = http.client.HTTPSConnection(BASE_URL)
 
     headers = {
-        'x-rapidapi-host': "v3.football.api-sports.io",
+        'x-rapidapi-host': BASE_URL,
         'x-rapidapi-key': API_KEY
     }
 
@@ -51,9 +52,9 @@ def fetch_players_for_fixture(fixture_id):
     return parsed_data
 
 def fetch_injuries_for_fixture(fixture_id):
-    conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+    conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
-        'x-rapidapi-host': "v3.football.api-sports.io",
+        'x-rapidapi-host': BASE_URL,
         'x-rapidapi-key': API_KEY
     }
     url = f"/injuries?fixture={fixture_id}"
@@ -70,10 +71,10 @@ def fetch_fixtures_for_day():
         # Format the date as YYYY-MM-DD
         current_date = today.strftime('%Y-%m-%d')
 
-        conn = http.client.HTTPSConnection("v3.football.api-sports.io")
+        conn = http.client.HTTPSConnection(BASE_URL)
 
         headers = {
-            'x-rapidapi-host': "v3.football.api-sports.io",
+            'x-rapidapi-host': BASE_URL,
             'x-rapidapi-key': API_KEY
         }
 
