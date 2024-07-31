@@ -1,0 +1,1741 @@
+{
+    "get": "standings",
+    "parameters": {
+        "league": "129",
+        "season": "2024"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "league": {
+                "id": 129,
+                "name": "Primera Nacional",
+                "country": "Argentina",
+                "logo": "https://media.api-sports.io/football/leagues/129.png",
+                "flag": "https://media.api-sports.io/flags/ar.svg",
+                "season": 2024,
+                "standings": [
+                    [
+                        {
+                            "rank": 1,
+                            "team": {
+                                "id": 485,
+                                "name": "San Martin Tucuman",
+                                "logo": "https://media.api-sports.io/football/teams/485.png"
+                            },
+                            "points": 48,
+                            "goalsDiff": 13,
+                            "group": "Group A",
+                            "form": "WWWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 14,
+                                "draw": 6,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 25,
+                                    "against": 12
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 9,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 2,
+                            "team": {
+                                "id": 461,
+                                "name": "San Martin S.J.",
+                                "logo": "https://media.api-sports.io/football/teams/461.png"
+                            },
+                            "points": 48,
+                            "goalsDiff": 12,
+                            "group": "Group A",
+                            "form": "WDWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 13,
+                                "draw": 9,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 23,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 10,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 3,
+                                "draw": 7,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 4
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 3,
+                            "team": {
+                                "id": 8379,
+                                "name": "San Miguel",
+                                "logo": "https://media.api-sports.io/football/teams/8379.png"
+                            },
+                            "points": 39,
+                            "goalsDiff": 4,
+                            "group": "Group A",
+                            "form": "LWLWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 10,
+                                "draw": 9,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 22,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 8,
+                                "draw": 4,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 2,
+                                "draw": 5,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 4,
+                            "team": {
+                                "id": 479,
+                                "name": "Gimnasia Jujuy",
+                                "logo": "https://media.api-sports.io/football/teams/479.png"
+                            },
+                            "points": 38,
+                            "goalsDiff": 5,
+                            "group": "Group A",
+                            "form": "WDDWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 11,
+                                "draw": 5,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 23,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 8,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 13
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 5,
+                            "team": {
+                                "id": 1936,
+                                "name": "CA Estudiantes",
+                                "logo": "https://media.api-sports.io/football/teams/1936.png"
+                            },
+                            "points": 37,
+                            "goalsDiff": 5,
+                            "group": "Group A",
+                            "form": "DLWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 9,
+                                "draw": 10,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 21,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 6,
+                                "draw": 5,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 6,
+                            "team": {
+                                "id": 480,
+                                "name": "Quilmes",
+                                "logo": "https://media.api-sports.io/football/teams/480.png"
+                            },
+                            "points": 35,
+                            "goalsDiff": 8,
+                            "group": "Group A",
+                            "form": "DLWWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 10,
+                                "draw": 8,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 27,
+                                    "against": 19
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 6,
+                                "draw": 4,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 7,
+                            "team": {
+                                "id": 1954,
+                                "name": "Deportivo Maipu",
+                                "logo": "https://media.api-sports.io/football/teams/1954.png"
+                            },
+                            "points": 34,
+                            "goalsDiff": -7,
+                            "group": "Group A",
+                            "form": "DWLWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 10,
+                                "draw": 4,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 22,
+                                    "against": 29
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 6,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 18
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 8,
+                            "team": {
+                                "id": 470,
+                                "name": "Ferro Carril Oeste",
+                                "logo": "https://media.api-sports.io/football/teams/470.png"
+                            },
+                            "points": 33,
+                            "goalsDiff": 4,
+                            "group": "Group A",
+                            "form": "LDDWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 9,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 35,
+                                    "against": 31
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 12
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 19
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 9,
+                            "team": {
+                                "id": 464,
+                                "name": "All Boys",
+                                "logo": "https://media.api-sports.io/football/teams/464.png"
+                            },
+                            "points": 33,
+                            "goalsDiff": -2,
+                            "group": "Group A",
+                            "form": "LLWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 9,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 7,
+                                "draw": 5,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 14
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 10,
+                            "team": {
+                                "id": 462,
+                                "name": "Agropecuario",
+                                "logo": "https://media.api-sports.io/football/teams/462.png"
+                            },
+                            "points": 32,
+                            "goalsDiff": 3,
+                            "group": "Group A",
+                            "form": "DDWWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 8,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 32,
+                                    "against": 29
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 14
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 15
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 11,
+                            "team": {
+                                "id": 1957,
+                                "name": "Racing Cordoba",
+                                "logo": "https://media.api-sports.io/football/teams/1957.png"
+                            },
+                            "points": 32,
+                            "goalsDiff": 0,
+                            "group": "Group A",
+                            "form": "LWLWW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 8,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 21,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 12,
+                            "team": {
+                                "id": 447,
+                                "name": "Chacarita Juniors",
+                                "logo": "https://media.api-sports.io/football/teams/447.png"
+                            },
+                            "points": 31,
+                            "goalsDiff": -3,
+                            "group": "Group A",
+                            "form": "DLLLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 7,
+                                "lose": 10,
+                                "goals": {
+                                    "for": 27,
+                                    "against": 30
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 18
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 13,
+                            "team": {
+                                "id": 1965,
+                                "name": "Tristan Suarez",
+                                "logo": "https://media.api-sports.io/football/teams/1965.png"
+                            },
+                            "points": 31,
+                            "goalsDiff": -4,
+                            "group": "Group A",
+                            "form": "DWWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 7,
+                                "lose": 10,
+                                "goals": {
+                                    "for": 27,
+                                    "against": 31
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 14
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 17
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 14,
+                            "team": {
+                                "id": 1962,
+                                "name": "Alvarado",
+                                "logo": "https://media.api-sports.io/football/teams/1962.png"
+                            },
+                            "points": 31,
+                            "goalsDiff": -7,
+                            "group": "Group A",
+                            "form": "WLLLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 7,
+                                "lose": 10,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 27
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 7,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 1,
+                                "draw": 5,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 18
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 15,
+                            "team": {
+                                "id": 472,
+                                "name": "Guillermo Brown",
+                                "logo": "https://media.api-sports.io/football/teams/472.png"
+                            },
+                            "points": 28,
+                            "goalsDiff": -4,
+                            "group": "Group A",
+                            "form": "WLDDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 10,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 24
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 6,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 12
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 2,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 16,
+                            "team": {
+                                "id": 444,
+                                "name": "Patronato",
+                                "logo": "https://media.api-sports.io/football/teams/444.png"
+                            },
+                            "points": 27,
+                            "goalsDiff": -4,
+                            "group": "Group A",
+                            "form": "LLWWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 9,
+                                "lose": 10,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 24
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 16
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 17,
+                            "team": {
+                                "id": 1927,
+                                "name": "Talleres Remedios",
+                                "logo": "https://media.api-sports.io/football/teams/1927.png"
+                            },
+                            "points": 27,
+                            "goalsDiff": -8,
+                            "group": "Group A",
+                            "form": "LWLDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 9,
+                                "lose": 10,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 25
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 13
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 2,
+                                "draw": 5,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 18,
+                            "team": {
+                                "id": 459,
+                                "name": "Arsenal Sarandi",
+                                "logo": "https://media.api-sports.io/football/teams/459.png"
+                            },
+                            "points": 26,
+                            "goalsDiff": -10,
+                            "group": "Group A",
+                            "form": "DLDLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 8,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 23
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 3,
+                                    "against": 15
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 19,
+                            "team": {
+                                "id": 3969,
+                                "name": "Club Atl\u00e9tico G\u00fcemes",
+                                "logo": "https://media.api-sports.io/football/teams/3969.png"
+                            },
+                            "points": 24,
+                            "goalsDiff": -9,
+                            "group": "Group A",
+                            "form": "DWLDL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 4,
+                                "draw": 12,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 24
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 0,
+                                "draw": 7,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 13
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        }
+                    ],
+                    [
+                        {
+                            "rank": 1,
+                            "team": {
+                                "id": 463,
+                                "name": "Aldosivi",
+                                "logo": "https://media.api-sports.io/football/teams/463.png"
+                            },
+                            "points": 44,
+                            "goalsDiff": 12,
+                            "group": "Group B",
+                            "form": "WLWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 24,
+                                "win": 12,
+                                "draw": 8,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 26,
+                                    "against": 14
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 7,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 11,
+                                "win": 7,
+                                "draw": 1,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 2,
+                            "team": {
+                                "id": 1932,
+                                "name": "San Telmo",
+                                "logo": "https://media.api-sports.io/football/teams/1932.png"
+                            },
+                            "points": 43,
+                            "goalsDiff": 20,
+                            "group": "Group B",
+                            "form": "DDWDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 24,
+                                "win": 12,
+                                "draw": 10,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 31,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 11,
+                                "win": 6,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 6,
+                                "draw": 6,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 3,
+                            "team": {
+                                "id": 448,
+                                "name": "Colon Santa Fe",
+                                "logo": "https://media.api-sports.io/football/teams/448.png"
+                            },
+                            "points": 43,
+                            "goalsDiff": 15,
+                            "group": "Group B",
+                            "form": "LWLDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 12,
+                                "draw": 7,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 32,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 9,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 21,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 4,
+                            "team": {
+                                "id": 1066,
+                                "name": "Gimnasia M.",
+                                "logo": "https://media.api-sports.io/football/teams/1066.png"
+                            },
+                            "points": 43,
+                            "goalsDiff": 8,
+                            "group": "Group B",
+                            "form": "WWWDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 12,
+                                "draw": 7,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 33,
+                                    "against": 25
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 8,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 14
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 5,
+                            "team": {
+                                "id": 484,
+                                "name": "Nueva Chicago",
+                                "logo": "https://media.api-sports.io/football/teams/484.png"
+                            },
+                            "points": 42,
+                            "goalsDiff": 10,
+                            "group": "Group B",
+                            "form": "DWLWD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 12,
+                                "draw": 6,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 26,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 9,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 6,
+                            "team": {
+                                "id": 1067,
+                                "name": "Defensores De Belgrano",
+                                "logo": "https://media.api-sports.io/football/teams/1067.png"
+                            },
+                            "points": 39,
+                            "goalsDiff": 10,
+                            "group": "Group B",
+                            "form": "LWDDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 11,
+                                "draw": 6,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 28,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 6,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 18,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 7,
+                            "team": {
+                                "id": 454,
+                                "name": "Temperley",
+                                "logo": "https://media.api-sports.io/football/teams/454.png"
+                            },
+                            "points": 38,
+                            "goalsDiff": 7,
+                            "group": "Group B",
+                            "form": "DWDDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 9,
+                                "draw": 11,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 24,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 6,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 8,
+                            "team": {
+                                "id": 1928,
+                                "name": "Gimnasia Y Tiro",
+                                "logo": "https://media.api-sports.io/football/teams/1928.png"
+                            },
+                            "points": 37,
+                            "goalsDiff": 3,
+                            "group": "Group B",
+                            "form": "WWDDL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 13,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 13
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 6,
+                                "draw": 5,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 2,
+                                "draw": 8,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 6
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 9,
+                            "team": {
+                                "id": 2424,
+                                "name": "Estudiantes de Rio Cuarto",
+                                "logo": "https://media.api-sports.io/football/teams/2424.png"
+                            },
+                            "points": 37,
+                            "goalsDiff": 1,
+                            "group": "Group B",
+                            "form": "WLLDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 10,
+                                "draw": 7,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 22,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 6,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 10,
+                            "team": {
+                                "id": 1929,
+                                "name": "Deportivo Madryn",
+                                "logo": "https://media.api-sports.io/football/teams/1929.png"
+                            },
+                            "points": 35,
+                            "goalsDiff": 2,
+                            "group": "Group B",
+                            "form": "DLDWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 9,
+                                "draw": 8,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 18,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 5,
+                                "draw": 4,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 6
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 10
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 11,
+                            "team": {
+                                "id": 466,
+                                "name": "Atletico Mitre",
+                                "logo": "https://media.api-sports.io/football/teams/466.png"
+                            },
+                            "points": 34,
+                            "goalsDiff": 2,
+                            "group": "Group B",
+                            "form": "WDWLW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 10,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 13
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 8,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 0,
+                                "draw": 7,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 1,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 12,
+                            "team": {
+                                "id": 1948,
+                                "name": "Atlanta",
+                                "logo": "https://media.api-sports.io/football/teams/1948.png"
+                            },
+                            "points": 32,
+                            "goalsDiff": -5,
+                            "group": "Group B",
+                            "form": "LDLDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 8,
+                                "draw": 8,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 25
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 4,
+                                "draw": 6,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 18
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 13,
+                            "team": {
+                                "id": 469,
+                                "name": "Deportivo Moron",
+                                "logo": "https://media.api-sports.io/football/teams/469.png"
+                            },
+                            "points": 30,
+                            "goalsDiff": -5,
+                            "group": "Group B",
+                            "form": "DDWDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 7,
+                                "draw": 9,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 20,
+                                    "against": 25
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 4,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 2,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 14
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 14,
+                            "team": {
+                                "id": 482,
+                                "name": "Almagro",
+                                "logo": "https://media.api-sports.io/football/teams/482.png"
+                            },
+                            "points": 28,
+                            "goalsDiff": -11,
+                            "group": "Group B",
+                            "form": "WWWDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 10,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 27
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 5,
+                                "draw": 6,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 20
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 15,
+                            "team": {
+                                "id": 1945,
+                                "name": "Defensores Unidos",
+                                "logo": "https://media.api-sports.io/football/teams/1945.png"
+                            },
+                            "points": 26,
+                            "goalsDiff": -8,
+                            "group": "Group B",
+                            "form": "LLLWL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 6,
+                                "draw": 8,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 19,
+                                    "against": 27
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 6,
+                                "draw": 4,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 0,
+                                "draw": 4,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 18
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 16,
+                            "team": {
+                                "id": 8375,
+                                "name": "Almirante Brown",
+                                "logo": "https://media.api-sports.io/football/teams/8375.png"
+                            },
+                            "points": 24,
+                            "goalsDiff": -8,
+                            "group": "Group B",
+                            "form": "LWWDD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 5,
+                                "draw": 9,
+                                "lose": 11,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 23
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 2,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 12
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 17,
+                            "team": {
+                                "id": 1946,
+                                "name": "Chaco For Ever",
+                                "logo": "https://media.api-sports.io/football/teams/1946.png"
+                            },
+                            "points": 22,
+                            "goalsDiff": -3,
+                            "group": "Group B",
+                            "form": "DLLLL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 5,
+                                "draw": 7,
+                                "lose": 13,
+                                "goals": {
+                                    "for": 18,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 5,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 0,
+                                "draw": 4,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 14
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 18,
+                            "team": {
+                                "id": 465,
+                                "name": "Atletico DE Rafaela",
+                                "logo": "https://media.api-sports.io/football/teams/465.png"
+                            },
+                            "points": 15,
+                            "goalsDiff": -19,
+                            "group": "Group B",
+                            "form": "DLLDL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 3,
+                                "draw": 6,
+                                "lose": 16,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 34
+                                }
+                            },
+                            "home": {
+                                "played": 12,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 16
+                                }
+                            },
+                            "away": {
+                                "played": 13,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 9,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 18
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 19,
+                            "team": {
+                                "id": 468,
+                                "name": "Brown DE Adrogue",
+                                "logo": "https://media.api-sports.io/football/teams/468.png"
+                            },
+                            "points": 13,
+                            "goalsDiff": -27,
+                            "group": "Group B",
+                            "form": "DLLDL",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 25,
+                                "win": 1,
+                                "draw": 10,
+                                "lose": 14,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 36
+                                }
+                            },
+                            "home": {
+                                "played": 13,
+                                "win": 0,
+                                "draw": 7,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 16
+                                }
+                            },
+                            "away": {
+                                "played": 12,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 20
+                                }
+                            },
+                            "update": "2024-07-31T00:00:00+00:00"
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

@@ -1,0 +1,1271 @@
+{
+    "get": "predictions",
+    "parameters": {
+        "fixture": "1194500"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "predictions": {
+                "winner": {
+                    "id": 2518,
+                    "name": "Terengganu",
+                    "comment": null
+                },
+                "win_or_draw": false,
+                "under_over": null,
+                "goals": {
+                    "home": "-3.5",
+                    "away": "-1.5"
+                },
+                "advice": "Winner : Terengganu",
+                "percent": {
+                    "home": "45%",
+                    "draw": "45%",
+                    "away": "10%"
+                }
+            },
+            "league": {
+                "id": 278,
+                "name": "Super League",
+                "country": "Malaysia",
+                "logo": "https://media.api-sports.io/football/leagues/278.png",
+                "flag": "https://media.api-sports.io/flags/my.svg",
+                "season": 2024
+            },
+            "teams": {
+                "home": {
+                    "id": 2518,
+                    "name": "Terengganu",
+                    "logo": "https://media.api-sports.io/football/teams/2518.png",
+                    "last_5": {
+                        "played": 5,
+                        "form": "53%",
+                        "att": "47%",
+                        "def": "60%",
+                        "goals": {
+                            "for": {
+                                "total": 7,
+                                "average": "1.4"
+                            },
+                            "against": {
+                                "total": 6,
+                                "average": "1.2"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "WDWDL",
+                        "fixtures": {
+                            "played": {
+                                "home": 2,
+                                "away": 3,
+                                "total": 5
+                            },
+                            "wins": {
+                                "home": 2,
+                                "away": 0,
+                                "total": 2
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 2,
+                                "total": 2
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 1,
+                                "total": 1
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 6,
+                                    "away": 1,
+                                    "total": 7
+                                },
+                                "average": {
+                                    "home": "3.0",
+                                    "away": "0.3",
+                                    "total": "1.4"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": 2,
+                                        "percentage": "33.33%"
+                                    },
+                                    "46-60": {
+                                        "total": 2,
+                                        "percentage": "33.33%"
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "16.67%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 1,
+                                    "away": 5,
+                                    "total": 6
+                                },
+                                "average": {
+                                    "home": "0.5",
+                                    "away": "1.7",
+                                    "total": "1.2"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "14.29%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": 1,
+                                        "percentage": "14.29%"
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": 3,
+                                        "percentage": "42.86%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "14.29%"
+                                    },
+                                    "91-105": {
+                                        "total": 1,
+                                        "percentage": "14.29%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 1,
+                                "draws": 1,
+                                "loses": 0
+                            },
+                            "wins": {
+                                "home": "3-0",
+                                "away": null
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": "4-0"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 3,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 1,
+                                    "away": 4
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 1,
+                            "away": 1,
+                            "total": 2
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 2,
+                            "total": 2
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 2,
+                                "percentage": "100.00%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 2
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": 2,
+                                    "percentage": "25.00%"
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": 3,
+                                    "percentage": "37.50%"
+                                },
+                                "61-75": {
+                                    "total": 2,
+                                    "percentage": "25.00%"
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": 1,
+                                    "percentage": "12.50%"
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": 1,
+                                    "percentage": "100.00%"
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "away": {
+                    "id": 2502,
+                    "name": "Negeri Sembilan",
+                    "logo": "https://media.api-sports.io/football/teams/2502.png",
+                    "last_5": {
+                        "played": 5,
+                        "form": "20%",
+                        "att": "20%",
+                        "def": "20%",
+                        "goals": {
+                            "for": {
+                                "total": 3,
+                                "average": "0.6"
+                            },
+                            "against": {
+                                "total": 12,
+                                "average": "2.4"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "LLLWL",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 4,
+                                "total": 5
+                            },
+                            "wins": {
+                                "home": 0,
+                                "away": 1,
+                                "total": 1
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 1,
+                                "away": 3,
+                                "total": 4
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 3,
+                                    "total": 3
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "0.8",
+                                    "total": "0.6"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": 2,
+                                        "percentage": "66.67%"
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": 1,
+                                        "percentage": "33.33%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 3,
+                                    "away": 9,
+                                    "total": 12
+                                },
+                                "average": {
+                                    "home": "3.0",
+                                    "away": "2.3",
+                                    "total": "2.4"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 2,
+                                        "percentage": "16.67%"
+                                    },
+                                    "16-30": {
+                                        "total": 2,
+                                        "percentage": "16.67%"
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "8.33%"
+                                    },
+                                    "61-75": {
+                                        "total": 3,
+                                        "percentage": "25.00%"
+                                    },
+                                    "76-90": {
+                                        "total": 2,
+                                        "percentage": "16.67%"
+                                    },
+                                    "91-105": {
+                                        "total": 2,
+                                        "percentage": "16.67%"
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 1,
+                                "draws": 0,
+                                "loses": 3
+                            },
+                            "wins": {
+                                "home": null,
+                                "away": "0-2"
+                            },
+                            "loses": {
+                                "home": "0-3",
+                                "away": "4-0"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 0,
+                                    "away": 2
+                                },
+                                "against": {
+                                    "home": 3,
+                                    "away": 4
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 0,
+                            "away": 1,
+                            "total": 1
+                        },
+                        "failed_to_score": {
+                            "home": 1,
+                            "away": 2,
+                            "total": 3
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 1,
+                                "percentage": "100.00%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 1
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": 1,
+                                    "percentage": "14.29%"
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": 1,
+                                    "percentage": "14.29%"
+                                },
+                                "46-60": {
+                                    "total": 2,
+                                    "percentage": "28.57%"
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": 2,
+                                    "percentage": "28.57%"
+                                },
+                                "91-105": {
+                                    "total": 1,
+                                    "percentage": "14.29%"
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": 1,
+                                    "percentage": "50.00%"
+                                },
+                                "61-75": {
+                                    "total": 1,
+                                    "percentage": "50.00%"
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "comparison": {
+                "form": {
+                    "home": "73%",
+                    "away": "27%"
+                },
+                "att": {
+                    "home": "70%",
+                    "away": "30%"
+                },
+                "def": {
+                    "home": "67%",
+                    "away": "33%"
+                },
+                "poisson_distribution": {
+                    "home": "93%",
+                    "away": "7%"
+                },
+                "h2h": {
+                    "home": "25%",
+                    "away": "75%"
+                },
+                "goals": {
+                    "home": "38%",
+                    "away": "63%"
+                },
+                "total": {
+                    "home": "61.0%",
+                    "away": "39.2%"
+                }
+            },
+            "h2h": [
+                {
+                    "fixture": {
+                        "id": 997536,
+                        "referee": "Khairulsyahmi Ahmad Khalidi",
+                        "timezone": "UTC",
+                        "date": "2023-07-28T13:00:00+00:00",
+                        "timestamp": 1690549200,
+                        "periods": {
+                            "first": 1690549200,
+                            "second": 1690552800
+                        },
+                        "venue": {
+                            "id": 18519,
+                            "name": "Sultan Mizan Zainal Abidin Stadium",
+                            "city": "Kuala Terengganu"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2023,
+                        "round": "Regular Season - 18"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": null
+                        },
+                        "away": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": null
+                        }
+                    },
+                    "goals": {
+                        "home": 1,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 1,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 997445,
+                        "referee": "Ahmad Zuhadi Dzulkifli",
+                        "timezone": "UTC",
+                        "date": "2023-03-16T12:15:00+00:00",
+                        "timestamp": 1678968900,
+                        "periods": {
+                            "first": 1678968900,
+                            "second": 1678972500
+                        },
+                        "venue": {
+                            "id": 1056,
+                            "name": "Stadium Tuanku Abdul Rahman",
+                            "city": "Seremban"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2023,
+                        "round": "Regular Season - 5"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 1,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 999450,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-01-31T13:00:00+00:00",
+                        "timestamp": 1675170000,
+                        "periods": {
+                            "first": 1675170000,
+                            "second": 1675173600
+                        },
+                        "venue": {
+                            "id": null,
+                            "name": null,
+                            "city": null
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 667,
+                        "name": "Friendlies Clubs",
+                        "country": "World",
+                        "logo": "https://media.api-sports.io/football/leagues/667.png",
+                        "flag": null,
+                        "season": 2023,
+                        "round": "Club Friendlies 5"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": null
+                        },
+                        "away": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": null
+                        }
+                    },
+                    "goals": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 844344,
+                        "referee": "S. Logeswaran",
+                        "timezone": "UTC",
+                        "date": "2022-07-27T13:00:00+00:00",
+                        "timestamp": 1658926800,
+                        "periods": {
+                            "first": 1658926800,
+                            "second": 1658930400
+                        },
+                        "venue": {
+                            "id": 1056,
+                            "name": "Stadium Tuanku Abdul Rahman",
+                            "city": "Seremban"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2022,
+                        "round": "Regular Season - 13"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 1,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 844277,
+                        "referee": "Zamzaidi Katimin",
+                        "timezone": "UTC",
+                        "date": "2022-06-29T13:00:00+00:00",
+                        "timestamp": 1656507600,
+                        "periods": {
+                            "first": 1656507600,
+                            "second": 1656511200
+                        },
+                        "venue": {
+                            "id": 18519,
+                            "name": "Sultan Mizan Zainal Abidin Stadium",
+                            "city": "Kuala Terengganu"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2022,
+                        "round": "Regular Season - 2"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": null
+                        },
+                        "away": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": null
+                        }
+                    },
+                    "goals": {
+                        "home": 0,
+                        "away": 0
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 847513,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2022-04-29T14:00:00+00:00",
+                        "timestamp": 1651240800,
+                        "periods": {
+                            "first": 1651240800,
+                            "second": 1651244400
+                        },
+                        "venue": {
+                            "id": 18519,
+                            "name": "Sultan Mizan Zainal Abidin Stadium",
+                            "city": "Kuala Terengganu"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 500,
+                        "name": "FA Cup",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/500.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2022,
+                        "round": "1st Round"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 335694,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2019-08-23T13:00:00+00:00",
+                        "timestamp": 1566565200,
+                        "periods": {
+                            "first": 1566565200,
+                            "second": 1566568800
+                        },
+                        "venue": {
+                            "id": 1056,
+                            "name": "Stadium Tuanku Abdul Rahman",
+                            "city": "Seremban"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 499,
+                        "name": "Malaysia Cup",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/499.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2019,
+                        "round": "Group Stage - 4"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 3,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "fulltime": {
+                            "home": 3,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 335687,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2019-08-17T13:00:00+00:00",
+                        "timestamp": 1566046800,
+                        "periods": {
+                            "first": 1566046800,
+                            "second": 1566050400
+                        },
+                        "venue": {
+                            "id": 1063,
+                            "name": "Stadium Sultan Ismail Nasiruddin Shah",
+                            "city": "Kuala Terengganu"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 499,
+                        "name": "Malaysia Cup",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/499.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2019,
+                        "round": "Group Stage - 3"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 3,
+                        "away": 1
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "fulltime": {
+                            "home": 3,
+                            "away": 1
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 88226,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2018-06-27T13:00:00+00:00",
+                        "timestamp": 1530104400,
+                        "periods": {
+                            "first": 1530104400,
+                            "second": 1530108000
+                        },
+                        "venue": {
+                            "id": null,
+                            "name": "Stadium Sultan Ismail Nasiruddin Shah (Kuala Terengganu)",
+                            "city": null
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2018,
+                        "round": "Regular Season - 17"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 3,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 1,
+                            "away": 2
+                        },
+                        "fulltime": {
+                            "home": 3,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 88307,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2018-02-23T13:00:00+00:00",
+                        "timestamp": 1519390800,
+                        "periods": {
+                            "first": 1519390800,
+                            "second": 1519394400
+                        },
+                        "venue": {
+                            "id": null,
+                            "name": "Stadium Tuanku Abdul Rahman (Seremban)",
+                            "city": null
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 278,
+                        "name": "Super League",
+                        "country": "Malaysia",
+                        "logo": "https://media.api-sports.io/football/leagues/278.png",
+                        "flag": "https://media.api-sports.io/flags/my.svg",
+                        "season": 2018,
+                        "round": "Regular Season - 4"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 2502,
+                            "name": "Negeri Sembilan",
+                            "logo": "https://media.api-sports.io/football/teams/2502.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 2518,
+                            "name": "Terengganu",
+                            "logo": "https://media.api-sports.io/football/teams/2518.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 1,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 1,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

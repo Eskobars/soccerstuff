@@ -1,0 +1,929 @@
+{
+    "get": "standings",
+    "parameters": {
+        "league": "75",
+        "season": "2024"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "league": {
+                "id": 75,
+                "name": "Serie C",
+                "country": "Brazil",
+                "logo": "https://media.api-sports.io/football/leagues/75.png",
+                "flag": "https://media.api-sports.io/flags/br.svg",
+                "season": 2024,
+                "standings": [
+                    [
+                        {
+                            "rank": 1,
+                            "team": {
+                                "id": 1197,
+                                "name": "Botafogo PB",
+                                "logo": "https://media.api-sports.io/football/teams/1197.png"
+                            },
+                            "points": 32,
+                            "goalsDiff": 10,
+                            "group": "Serie C: Regular Season",
+                            "form": "DWWDL",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 9,
+                                "draw": 5,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 26,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 6,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 2,
+                            "team": {
+                                "id": 13975,
+                                "name": "Athletic Club",
+                                "logo": "https://media.api-sports.io/football/teams/13975.png"
+                            },
+                            "points": 30,
+                            "goalsDiff": 11,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDWDW",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 9,
+                                "draw": 3,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 29,
+                                    "against": 18
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 6,
+                                "draw": 0,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 3,
+                            "team": {
+                                "id": 7814,
+                                "name": "Volta Redonda",
+                                "logo": "https://media.api-sports.io/football/teams/7814.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 5,
+                            "group": "Serie C: Regular Season",
+                            "form": "LWLWD",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 9,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 26,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 4,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 10
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 4,
+                            "team": {
+                                "id": 7865,
+                                "name": "S\u00e3o Bernardo",
+                                "logo": "https://media.api-sports.io/football/teams/7865.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 14,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDWWW",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 8,
+                                "draw": 5,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 25,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 5,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 5,
+                            "team": {
+                                "id": 7826,
+                                "name": "Ferrovi\u00e1ria",
+                                "logo": "https://media.api-sports.io/football/teams/7826.png"
+                            },
+                            "points": 29,
+                            "goalsDiff": 10,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDWWW",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 7,
+                                "draw": 8,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 5
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 4,
+                                "draw": 3,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 2
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 6,
+                            "team": {
+                                "id": 148,
+                                "name": "Londrina",
+                                "logo": "https://media.api-sports.io/football/teams/148.png"
+                            },
+                            "points": 24,
+                            "goalsDiff": 5,
+                            "group": "Serie C: Regular Season",
+                            "form": "DWLWD",
+                            "status": "same",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 6,
+                                "draw": 6,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 21,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 7,
+                            "team": {
+                                "id": 137,
+                                "name": "Figueirense",
+                                "logo": "https://media.api-sports.io/football/teams/137.png"
+                            },
+                            "points": 22,
+                            "goalsDiff": 0,
+                            "group": "Serie C: Regular Season",
+                            "form": "WDLDL",
+                            "status": "up",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 15,
+                                "win": 6,
+                                "draw": 4,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 16
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 13
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 8,
+                            "team": {
+                                "id": 1221,
+                                "name": "Ypiranga-RS",
+                                "logo": "https://media.api-sports.io/football/teams/1221.png"
+                            },
+                            "points": 21,
+                            "goalsDiff": 4,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDLWL",
+                            "status": "down",
+                            "description": "Promotion Group",
+                            "all": {
+                                "played": 13,
+                                "win": 6,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 11
+                                }
+                            },
+                            "home": {
+                                "played": 6,
+                                "win": 4,
+                                "draw": 2,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 4
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 1,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 7
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 9,
+                            "team": {
+                                "id": 2227,
+                                "name": "Tombense",
+                                "logo": "https://media.api-sports.io/football/teams/2227.png"
+                            },
+                            "points": 21,
+                            "goalsDiff": 3,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDLDD",
+                            "status": "down",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 5,
+                                "draw": 6,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 14
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 0,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 3
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 10,
+                            "team": {
+                                "id": 1198,
+                                "name": "remo",
+                                "logo": "https://media.api-sports.io/football/teams/1198.png"
+                            },
+                            "points": 19,
+                            "goalsDiff": -5,
+                            "group": "Serie C: Regular Season",
+                            "form": "LWLWW",
+                            "status": "down",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 6,
+                                "draw": 1,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 22
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 4,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 5
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 0,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 17
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 11,
+                            "team": {
+                                "id": 755,
+                                "name": "Nautico Recife",
+                                "logo": "https://media.api-sports.io/football/teams/755.png"
+                            },
+                            "points": 18,
+                            "goalsDiff": 6,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDWDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 14,
+                                "win": 4,
+                                "draw": 6,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 23,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 15,
+                                    "against": 8
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 3,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 12,
+                            "team": {
+                                "id": 7774,
+                                "name": "Floresta",
+                                "logo": "https://media.api-sports.io/football/teams/7774.png"
+                            },
+                            "points": 17,
+                            "goalsDiff": -8,
+                            "group": "Serie C: Regular Season",
+                            "form": "DWWDW",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 5,
+                                "draw": 2,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 20
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 3,
+                                "draw": 0,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 5,
+                                    "against": 9
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 13,
+                            "team": {
+                                "id": 754,
+                                "name": "ABC",
+                                "logo": "https://media.api-sports.io/football/teams/754.png"
+                            },
+                            "points": 17,
+                            "goalsDiff": -2,
+                            "group": "Serie C: Regular Season",
+                            "form": "DLWLD",
+                            "status": "same",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 4,
+                                "draw": 5,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 15
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 5
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 14,
+                            "team": {
+                                "id": 7772,
+                                "name": "Confian\u00e7a",
+                                "logo": "https://media.api-sports.io/football/teams/7772.png"
+                            },
+                            "points": 16,
+                            "goalsDiff": 0,
+                            "group": "Serie C: Regular Season",
+                            "form": "WDDWL",
+                            "status": "up",
+                            "description": null,
+                            "all": {
+                                "played": 14,
+                                "win": 4,
+                                "draw": 4,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 17,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 11,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 6,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 10
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 15,
+                            "team": {
+                                "id": 1202,
+                                "name": "Aparecidense",
+                                "logo": "https://media.api-sports.io/football/teams/1202.png"
+                            },
+                            "points": 15,
+                            "goalsDiff": -6,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDWLL",
+                            "status": "down",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 3,
+                                "draw": 6,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 22
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 4,
+                                "lose": 1,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 7
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 15
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 16,
+                            "team": {
+                                "id": 150,
+                                "name": "CSA",
+                                "logo": "https://media.api-sports.io/football/teams/150.png"
+                            },
+                            "points": 15,
+                            "goalsDiff": -7,
+                            "group": "Serie C: Regular Season",
+                            "form": "DLLWW",
+                            "status": "down",
+                            "description": null,
+                            "all": {
+                                "played": 15,
+                                "win": 3,
+                                "draw": 6,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 16,
+                                    "against": 23
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 1,
+                                "draw": 4,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 2,
+                                "draw": 2,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 9,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 17,
+                            "team": {
+                                "id": 155,
+                                "name": "Sampaio Correa",
+                                "logo": "https://media.api-sports.io/football/teams/155.png"
+                            },
+                            "points": 14,
+                            "goalsDiff": -5,
+                            "group": "Serie C: Regular Season",
+                            "form": "DLWLD",
+                            "status": "same",
+                            "description": "Relegation",
+                            "all": {
+                                "played": 15,
+                                "win": 3,
+                                "draw": 5,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 12,
+                                    "against": 17
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 3,
+                                "draw": 2,
+                                "lose": 3,
+                                "goals": {
+                                    "for": 10,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 0,
+                                "draw": 3,
+                                "lose": 4,
+                                "goals": {
+                                    "for": 2,
+                                    "against": 8
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 18,
+                            "team": {
+                                "id": 1195,
+                                "name": "Ferroviario",
+                                "logo": "https://media.api-sports.io/football/teams/1195.png"
+                            },
+                            "points": 13,
+                            "goalsDiff": -15,
+                            "group": "Serie C: Regular Season",
+                            "form": "DDLLL",
+                            "status": "same",
+                            "description": "Relegation",
+                            "all": {
+                                "played": 15,
+                                "win": 3,
+                                "draw": 4,
+                                "lose": 8,
+                                "goals": {
+                                    "for": 13,
+                                    "against": 28
+                                }
+                            },
+                            "home": {
+                                "played": 7,
+                                "win": 2,
+                                "draw": 3,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 7,
+                                    "against": 11
+                                }
+                            },
+                            "away": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 17
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 19,
+                            "team": {
+                                "id": 7770,
+                                "name": "Caxias",
+                                "logo": "https://media.api-sports.io/football/teams/7770.png"
+                            },
+                            "points": 12,
+                            "goalsDiff": -7,
+                            "group": "Serie C: Regular Season",
+                            "form": "WLWLL",
+                            "status": "same",
+                            "description": "Relegation",
+                            "all": {
+                                "played": 13,
+                                "win": 3,
+                                "draw": 3,
+                                "lose": 7,
+                                "goals": {
+                                    "for": 14,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 6,
+                                "win": 3,
+                                "draw": 1,
+                                "lose": 2,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 9
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 0,
+                                "draw": 2,
+                                "lose": 5,
+                                "goals": {
+                                    "for": 6,
+                                    "against": 12
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        },
+                        {
+                            "rank": 20,
+                            "team": {
+                                "id": 2232,
+                                "name": "Sao Jose",
+                                "logo": "https://media.api-sports.io/football/teams/2232.png"
+                            },
+                            "points": 5,
+                            "goalsDiff": -13,
+                            "group": "Serie C: Regular Season",
+                            "form": "LLLLD",
+                            "status": "same",
+                            "description": "Relegation",
+                            "all": {
+                                "played": 15,
+                                "win": 1,
+                                "draw": 2,
+                                "lose": 12,
+                                "goals": {
+                                    "for": 8,
+                                    "against": 21
+                                }
+                            },
+                            "home": {
+                                "played": 8,
+                                "win": 1,
+                                "draw": 1,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 10
+                                }
+                            },
+                            "away": {
+                                "played": 7,
+                                "win": 0,
+                                "draw": 1,
+                                "lose": 6,
+                                "goals": {
+                                    "for": 4,
+                                    "against": 11
+                                }
+                            },
+                            "update": "2024-07-30T00:00:00+00:00"
+                        }
+                    ]
+                ]
+            }
+        }
+    ]
+}

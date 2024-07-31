@@ -40,9 +40,17 @@ def get_fixtures_data():
 
     return all_fixtures_data
 
-def filter_fixtures(all_fixtures, leagues, statuses):
+def filter_fixtures(all_fixtures, statuses, countries):
+    """
+    Filters fixtures based on provided statuses and countries.
+
+    :param all_fixtures: List of all fixture data.
+    :param statuses: List of statuses to include (e.g., ['NS', 'TBD']).
+    :param countries: List of countries to include (e.g., ['Argentina', 'England']).
+    :return: List of filtered fixtures.
+    """
     filtered_fixtures = []
-    
+
     # Check if data is a dictionary
     if isinstance(all_fixtures, dict):
         # Extract fixtures from the 'response' key if it exists
@@ -56,14 +64,19 @@ def filter_fixtures(all_fixtures, leagues, statuses):
         return filtered_fixtures
 
     for fixture in all_fixtures:
-        if 'league' not in fixture or 'name' not in fixture['league']:
+        # Ensure 'league' and 'fixture' keys exist
+        if 'league' not in fixture or 'fixture' not in fixture:
+            print(f"Fixture missing league or fixture data: {fixture}")
             continue
         
-        league_name = fixture['league']['name']
-        if league_name not in leagues:
+        league_country = fixture['league'].get('country', '')
+
+        # Check if the country matches the filtering criteria
+        if league_country not in countries:
             continue
         
-        if 'fixture' not in fixture or 'status' not in fixture['fixture']:
+        # Ensure 'status' key exists in fixture data
+        if 'status' not in fixture['fixture']:
             print(f"Fixture missing status data: {fixture}")
             continue
         

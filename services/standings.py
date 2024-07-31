@@ -1,28 +1,60 @@
 import os
 import json
-from date_helper import is_data_up_to_date
+from datetime import datetime, timezone, timedelta
 from fetchers import fetch_league_standings
+from config import STANDINGS_DIR
+
+def is_data_up_to_date(filename, current_date):
+    """
+    Check if the data in the file is up-to-date based on the current date.
+
+    :param filename: Path to the JSON file.
+    :param current_date: The current date to compare against the file's last update.
+    :return: True if data is up-to-date, False otherwise.
+    """
+    try:
+        # Check if the file exists and get its last modified date
+        file_mod_time = datetime.fromtimestamp(os.path.getmtime(filename)).date()
+        
+        # Calculate the date range for checking
+        date_range_start = current_date - timedelta(days=1)  # Yesterday
+        date_range_end = current_date  # Today
+        
+        # Compare file modification date with the current date
+        return date_range_start <= file_mod_time <= date_range_end
+    except (OSError, ValueError):
+        return False
 
 def get_standings_data(league_id):
-    # Define the directory and file path
-    standings_dir = os.path.join('soccerstuff', 'data', 'standings_data')
-    filename = os.path.join(standings_dir, f'standings_{league_id}.json')
+    # Define the file path
+    filename = os.path.join(STANDINGS_DIR, f'standings_{league_id}.json')
     
     # Ensure the directory exists
-    os.makedirs(standings_dir, exist_ok=True)
+    os.makedirs(STANDINGS_DIR, exist_ok=True)
+    
+    # Use current date for checking
+    current_date = datetime.now().date()
 
-    if is_data_up_to_date(filename):
+    # Check if the data file exists and is up-to-date
+    if os.path.exists(filename) and is_data_up_to_date(filename, current_date):
         print(f"Standings data for league {league_id} is up to date, loading from file.")
         with open(filename, 'r') as f:
             standings = json.load(f)
     else:
         print(f"Fetching new standings data for league {league_id}...")
         standings = fetch_league_standings(league_id)
-        with open(filename, 'w') as f:
-            json.dump(standings, f, indent=4)
-        print("Standings data fetched and stored successfully.")
+        if standings and 'response' in standings and isinstance(standings['response'], list) and len(standings['response']) > 0:
+            with open(filename, 'w') as f:
+                json.dump(standings, f, indent=4)
+            print("Standings data fetched and stored successfully.")
+        else:
+            # Handle the case where the response is empty or invalid
+            print(f"Empty or invalid standings data received for league {league_id}. Skipping update.")
+            # Optionally, set standings to an empty list or handle accordingly
+            standings = {'response': []}
     
     return standings
+
 
 def extract_team_info(standings_data):
     """
@@ -35,26 +67,22 @@ def extract_team_info(standings_data):
     team_ranks = []
 
     # Navigate through the nested JSON structure
-    try:
         # Extract the list of standings
-        standings_list = standings_data.get('response', [])[0].get('league', {}).get('standings', [])[0]
+    standings_list = standings_data.get('response', [])[0].get('league', {}).get('standings', [])[0]
 
-        # Iterate through each team in the standings
-        for team in standings_list:
-            # Extract relevant details including rank
-            team_info = {
-                'rank': team.get('rank'),
-                'team_name': team.get('team', {}).get('name', 'Unknown'),
-                'points': team.get('points'),
-                'goalsDiff': team.get('goalsDiff'),
-                'form': team.get('form'),
-                'status': team.get('status')
-            }
-            team_ranks.append(team_info)
+    # Iterate through each team in the standings
+    for team in standings_list:
+        # Extract relevant details including rank
+        team_info = {
+            'rank': team.get('rank'),
+            'team_name': team.get('team', {}).get('name', 'Unknown'),
+            'points': team.get('points'),
+            'goalsDiff': team.get('goalsDiff'),
+            'form': team.get('form'),
+            'status': team.get('status')
+        }
+        team_ranks.append(team_info)
     
-    except (IndexError, KeyError) as e:
-        print(f"Error processing standings data: {e}")
-
     return team_ranks
 
 def get_team_rank(team_ranks, team_name):
@@ -69,3 +97,17 @@ def get_team_rank(team_ranks, team_name):
         if team['team_name'] == team_name:
             return team['rank']
     return None
+
+def test_get_standings_data(league_id):
+    """
+    Test the get_standings_data function by providing a league ID and printing the response.
+
+    :param league_id: The league ID to test.
+    """
+    standings_data = get_standings_data(league_id)
+    
+    if standings_data and 'response' in standings_data:
+        print(f"Standings data for league {league_id}:")
+        print(json.dumps(standings_data, indent=4))
+    else:
+        print(f"No valid standings data available for league {league_id}.")

@@ -1,0 +1,931 @@
+{
+    "get": "predictions",
+    "parameters": {
+        "fixture": "1243766"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "predictions": {
+                "winner": {
+                    "id": 12792,
+                    "name": "Ingolstadt II",
+                    "comment": "Win or draw"
+                },
+                "win_or_draw": true,
+                "under_over": null,
+                "goals": {
+                    "home": "-2.5",
+                    "away": "-3.5"
+                },
+                "advice": "Double chance : draw or Ingolstadt II",
+                "percent": {
+                    "home": "10%",
+                    "draw": "45%",
+                    "away": "45%"
+                }
+            },
+            "league": {
+                "id": 938,
+                "name": "Oberliga - Bayern Nord",
+                "country": "Germany",
+                "logo": "https://media.api-sports.io/football/leagues/938.png",
+                "flag": "https://media.api-sports.io/flags/de.svg",
+                "season": 2024
+            },
+            "teams": {
+                "home": {
+                    "id": 4262,
+                    "name": "Eichst\u00e4tt",
+                    "logo": "https://media.api-sports.io/football/teams/4262.png",
+                    "last_5": {
+                        "played": 2,
+                        "form": "50%",
+                        "att": "19%",
+                        "def": "81%",
+                        "goals": {
+                            "for": {
+                                "total": 4,
+                                "average": "2.0"
+                            },
+                            "against": {
+                                "total": 4,
+                                "average": "2.0"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "LW",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "wins": {
+                                "home": 1,
+                                "away": 0,
+                                "total": 1
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 1,
+                                "total": 1
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 3,
+                                    "away": 1,
+                                    "total": 4
+                                },
+                                "average": {
+                                    "home": "3.0",
+                                    "away": "1.0",
+                                    "total": "2.0"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 2,
+                                    "away": 2,
+                                    "total": 4
+                                },
+                                "average": {
+                                    "home": "2.0",
+                                    "away": "2.0",
+                                    "total": "2.0"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 0,
+                                "draws": 0,
+                                "loses": 1
+                            },
+                            "wins": {
+                                "home": "3-2",
+                                "away": null
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": "2-1"
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 3,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 2,
+                                    "away": 2
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": 1,
+                                    "percentage": "100.00%"
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": 1,
+                                    "percentage": "100.00%"
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "away": {
+                    "id": 12792,
+                    "name": "Ingolstadt II",
+                    "logo": "https://media.api-sports.io/football/teams/12792.png",
+                    "last_5": {
+                        "played": 2,
+                        "form": "100%",
+                        "att": "14%",
+                        "def": "95%",
+                        "goals": {
+                            "for": {
+                                "total": 3,
+                                "average": "1.5"
+                            },
+                            "against": {
+                                "total": 1,
+                                "average": "0.5"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "WW",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "wins": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 1,
+                                    "away": 2,
+                                    "total": 3
+                                },
+                                "average": {
+                                    "home": "1.0",
+                                    "away": "2.0",
+                                    "total": "1.5"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": 1,
+                                        "percentage": "33.33%"
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "33.33%"
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "33.33%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 1,
+                                    "total": 1
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "1.0",
+                                    "total": "0.5"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "100.00%"
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 2,
+                                "draws": 0,
+                                "loses": 0
+                            },
+                            "wins": {
+                                "home": "1-0",
+                                "away": "1-2"
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": null
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 1,
+                                    "away": 2
+                                },
+                                "against": {
+                                    "home": 0,
+                                    "away": 1
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 1,
+                            "away": 0,
+                            "total": 1
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": 1,
+                                    "percentage": "100.00%"
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "comparison": {
+                "form": {
+                    "home": "33%",
+                    "away": "67%"
+                },
+                "att": {
+                    "home": "57%",
+                    "away": "43%"
+                },
+                "def": {
+                    "home": "20%",
+                    "away": "80%"
+                },
+                "poisson_distribution": {
+                    "home": "40%",
+                    "away": "60%"
+                },
+                "h2h": {
+                    "home": "29%",
+                    "away": "71%"
+                },
+                "goals": {
+                    "home": "43%",
+                    "away": "57%"
+                },
+                "total": {
+                    "home": "37.0%",
+                    "away": "63.0%"
+                }
+            },
+            "h2h": [
+                {
+                    "fixture": {
+                        "id": 1089168,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2024-04-09T16:00:00+00:00",
+                        "timestamp": 1712678400,
+                        "periods": {
+                            "first": 1712678400,
+                            "second": 1712682000
+                        },
+                        "venue": {
+                            "id": 3257,
+                            "name": "Liqui-Moly-Stadion",
+                            "city": "Eichst\u00e4tt"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 938,
+                        "name": "Oberliga - Bayern Nord",
+                        "country": "Germany",
+                        "logo": "https://media.api-sports.io/football/leagues/938.png",
+                        "flag": "https://media.api-sports.io/flags/de.svg",
+                        "season": 2023,
+                        "round": "Bayern Nord - 22"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 4262,
+                            "name": "Eichst\u00e4tt",
+                            "logo": "https://media.api-sports.io/football/teams/4262.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 12792,
+                            "name": "Ingolstadt II",
+                            "logo": "https://media.api-sports.io/football/teams/12792.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 0,
+                        "away": 3
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 0,
+                            "away": 3
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 1088993,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-07-29T09:00:00+00:00",
+                        "timestamp": 1690621200,
+                        "periods": {
+                            "first": 1690621200,
+                            "second": 1690624800
+                        },
+                        "venue": {
+                            "id": 8148,
+                            "name": "BZA S\u00fcd-Ost",
+                            "city": "Ingolstadt"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 938,
+                        "name": "Oberliga - Bayern Nord",
+                        "country": "Germany",
+                        "logo": "https://media.api-sports.io/football/leagues/938.png",
+                        "flag": "https://media.api-sports.io/flags/de.svg",
+                        "season": 2023,
+                        "round": "Bayern Nord - 3"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 12792,
+                            "name": "Ingolstadt II",
+                            "logo": "https://media.api-sports.io/football/teams/12792.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 4262,
+                            "name": "Eichst\u00e4tt",
+                            "logo": "https://media.api-sports.io/football/teams/4262.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 5,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 2
+                        },
+                        "fulltime": {
+                            "home": 5,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 994145,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-01-28T12:30:00+00:00",
+                        "timestamp": 1674909000,
+                        "periods": {
+                            "first": 1674909000,
+                            "second": 1674912600
+                        },
+                        "venue": {
+                            "id": 726,
+                            "name": "Audi-Sportpark",
+                            "city": "Ingolstadt"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 667,
+                        "name": "Friendlies Clubs",
+                        "country": "World",
+                        "logo": "https://media.api-sports.io/football/leagues/667.png",
+                        "flag": null,
+                        "season": 2023,
+                        "round": "Club Friendlies 3"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 12792,
+                            "name": "Ingolstadt II",
+                            "logo": "https://media.api-sports.io/football/teams/12792.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 4262,
+                            "name": "Eichst\u00e4tt",
+                            "logo": "https://media.api-sports.io/football/teams/4262.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 1,
+                        "away": 6
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "fulltime": {
+                            "home": 1,
+                            "away": 6
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 890466,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2022-07-09T15:00:00+00:00",
+                        "timestamp": 1657378800,
+                        "periods": {
+                            "first": 1657378800,
+                            "second": 1657382400
+                        },
+                        "venue": {
+                            "id": null,
+                            "name": "Nebenplatz Joshofener Weiher",
+                            "city": "Neuburg an der Donau"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 667,
+                        "name": "Friendlies Clubs",
+                        "country": "World",
+                        "logo": "https://media.api-sports.io/football/leagues/667.png",
+                        "flag": null,
+                        "season": 2022,
+                        "round": "Club Friendlies 3"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 12792,
+                            "name": "Ingolstadt II",
+                            "logo": "https://media.api-sports.io/football/teams/12792.png",
+                            "winner": true
+                        },
+                        "away": {
+                            "id": 4262,
+                            "name": "Eichst\u00e4tt",
+                            "logo": "https://media.api-sports.io/football/teams/4262.png",
+                            "winner": false
+                        }
+                    },
+                    "goals": {
+                        "home": 4,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "fulltime": {
+                            "home": 4,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 604080,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2020-08-18T16:30:00+00:00",
+                        "timestamp": 1597768200,
+                        "periods": {
+                            "first": null,
+                            "second": null
+                        },
+                        "venue": {
+                            "id": 3257,
+                            "name": "Liqui-Moly-Stadion",
+                            "city": "Eichst\u00e4tt"
+                        },
+                        "status": {
+                            "long": "Match Postponed",
+                            "short": "PST",
+                            "elapsed": null
+                        }
+                    },
+                    "league": {
+                        "id": 667,
+                        "name": "Friendlies Clubs",
+                        "country": "World",
+                        "logo": "https://media.api-sports.io/football/leagues/667.png",
+                        "flag": null,
+                        "season": 2020,
+                        "round": "Club Friendlies 3"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 4262,
+                            "name": "Eichst\u00e4tt",
+                            "logo": "https://media.api-sports.io/football/teams/4262.png",
+                            "winner": null
+                        },
+                        "away": {
+                            "id": 12792,
+                            "name": "Ingolstadt II",
+                            "logo": "https://media.api-sports.io/football/teams/12792.png",
+                            "winner": null
+                        }
+                    },
+                    "goals": {
+                        "home": null,
+                        "away": null
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "fulltime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

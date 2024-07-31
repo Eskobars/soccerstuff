@@ -1,0 +1,727 @@
+{
+    "get": "predictions",
+    "parameters": {
+        "fixture": "1243764"
+    },
+    "errors": [],
+    "results": 1,
+    "paging": {
+        "current": 1,
+        "total": 1
+    },
+    "response": [
+        {
+            "predictions": {
+                "winner": {
+                    "id": 19758,
+                    "name": "ASV Neumarkt",
+                    "comment": "Win or draw"
+                },
+                "win_or_draw": true,
+                "under_over": "-3.5",
+                "goals": {
+                    "home": "-1.5",
+                    "away": "-2.5"
+                },
+                "advice": "Combo Double chance : draw or ASV Neumarkt and -3.5 goals",
+                "percent": {
+                    "home": "10%",
+                    "draw": "45%",
+                    "away": "45%"
+                }
+            },
+            "league": {
+                "id": 938,
+                "name": "Oberliga - Bayern Nord",
+                "country": "Germany",
+                "logo": "https://media.api-sports.io/football/leagues/938.png",
+                "flag": "https://media.api-sports.io/flags/de.svg",
+                "season": 2024
+            },
+            "teams": {
+                "home": {
+                    "id": 21526,
+                    "name": "Neudrossenfeld",
+                    "logo": "https://media.api-sports.io/football/teams/21526.png",
+                    "last_5": {
+                        "played": 2,
+                        "form": "33%",
+                        "att": "5%",
+                        "def": "95%",
+                        "goals": {
+                            "for": {
+                                "total": 1,
+                                "average": "0.5"
+                            },
+                            "against": {
+                                "total": 1,
+                                "average": "0.5"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "DD",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "wins": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "draws": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 1,
+                                    "total": 1
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "1.0",
+                                    "total": "0.5"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": 1,
+                                        "percentage": "100.00%"
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 0,
+                                    "away": 1,
+                                    "total": 1
+                                },
+                                "average": {
+                                    "home": "0.0",
+                                    "away": "1.0",
+                                    "total": "0.5"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": 1,
+                                        "percentage": "100.00%"
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 0,
+                                "draws": 2,
+                                "loses": 0
+                            },
+                            "wins": {
+                                "home": null,
+                                "away": null
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": null
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 0,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 0,
+                                    "away": 1
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 1,
+                            "away": 0,
+                            "total": 1
+                        },
+                        "failed_to_score": {
+                            "home": 1,
+                            "away": 0,
+                            "total": 1
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                },
+                "away": {
+                    "id": 19758,
+                    "name": "ASV Neumarkt",
+                    "logo": "https://media.api-sports.io/football/teams/19758.png",
+                    "last_5": {
+                        "played": 2,
+                        "form": "100%",
+                        "att": "21%",
+                        "def": "95%",
+                        "goals": {
+                            "for": {
+                                "total": 4,
+                                "average": "2.0"
+                            },
+                            "against": {
+                                "total": 1,
+                                "average": "0.5"
+                            }
+                        }
+                    },
+                    "league": {
+                        "form": "WW",
+                        "fixtures": {
+                            "played": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "wins": {
+                                "home": 1,
+                                "away": 1,
+                                "total": 2
+                            },
+                            "draws": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            },
+                            "loses": {
+                                "home": 0,
+                                "away": 0,
+                                "total": 0
+                            }
+                        },
+                        "goals": {
+                            "for": {
+                                "total": {
+                                    "home": 3,
+                                    "away": 1,
+                                    "total": 4
+                                },
+                                "average": {
+                                    "home": "3.0",
+                                    "away": "1.0",
+                                    "total": "2.0"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "16-30": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": 2,
+                                        "percentage": "50.00%"
+                                    },
+                                    "76-90": {
+                                        "total": 1,
+                                        "percentage": "25.00%"
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            },
+                            "against": {
+                                "total": {
+                                    "home": 1,
+                                    "away": 0,
+                                    "total": 1
+                                },
+                                "average": {
+                                    "home": "1.0",
+                                    "away": "0.0",
+                                    "total": "0.5"
+                                },
+                                "minute": {
+                                    "0-15": {
+                                        "total": 1,
+                                        "percentage": "100.00%"
+                                    },
+                                    "16-30": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "31-45": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "46-60": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "61-75": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "76-90": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "91-105": {
+                                        "total": null,
+                                        "percentage": null
+                                    },
+                                    "106-120": {
+                                        "total": null,
+                                        "percentage": null
+                                    }
+                                }
+                            }
+                        },
+                        "biggest": {
+                            "streak": {
+                                "wins": 2,
+                                "draws": 0,
+                                "loses": 0
+                            },
+                            "wins": {
+                                "home": "3-1",
+                                "away": "0-1"
+                            },
+                            "loses": {
+                                "home": null,
+                                "away": null
+                            },
+                            "goals": {
+                                "for": {
+                                    "home": 3,
+                                    "away": 1
+                                },
+                                "against": {
+                                    "home": 1,
+                                    "away": 0
+                                }
+                            }
+                        },
+                        "clean_sheet": {
+                            "home": 0,
+                            "away": 1,
+                            "total": 1
+                        },
+                        "failed_to_score": {
+                            "home": 0,
+                            "away": 0,
+                            "total": 0
+                        },
+                        "penalty": {
+                            "scored": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "missed": {
+                                "total": 0,
+                                "percentage": "0%"
+                            },
+                            "total": 0
+                        },
+                        "lineups": [],
+                        "cards": {
+                            "yellow": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            },
+                            "red": {
+                                "0-15": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "16-30": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "31-45": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "46-60": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "61-75": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "76-90": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "91-105": {
+                                    "total": null,
+                                    "percentage": null
+                                },
+                                "106-120": {
+                                    "total": null,
+                                    "percentage": null
+                                }
+                            }
+                        }
+                    }
+                }
+            },
+            "comparison": {
+                "form": {
+                    "home": "25%",
+                    "away": "75%"
+                },
+                "att": {
+                    "home": "20%",
+                    "away": "80%"
+                },
+                "def": {
+                    "home": "50%",
+                    "away": "50%"
+                },
+                "poisson_distribution": {
+                    "home": "0%",
+                    "away": "0%"
+                },
+                "h2h": {
+                    "home": "20%",
+                    "away": "80%"
+                },
+                "goals": {
+                    "home": "33%",
+                    "away": "67%"
+                },
+                "total": {
+                    "home": "29.6%",
+                    "away": "70.4%"
+                }
+            },
+            "h2h": [
+                {
+                    "fixture": {
+                        "id": 1089175,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2024-02-17T13:00:00+00:00",
+                        "timestamp": 1708174800,
+                        "periods": {
+                            "first": 1708174800,
+                            "second": 1708178400
+                        },
+                        "venue": {
+                            "id": 18910,
+                            "name": "Stadion am Deininger Weg",
+                            "city": "Neumarkt in der Oberpfalz"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 938,
+                        "name": "Oberliga - Bayern Nord",
+                        "country": "Germany",
+                        "logo": "https://media.api-sports.io/football/leagues/938.png",
+                        "flag": "https://media.api-sports.io/flags/de.svg",
+                        "season": 2023,
+                        "round": "Bayern Nord - 23"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 19758,
+                            "name": "ASV Neumarkt",
+                            "logo": "https://media.api-sports.io/football/teams/19758.png",
+                            "winner": null
+                        },
+                        "away": {
+                            "id": 21526,
+                            "name": "Neudrossenfeld",
+                            "logo": "https://media.api-sports.io/football/teams/21526.png",
+                            "winner": null
+                        }
+                    },
+                    "goals": {
+                        "home": 2,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 0
+                        },
+                        "fulltime": {
+                            "home": 2,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                },
+                {
+                    "fixture": {
+                        "id": 1089008,
+                        "referee": null,
+                        "timezone": "UTC",
+                        "date": "2023-08-06T13:00:00+00:00",
+                        "timestamp": 1691326800,
+                        "periods": {
+                            "first": 1691326800,
+                            "second": 1691330400
+                        },
+                        "venue": {
+                            "id": 19803,
+                            "name": "Sportanlage Neudrossenfeld Platz 1",
+                            "city": "Neudrossenfeld"
+                        },
+                        "status": {
+                            "long": "Match Finished",
+                            "short": "FT",
+                            "elapsed": 90
+                        }
+                    },
+                    "league": {
+                        "id": 938,
+                        "name": "Oberliga - Bayern Nord",
+                        "country": "Germany",
+                        "logo": "https://media.api-sports.io/football/leagues/938.png",
+                        "flag": "https://media.api-sports.io/flags/de.svg",
+                        "season": 2023,
+                        "round": "Bayern Nord - 4"
+                    },
+                    "teams": {
+                        "home": {
+                            "id": 21526,
+                            "name": "Neudrossenfeld",
+                            "logo": "https://media.api-sports.io/football/teams/21526.png",
+                            "winner": false
+                        },
+                        "away": {
+                            "id": 19758,
+                            "name": "ASV Neumarkt",
+                            "logo": "https://media.api-sports.io/football/teams/19758.png",
+                            "winner": true
+                        }
+                    },
+                    "goals": {
+                        "home": 0,
+                        "away": 2
+                    },
+                    "score": {
+                        "halftime": {
+                            "home": 0,
+                            "away": 1
+                        },
+                        "fulltime": {
+                            "home": 0,
+                            "away": 2
+                        },
+                        "extratime": {
+                            "home": null,
+                            "away": null
+                        },
+                        "penalty": {
+                            "home": null,
+                            "away": null
+                        }
+                    }
+                }
+            ]
+        }
+    ]
+}

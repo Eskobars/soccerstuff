@@ -1,6 +1,5 @@
 import json
 import os    
-from config import INJURIES_DIR
 from date_helper import is_data_up_to_date
 from fetchers import fetch_players_for_fixture
 from config import PLAYERS_DIR
@@ -23,24 +22,15 @@ def get_player_data(fixture_id):
 
     return home_team_players, away_team_players
 
-def get_key_players_by_team(player_data, rating_threshold=7.0):
-    home_team_players = []
-    away_team_players = []
+def get_key_players_by_team(home_team_players, away_team_players, rating_threshold=7.0):
+    home_key_players = []
+    away_key_players = []
 
-    # Ensure 'response' exists in the data
-    if 'response' not in player_data:
-        print("No 'response' field found in player data.")
-        return home_team_players, away_team_players
-
-    # Traverse the response structure to access player statistics
-    for team_data in player_data['response']:
-        team_name = team_data['team']['name']
-        players = team_data.get('players', [])
-        
+    # Function to filter players based on rating threshold
+    def filter_key_players(players, team_key_players):
         for player in players:
             player_id = player['player']['id']
             player_name = player['player']['name']
-            # Assuming rating is the first element in statistics list
             player_rating = float(player['statistics'][0]['games']['rating']) if 'rating' in player['statistics'][0]['games'] else 0.0
             
             if player_rating >= rating_threshold:
@@ -49,10 +39,10 @@ def get_key_players_by_team(player_data, rating_threshold=7.0):
                     'name': player_name,
                     'rating': player_rating
                 }
-                
-                if team_name == player_data['response'][0]['team']['name']:
-                    home_team_players.append(player_info)
-                else:
-                    away_team_players.append(player_info)
+                team_key_players.append(player_info)
+    
+    # Filter key players for home and away teams
+    filter_key_players(home_team_players, home_key_players)
+    filter_key_players(away_team_players, away_key_players)
 
-    return home_team_players, away_team_players
+    return home_key_players, away_key_players
