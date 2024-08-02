@@ -8,7 +8,7 @@ from services.standings import get_standings_data, extract_team_info, get_team_r
 from services.injuries import get_injury_data
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
 from services.players import get_player_data, get_key_players_by_team
-from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR
+from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
 
 # Create directories if they do not exist
 os.makedirs(PREDICTIONS_DIR, exist_ok=True)
@@ -16,6 +16,7 @@ os.makedirs(INJURIES_DIR, exist_ok=True)
 os.makedirs(PLAYERS_DIR, exist_ok=True)
 os.makedirs(STANDINGS_DIR, exist_ok=True)
 os.makedirs(RATINGS_DIR, exist_ok=True)
+os.makedirs(TEAMS_DIR, exist_ok = True)
 
 def find_latest_file(directory):
     files = [f for f in os.listdir(directory) if f.startswith('rated_fixtures_') and f.endswith('.json')]
@@ -314,11 +315,13 @@ def main():
             # Fetch more data only for games rated one_star, two_star, or three_star
             if rating in {'three_star', 'two_star', 'one_star'}: 
                 
-                ## This hasnt ever returned anything, maybe it should only be used for major league games? ##
+                ## This hasnt ever returned anything, maybe it should only be used for major league games? 
 
 
-                ## I think this would be a good start for getting team data by teamId instead and passing the data to rate_fixture
+                ## 1. I think this would be a good start for getting team data by teamId instead and passing the data to rate_fixture
+                
 
+                ## 2. Also, maybe keep the get_injuries part and add to ratings. Can use it later combined with team_id
 
 
                 # home_team_players, away_team_players = fetch_data_with_rate_limit(get_player_data, fixture_id) 

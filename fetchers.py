@@ -17,6 +17,7 @@ def fetch_league_standings(league_id):
     
     return json.loads(data.decode("utf-8"))
 
+
 def fetch_match_predictions(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
@@ -28,6 +29,7 @@ def fetch_match_predictions(fixture_id):
     res = conn.getresponse()
     data = res.read()
     return json.loads(data.decode("utf-8"))
+
 
 def fetch_players_for_fixture(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
@@ -51,6 +53,7 @@ def fetch_players_for_fixture(fixture_id):
     
     return parsed_data
 
+
 def fetch_injuries_for_fixture(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
@@ -58,6 +61,19 @@ def fetch_injuries_for_fixture(fixture_id):
         'x-rapidapi-key': API_KEY
     }
     url = f"/injuries?fixture={fixture_id}"
+    conn.request("GET", url, headers=headers)
+    res = conn.getresponse()
+    data = res.read()
+    return json.loads(data.decode("utf-8"))
+
+
+def fetch_team_stats(team_id, league_id):
+    conn = http.client.HTTPSConnection(BASE_URL)
+    headers = {
+        'x-rapidapi-host': BASE_URL,
+        'x-rapidapi-key': API_KEY
+    }
+    url = f"/teams/statistics?season=2024&team={team_id}&league={league_id}"
     conn.request("GET", url, headers=headers)
     res = conn.getresponse()
     data = res.read()

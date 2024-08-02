@@ -3,6 +3,7 @@ import os
 from datetime import datetime
 from config import PREDICTIONS_DIR
 from fetchers import fetch_match_predictions
+from services.teams import get_teams_data
 
 def is_data_up_to_date(filename):
     """
@@ -42,17 +43,6 @@ def get_fixture_prediction(fixture_id):
     else:
         print(f"No predictions available or incorrect format for fixture {fixture_id}.")
         return {}
-    
-def determine_rating(home_team_points, away_team_points):
-    points_difference = abs(home_team_points - away_team_points)
-    if points_difference > 6:
-        return 'three_star'
-    elif points_difference > 4:
-        return 'two_star'
-    elif points_difference > 2:
-        return 'one_star'
-    else:
-        return 'no_star'
 
 def rate_fixture(predictions, home_team_data, away_team_data):
     """
@@ -68,22 +58,32 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         away_team_points = 0
 
         # Extract prediction data directly
-        response_item = predictions['predictions']  # Access the predictions section
-        
+        predictions_item = predictions['predictions']  # Access the predictions section
+        teams_item = predictions['teams']
+        home_team_item = teams_item['home']
+        away_team_item = teams_item['away']
+        league_item = predictions['league']
+
         # Convert percentage values to integers
-        percent_home = int(response_item['percent']['home'].strip('%')) if 'home' in response_item['percent'] else 0
-        percent_draw = int(response_item['percent']['draw'].strip('%')) if 'draw' in response_item['percent'] else 0
-        percent_away = int(response_item['percent']['away'].strip('%')) if 'away' in response_item['percent'] else 0
-        
+        percent_home = int(predictions_item['percent']['home'].strip('%')) if 'home' in predictions_item['percent'] else 0
+        percent_draw = int(predictions_item['percent']['draw'].strip('%')) if 'draw' in predictions_item['percent'] else 0
+        percent_away = int(predictions_item['percent']['away'].strip('%')) if 'away' in predictions_item['percent'] else 0
+
+        home_team_id = int(teams_item['home']['id'])
+        away_team_id = int(teams_item['away']['id'])
+        league_id = int(league_item['id'])
+
         # Access predicted winner's name with a default value if None
-        predicted_winner_name = response_item['winner']['name'] if response_item['winner']['name'] is not None else 'Unknown'
+        predicted_winner_name = predictions_item['winner']['name'] if predictions_item['winner']['name'] is not None else 'Unknown'
         
         # Default team names if not provided
         home_team_name = home_team_data['team_name'] if 'team_name' in home_team_data else 'Unknown'
         away_team_name = away_team_data['team_name'] if 'team_name' in away_team_data else 'Unknown'
 
+        home_team_ratio, away_team_ratio = get_team_ratios(home_team_item, away_team_item)
+
         # Extract comment and advice directly
-        winner_data = response_item['winner']
+        winner_data = predictions_item['winner']
         comment = winner_data['comment'] if winner_data['comment'] is not None else default_comment
         advice = predictions['advice'] if 'advice' in predictions else default_comment
         comment = f"{comment} {'| ' if comment and advice else ''}{advice}".strip() or default_comment
@@ -103,8 +103,23 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         elif percent_away > 45 and percent_draw > 45:
             away_team_points += 1
 
+        # Adjust points based on win-to-lose ratio
+        if home_team_ratio >= 3:
+            home_team_points += 2
+        elif home_team_ratio >= 2:
+            home_team_points += 1    
+        elif home_team_ratio >= 1:
+            home_team_points += 0
+
+        if away_team_ratio >= 3:
+            home_team_points += 2
+        elif away_team_ratio > 2:
+            away_team_points += 1
+        elif away_team_ratio > 1:
+            away_team_points += 0
+
         # Use points and goalsDiff (goal difference) to rate the teams
-        home_points = home_team_data['points'] if 'points' in home_team_data else 0
+        home_points = home_team_data['points'] if 'points' in home_team_data else 0 ## these need renaming
         away_points = away_team_data['points'] if 'points' in away_team_data else 0
         home_goals_diff = home_team_data['goalsDiff'] if 'goalsDiff' in home_team_data else 0
         away_goals_diff = away_team_data['goalsDiff'] if 'goalsDiff' in away_team_data else 0
@@ -130,6 +145,8 @@ def rate_fixture(predictions, home_team_data, away_team_data):
             home_team_points += 2
         elif home_goals_diff > 0:
             home_team_points += 1
+        elif home_goals_diff < 0:
+            home_team_points -1 
 
         if away_goals_diff > 30:
             away_team_points += 3
@@ -137,7 +154,9 @@ def rate_fixture(predictions, home_team_data, away_team_data):
             away_team_points += 2
         elif away_goals_diff > 0:
             away_team_points += 1
-        
+        elif away_goals_diff < 0:
+            away_team_points -= 1
+
         home_team_points += 1
         away_team_points -= 1
 
@@ -175,6 +194,12 @@ def rate_fixture(predictions, home_team_data, away_team_data):
 
         rating = determine_rating(home_team_points, away_team_points)
 
+        if (rating != 'no_star') : 
+            # home_team_stats = get_teams_data(home_team_id, league_id)
+            # away_team_stats = get_teams_data(away_team_id, league_id)
+            print("rating succesful")
+
+
         # Debug output for points and rating
         print(f"Fixture: {home_team_name} vs {away_team_name}, Home Team Points: {home_team_points}, Away Team Points: {away_team_points}, Comment: {comment}")
         print(f"Predicted Winner: {predicted_winner_name}, Winner in points: {points_winner_name}")
@@ -186,3 +211,45 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         print(f"Error processing predictions: {e}")
         print(f"Predictions data: {predictions}")
         return 0, 0, 'no_star', None, "Error retrieving comment"
+
+    
+def determine_rating(home_team_points, away_team_points):
+    # Calculate the absolute difference between home team and away team points
+    points_difference = abs(home_team_points - away_team_points)
+
+    # Determine the rating based on the points difference
+    if points_difference > 6:
+        return 'three_star'
+    elif points_difference > 4:
+        return 'two_star'
+    elif points_difference > 2:
+        return 'one_star'
+    else:
+        return 'no_star'
+
+def calculate_win_lose_ratio(wins, losses):
+    # Convert inputs to integers and handle division by zero
+    wins = int(wins)
+    losses = int(losses)
+    
+    if losses == 0:
+        return float('inf')  # or another indicator of an undefined ratio
+    else:
+        return wins / losses
+    
+def get_team_ratios(home_team_item, away_team_item):
+    # Extract home team stats
+    home_total_wins = home_team_item['league']['fixtures']['wins']['total']
+    home_total_losses = home_team_item['league']['fixtures']['loses']['total']
+    
+    # Calculate home team win/lose ratio
+    home_win_lose_ratio = calculate_win_lose_ratio(home_total_wins, home_total_losses)
+    
+    # Extract away team stats
+    away_total_wins = away_team_item['league']['fixtures']['wins']['total']
+    away_total_losses = away_team_item['league']['fixtures']['loses']['total']
+    
+    # Calculate away team win/lose ratio
+    away_win_lose_ratio = calculate_win_lose_ratio(away_total_wins, away_total_losses)
+    
+    return home_win_lose_ratio, away_win_lose_ratio
