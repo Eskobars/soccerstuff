@@ -67,18 +67,25 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         home_team_points = 0
         away_team_points = 0
 
-        # Extract prediction data or use defaults
-        percent_home = int(predictions.get('percent', {}).get('home', 0))
-        percent_draw = int(predictions.get('percent', {}).get('draw', 0))
-        percent_away = int(predictions.get('percent', {}).get('away', 0))
-        predicted_winner_name = predictions.get('winner', {}).get('name', 'Unknown')
-        points_winner_name = ""
-        home_team_name = home_team_data.get('team_name', 'Unknown')
-        away_team_name = away_team_data.get('team_name', 'Unknown')
+        # Extract prediction data directly
+        response_item = predictions['predictions']  # Access the predictions section
+        
+        # Convert percentage values to integers
+        percent_home = int(response_item['percent']['home'].strip('%')) if 'home' in response_item['percent'] else 0
+        percent_draw = int(response_item['percent']['draw'].strip('%')) if 'draw' in response_item['percent'] else 0
+        percent_away = int(response_item['percent']['away'].strip('%')) if 'away' in response_item['percent'] else 0
+        
+        # Access predicted winner's name with a default value if None
+        predicted_winner_name = response_item['winner']['name'] if response_item['winner']['name'] is not None else 'Unknown'
+        
+        # Default team names if not provided
+        home_team_name = home_team_data['team_name'] if 'team_name' in home_team_data else 'Unknown'
+        away_team_name = away_team_data['team_name'] if 'team_name' in away_team_data else 'Unknown'
 
-        # Check both fields for the comment
-        comment = predictions.get('winner', {}).get('comment', '')
-        advice = predictions.get('winner', {}).get('advice', '')
+        # Extract comment and advice directly
+        winner_data = response_item['winner']
+        comment = winner_data['comment'] if winner_data['comment'] is not None else default_comment
+        advice = predictions['advice'] if 'advice' in predictions else default_comment
         comment = f"{comment} {'| ' if comment and advice else ''}{advice}".strip() or default_comment
 
         # Add points based on percentage values
@@ -97,10 +104,10 @@ def rate_fixture(predictions, home_team_data, away_team_data):
             away_team_points += 1
 
         # Use points and goalsDiff (goal difference) to rate the teams
-        home_points = home_team_data.get('points', 0)
-        away_points = away_team_data.get('points', 0)
-        home_goals_diff = home_team_data.get('goalsDiff', 0)
-        away_goals_diff = away_team_data.get('goalsDiff', 0)
+        home_points = home_team_data['points'] if 'points' in home_team_data else 0
+        away_points = away_team_data['points'] if 'points' in away_team_data else 0
+        home_goals_diff = home_team_data['goalsDiff'] if 'goalsDiff' in home_team_data else 0
+        away_goals_diff = away_team_data['goalsDiff'] if 'goalsDiff' in away_team_data else 0
 
         # Additional points based on points and goals difference
         if home_points > (away_points + 30):
@@ -135,8 +142,8 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         away_team_points -= 1
 
         # Form check
-        home_form = home_team_data.get('form', '')
-        away_form = away_team_data.get('form', '')
+        home_form = home_team_data['form'] if 'form' in home_team_data else ''
+        away_form = away_team_data['form'] if 'form' in away_team_data else ''
 
         if home_form:
             if home_form.endswith('WWWWW'):
@@ -174,7 +181,7 @@ def rate_fixture(predictions, home_team_data, away_team_data):
 
         return home_team_points, away_team_points, rating, predicted_winner_name, points_winner_name, comment
 
-    except (KeyError, ValueError, TypeError) as e:
+    except (KeyError, IndexError, ValueError) as e:
         # Print the structure of predictions for debugging
         print(f"Error processing predictions: {e}")
         print(f"Predictions data: {predictions}")

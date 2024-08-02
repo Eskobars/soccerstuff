@@ -1,2 +1,10 @@
 # Ignore config.py where API keys and other sensitive information are stored
 config.py
+
+# Ignore directories for various data types
+predictions_data/
+injuries_data/
+players_data/
+standings_data/
+fixtures_data/
+rated_fixtures_data/
