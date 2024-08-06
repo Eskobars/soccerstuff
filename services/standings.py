@@ -67,11 +67,24 @@ def extract_team_info(standings_data):
     team_ranks = []
 
     # Navigate through the nested JSON structure
-        # Extract the list of standings
-    standings_list = standings_data.get('response', [])[0].get('league', {}).get('standings', [])[0]
-
+    response_list = standings_data.get('response', [])
+    if not response_list:
+        print("No response data available.")
+        return team_ranks
+    
+    league_data = response_list[0].get('league', {})
+    standings_list = league_data.get('standings', [])
+    if not standings_list:
+        print("No standings data available.")
+        return team_ranks
+    
+    standings = standings_list[0]  # Assuming standings_list contains one list of standings
+    if not isinstance(standings, list):
+        print("Standings data is not a list.")
+        return team_ranks
+    
     # Iterate through each team in the standings
-    for team in standings_list:
+    for team in standings:
         # Extract relevant details including rank
         team_info = {
             'rank': team.get('rank'),
@@ -97,17 +110,3 @@ def get_team_rank(team_ranks, team_name):
         if team['team_name'] == team_name:
             return team['rank']
     return None
-
-def test_get_standings_data(league_id):
-    """
-    Test the get_standings_data function by providing a league ID and printing the response.
-
-    :param league_id: The league ID to test.
-    """
-    standings_data = get_standings_data(league_id)
-    
-    if standings_data and 'response' in standings_data:
-        print(f"Standings data for league {league_id}:")
-        print(json.dumps(standings_data, indent=4))
-    else:
-        print(f"No valid standings data available for league {league_id}.")

@@ -61,12 +61,12 @@ def find_team_data_by_name(team_name, team_info):
 def fetch_data_with_rate_limit(fetch_function, *args, max_requests_per_minute=10):
     request_count = 0
     start_time = time.time()
-    time.sleep(3)
+    time.sleep(6.1)
 
     @functools.wraps(fetch_function)
     def wrapper():
+        nonlocal request_count, start_time
         while True:
-            nonlocal request_count, start_time
             current_time = time.time()
 
             # Check if the minute has passed and reset request count if necessary
@@ -106,7 +106,6 @@ def load_standings_data(league_id):
         try:
             with open(file_path, 'r') as file:
                 data = json.load(file)
-                # Check if data is not empty and contains the expected 'response' field
                 if data and 'response' in data and isinstance(data['response'], list) and len(data['response']) > 0:
                     return data
         except (FileNotFoundError, KeyError, IndexError, ValueError, json.JSONDecodeError) as e:
@@ -118,7 +117,7 @@ def save_standings_data(league_id, data):
     """Save standings data to a file."""
     file_path = os.path.join(STANDINGS_DIR, f'standings_{league_id}.json')
     with open(file_path, 'w') as file:
-        json.dump(data, file)
+        json.dump(data, file, indent=4)
 
 def load_rated_fixtures():
     latest_file = find_latest_file(RATINGS_DIR)
@@ -152,25 +151,7 @@ def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_sta
     rated_fixtures.setdefault('no_star_games', []).extend(no_star_games)
     
     with open(file_path, 'w') as file:
-        json.dump(rated_fixtures, file, indent=4)  # Added indent for readability
-
-
-def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games):
-    # Generate the file name with the current date
-    date_str = datetime.now().strftime('%Y-%m-%d')
-    file_path = os.path.join(RATINGS_DIR, f'rated_fixtures_{date_str}.json')
-    
-    # Load existing fixtures
-    rated_fixtures = load_rated_fixtures()
-    
-    # Use the get method with a default value to prevent KeyError
-    rated_fixtures.setdefault('one_star_games', []).extend(one_star_games)
-    rated_fixtures.setdefault('two_star_games', []).extend(two_star_games)
-    rated_fixtures.setdefault('three_star_games', []).extend(three_star_games)
-    rated_fixtures.setdefault('no_star_games', []).extend(no_star_games)
-    
-    with open(file_path, 'w') as file:
-        json.dump(rated_fixtures, file, indent=4)  # Added indent for readability
+        json.dump(rated_fixtures, file, indent=4)
 
 def main():
     print("Loading...")
@@ -305,12 +286,12 @@ def main():
             home_team_data = find_team_data_by_name(home_team_name, team_info)
             away_team_data = find_team_data_by_name(away_team_name, team_info)
             home_team_points, away_team_points, rating, winner_name, points_winner_name, comment = rate_fixture(predictions, home_team_data, away_team_data)
-            home_team_warning = ""
-            away_team_warning = ""
-            home_team_injuries = []
-            away_team_injuries = []
-            home_team_players = []
-            away_team_players = []
+            # home_team_warning = ""
+            # away_team_warning = ""
+            # home_team_injuries = []
+            # away_team_injuries = []
+            # home_team_players = []
+            # away_team_players = []
 
             # Fetch more data only for games rated one_star, two_star, or three_star
             if rating in {'three_star', 'two_star', 'one_star'}: 
@@ -389,12 +370,12 @@ def main():
         three_star_games.clear()
         no_star_games.clear()
     
+    load_rated_fixtures()
     print("\nThree Star Games:")
     for game in rated_fixtures['three_star_games']:
-        print(f"Fixture: {game['fixture_data']['fixture']['id']}, "
+        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
               f"Home Team Points: {game['home_team_points']}, "
               f"Away Team Points: {game['away_team_points']}, "
-              f"Points Winner: {game['points_winner_name']}, "
               f"Predicted Winner: {game['winning_team']}, "
               f"Comment: {game['comment']}, "
               f"League: {game['league_name']}, "
@@ -402,10 +383,9 @@ def main():
 
     print("\nTwo Star Games:")
     for game in rated_fixtures['two_star_games']:
-        print(f"Fixture: {game['fixture_data']['fixture']['id']}, "
+        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
               f"Home Team Points: {game['home_team_points']}, "
               f"Away Team Points: {game['away_team_points']}, "
-              f"Points Winner: {game['points_winner_name']}, "
               f"Predicted Winner: {game['winning_team']}, "
               f"Comment: {game['comment']}, "
               f"League: {game['league_name']}, "
@@ -413,15 +393,13 @@ def main():
 
     print("\nOne Star Games:")
     for game in rated_fixtures['one_star_games']:
-        print(f"Fixture: {game['fixture_data']['fixture']['id']}, "
+        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
               f"Home Team Points: {game['home_team_points']}, "
               f"Away Team Points: {game['away_team_points']}, "
-              f"Points Winner: {game['points_winner_name']}, "
               f"Predicted Winner: {game['winning_team']}, "
               f"Comment: {game['comment']}, "
               f"League: {game['league_name']}, "
               f"Warning: {game['warning']}")
 
-    ## Implement something that saves currenct lists of one_star_games, two_star_games and three_star_games into a rated_fixtures.json
 if __name__ == "__main__":
     main()

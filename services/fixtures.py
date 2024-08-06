@@ -7,28 +7,34 @@ from config import FIXTURES_DIR
 def get_fixtures_data():
     filename = os.path.join(FIXTURES_DIR, 'fixtures_data.json')
     metadata_file = os.path.join(FIXTURES_DIR, 'metadata.json')
-
+    
     # Ensure the directory exists
     os.makedirs(FIXTURES_DIR, exist_ok=True)
-
+    
     # Fetch the current date in 'YYYY-MM-DD' format
     current_date = datetime.now().strftime('%Y-%m-%d')
-
-    # Function to check if the data is up to date
-    def is_data_up_to_date():
-        if not os.path.isfile(metadata_file):
+    
+    # Function to check if the data is up to date and not empty
+    def is_data_valid():
+        if not os.path.isfile(filename) or not os.path.isfile(metadata_file):
             return False
+        
+        # Check if fixtures_data.json is empty
+        if os.path.getsize(filename) == 0:
+            return False
+        
         with open(metadata_file, 'r') as f:
             metadata = json.load(f)
         stored_date = metadata.get('date')
         return stored_date == current_date
-
-    if is_data_up_to_date():
+    
+    if is_data_valid():
         with open(filename, 'r') as f:
             all_fixtures_data = json.load(f)
     else:
         all_fixtures_data = fetch_fixtures_for_day()
-
+        
+        # Save the new fixtures data
         with open(filename, 'w') as f:
             json.dump(all_fixtures_data, f, indent=4)
         
@@ -37,7 +43,7 @@ def get_fixtures_data():
             json.dump({'date': current_date}, f, indent=4)
         
         print("Fixtures data fetched and stored successfully")
-
+    
     return all_fixtures_data
 
 def filter_fixtures(all_fixtures, statuses, countries):
