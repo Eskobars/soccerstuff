@@ -4,6 +4,10 @@ from datetime import datetime
 from config import PREDICTIONS_DIR
 from fetchers import fetch_match_predictions
 from services.teams import get_teams_data
+import logging
+
+# Configure logging
+logging.basicConfig(level=logging.INFO)
 
 def is_data_up_to_date(filename):
     """
@@ -16,226 +20,214 @@ def is_data_up_to_date(filename):
         try:
             with open(filename, 'r') as f:
                 data = json.load(f)
-                # Check if data is not empty
                 return bool(data and 'response' in data and isinstance(data['response'], list) and len(data['response']) > 0)
-        except (FileNotFoundError, KeyError, IndexError, ValueError, json.JSONDecodeError):
+        except (FileNotFoundError, KeyError, IndexError, ValueError, json.JSONDecodeError) as e:
+            logging.error(f"Error reading data from {filename}: {e}")
             return False
     return False
 
 def get_fixture_prediction(fixture_id):
-    # Define the file path using PREDICTIONS_DIR from the config
     filename = os.path.join(PREDICTIONS_DIR, f'predictions_data_{fixture_id}.json')
 
-    # Use the is_data_up_to_date function to check if the file is valid
     if is_data_up_to_date(filename):
-        print(f"Predictions data for fixture {fixture_id} is up to date, loading from file.")
+        logging.info(f"Predictions data for fixture {fixture_id} is up to date, loading from file.")
         with open(filename, 'r') as f:
             predictions = json.load(f)
     else:
-        print(f"Fetching new predictions data for fixture {fixture_id}...")
+        logging.info(f"Fetching new predictions data for fixture {fixture_id}...")
         predictions = fetch_match_predictions(fixture_id)
         with open(filename, 'w') as f:
             json.dump(predictions, f, indent=4)
-        print("Predictions data fetched and stored successfully.")
+        logging.info("Predictions data fetched and stored successfully.")
     
     if predictions and 'response' in predictions and isinstance(predictions['response'], list) and len(predictions['response']) > 0:
-        return predictions['response'][0]  # Adjust if the structure is different
+        return predictions['response'][0]
     else:
-        print(f"No predictions available or incorrect format for fixture {fixture_id}.")
+        logging.warning(f"No predictions available or incorrect format for fixture {fixture_id}.")
         return {}
 
 def rate_fixture(predictions, home_team_data, away_team_data):
     """
-    Rate a fixture based on its prediction and return the points and rating for home and away teams, 
+    Rate a fixture based on its prediction and return the points and rating for home and away teams,
     along with the winning team and comment.
     """
-    # Default values
     default_comment = "No comments"
-
+    
     try:
         # Initialize points for the home and away teams
         home_team_points = 0
         away_team_points = 0
 
-        # Extract prediction data directly
-        predictions_item = predictions['predictions']  # Access the predictions section
-        teams_item = predictions['teams']
-        home_team_item = teams_item['home']
-        away_team_item = teams_item['away']
-        league_item = predictions['league']
+        # Extract prediction data
+        predictions_item = predictions.get('predictions', {})
+        teams_item = predictions.get('teams', {})
+        home_team_item = teams_item.get('home', {})
+        away_team_item = teams_item.get('away', {})
+        league_item = predictions.get('league', {})
 
         # Convert percentage values to integers
-        percent_home = int(predictions_item['percent']['home'].strip('%')) if 'home' in predictions_item['percent'] else 0
-        percent_draw = int(predictions_item['percent']['draw'].strip('%')) if 'draw' in predictions_item['percent'] else 0
-        percent_away = int(predictions_item['percent']['away'].strip('%')) if 'away' in predictions_item['percent'] else 0
+        percent_home = int(predictions_item.get('percent', {}).get('home', '0').strip('%'))
+        percent_draw = int(predictions_item.get('percent', {}).get('draw', '0').strip('%'))
+        percent_away = int(predictions_item.get('percent', {}).get('away', '0').strip('%'))
 
-        home_team_id = int(teams_item['home']['id'])
-        away_team_id = int(teams_item['away']['id'])
-        league_id = int(league_item['id'])
+        home_team_id = int(home_team_item.get('id', 0))
+        away_team_id = int(away_team_item.get('id', 0))
+        league_id = int(league_item.get('id', 0))
 
-        # Access predicted winner's name with a default value if None
-        predicted_winner_name = predictions_item['winner']['name'] if predictions_item['winner']['name'] is not None else 'Unknown'
-        
-        # Default team names if not provided
-        home_team_name = home_team_data['team_name'] if 'team_name' in home_team_data else 'Unknown'
-        away_team_name = away_team_data['team_name'] if 'team_name' in away_team_data else 'Unknown'
-        
-        # Form check
-        home_form = home_team_data['form'] if 'form' in home_team_data else ''
-        away_form = away_team_data['form'] if 'form' in away_team_data else ''
+        predicted_winner_name = predictions_item.get('winner', {}).get('name', 'Unknown')
+        home_team_name = home_team_data.get('team_name', 'Unknown')
+        away_team_name = away_team_data.get('team_name', 'Unknown')
+
+        home_form = home_team_data.get('form', '')
+        away_form = away_team_data.get('form', '')
 
         # Ensure form has at least five characters
         if len(home_form) < 5 or len(away_form) < 5:
             return 0, 0, 'no_star', "None", "None", "Not enough recent matches, skipping"
 
+        # Calculate win/lose ratios and goal ratios
         home_team_win_ratio, away_team_win_ratio = get_team_win_lose_ratios(home_team_item, away_team_item)
         home_team_goal_ratio, away_team_goal_ratio = get_team_goals_ratios(home_team_item, away_team_item)
         rank_difference = get_team_rank_difference(home_team_data, away_team_data)
         win_ratio_difference = home_team_win_ratio - away_team_win_ratio
-        goal_ratio_difference = away_team_win_ratio - home_team_goal_ratio
+        goal_ratio_difference = home_team_goal_ratio - away_team_goal_ratio
 
-        # Extract comment and advice directly
-        winner_data = predictions_item['winner']
-        comment = winner_data['comment'] if winner_data['comment'] is not None else default_comment
-        advice = predictions['advice'] if 'advice' in predictions else default_comment
+        # Extract comment and advice
+        winner_data = predictions_item.get('winner', {})
+        comment = winner_data.get('comment', default_comment)
+        advice = predictions.get('advice', default_comment)
         comment = f"{comment} {'| ' if comment and advice else ''}{advice}".strip() or default_comment
 
         # Add points based on percentage values
-        if percent_home >= 70:
-            home_team_points += 2
-        elif percent_home >= 60:
-            home_team_points += 1
-        elif percent_home >= 45 and percent_draw >= 45:
-            home_team_points += 0
-
-        if percent_away >= 70:
-            away_team_points += 2
-        elif percent_away >= 60:
-            away_team_points += 1
-        elif percent_away >= 45 and percent_draw >= 45:
-            away_team_points += 0
+        home_team_points += calculate_percentage_points(percent_home, percent_draw)
+        away_team_points += calculate_percentage_points(percent_away, percent_draw)
 
         # Adjust points based on the win/lose ratio difference
-        if win_ratio_difference >= 3:
-            home_team_points += 2
-        elif win_ratio_difference >= 2:
-            home_team_points += 1
-        elif win_ratio_difference >= 1:
-            home_team_points += 0
-        elif win_ratio_difference <= -3:
-            away_team_points += 2
-        elif win_ratio_difference <= -2:
-            away_team_points += 1
-        else:
-            away_team_points += 0
-            home_team_points += 0
+        home_team_points += adjust_points_based_on_ratio(win_ratio_difference, is_home=True)
+        away_team_points += adjust_points_based_on_ratio(-win_ratio_difference, is_home=False)
 
         # Adjust points based on the goal ratio difference
-        if goal_ratio_difference >= 3:
-            home_team_points += 2
-        elif goal_ratio_difference >= 2:
-            home_team_points += 1
-        elif goal_ratio_difference >= 1:
-            home_team_points += 0
-        elif goal_ratio_difference <= -2:
-            away_team_points -= 1
-        elif goal_ratio_difference <= -3:
-            away_team_points -= 2
-        else:
-            away_team_points += 0
-            home_team_points += 0
+        home_team_points += adjust_points_based_on_goal_ratio(goal_ratio_difference, is_home=True)
+        away_team_points += adjust_points_based_on_goal_ratio(-goal_ratio_difference, is_home=False)
 
-        if rank_difference >= 10:
-            home_team_points += 2
-        elif rank_difference >= 5:
-            home_team_points += 1
-        elif rank_difference <= 5:
-            away_team_points += 1
-        elif rank_difference <= -5:
-            away_team_points += 1
-        elif rank_difference <= -10:
-            away_team_points += 2
+        # Adjust points based on rank difference
+        home_team_points += adjust_points_based_on_rank(rank_difference, is_home=True)
+        away_team_points += adjust_points_based_on_rank(-rank_difference, is_home=False)
 
-        # Use points and goalsDiff (goal difference) to rate the teams
-        home_points = home_team_data['points'] if 'points' in home_team_data else 0
-        away_points = away_team_data['points'] if 'points' in away_team_data else 0
+        # Adjust points based on total goals and goals difference
+        home_team_points += adjust_points_based_on_points_difference(home_team_data.get('points', 0), away_team_data.get('points', 0))
+        away_team_points += adjust_points_based_on_points_difference(away_team_data.get('points', 0), home_team_data.get('points', 0))
+        
+        home_team_points += adjust_points_based_on_goals_diff(home_team_data.get('goalsDiff', 0))
+        away_team_points += adjust_points_based_on_goals_diff(away_team_data.get('goalsDiff', 0), is_home=False)
 
-        # Calculate the difference between the points of the two teams
-        points_difference = home_points - away_points
+        # Adjust points based on recent form
+        home_team_points += adjust_points_based_on_form(home_form, is_home=True)
+        away_team_points += adjust_points_based_on_form(away_form, is_home=False)
 
-        # Adjust points based on the points difference
-        if points_difference >= 30:
-            home_team_points += 2
-        elif points_difference >= 20:
-            home_team_points += 1
-        elif points_difference >= 10:
-            home_team_points += 0
+        # Determine the winning team based on points
+        points_winner_name = determine_winner(home_team_points, away_team_points, home_team_name, away_team_name)
 
-        if -points_difference >= 30:
-            away_team_points += 2
-        elif -points_difference >= 20:
-            away_team_points += 1
-        elif -points_difference >= 10:
-            away_team_points += 0
-
-        home_team_points += 1
-        away_team_points -= 1
-
-        if home_form:
-            if home_form.endswith('WWWWW'):
-                home_team_points += 2
-            elif home_form.endswith('WWW'):
-                home_team_points += 1
-            elif home_form.endswith('LLLLL'):
-                home_team_points -= 2
-            elif home_form.endswith('LLL'):
-                home_team_points -= 1
-
-        if away_form:
-            if away_form.endswith('WWWWW'):
-                away_team_points += 2
-            elif away_form.endswith('WWW'):
-                away_team_points += 1
-            elif away_form.endswith('LLLLL'):
-                away_team_points -= 2
-            elif away_form.endswith('LLL'):
-                away_team_points -= 1
-
-        # Determine which team has more points
-        if home_team_points > away_team_points:
-            points_winner_name = home_team_name
-        elif away_team_points > home_team_points:
-            points_winner_name = away_team_name
-        else:
-            points_winner_name = "Draw"
-
+        # Determine rating
         rating = determine_rating(home_team_points, away_team_points)
 
-        if (rating != 'no_star') : 
-            # home_team_stats = get_teams_data(home_team_id, league_id)
-            # away_team_stats = get_teams_data(away_team_id, league_id)
-
-            print("rating succesful")
-
-
-        # Debug output for points and rating
-        print(f"Fixture: {home_team_name} vs {away_team_name}, Home Team Points: {home_team_points}, Away Team Points: {away_team_points}, Comment: {comment}")
-        print(f"Predicted Winner: {predicted_winner_name}, Winner in points: {points_winner_name}")
+        logging.info(f"Fixture: {home_team_name} vs {away_team_name}, Home Team Points: {home_team_points}, Away Team Points: {away_team_points}, Comment: {comment}")
+        logging.info(f"Predicted Winner: {predicted_winner_name}, Winner in points: {points_winner_name}")
 
         return home_team_points, away_team_points, rating, predicted_winner_name, points_winner_name, comment
 
     except (KeyError, IndexError, ValueError) as e:
-        # Print the structure of predictions for debugging
-        print(f"Error processing predictions: {e}")
-
+        logging.error(f"Error processing predictions: {e}")
         return 0, 0, 'no_star', "None", "None", "Error retrieving comment"
 
-    
-def determine_rating(home_team_points, away_team_points):
-    # Calculate the absolute difference between home team and away team points
-    points_difference = abs(home_team_points - away_team_points)
+def calculate_percentage_points(percent, percent_draw):
+    if percent >= 70:
+        return 2
+    elif percent >= 60:
+        return 1
+    elif percent >= 45 and percent_draw >= 45:
+        return 0
+    return 0
 
-    # Determine the rating based on the points difference
+def adjust_points_based_on_ratio(ratio_difference, is_home):
+    if ratio_difference >= 3:
+        return 2 if is_home else 0
+    elif ratio_difference >= 2:
+        return 1 if is_home else 0
+    elif ratio_difference >= 1:
+        return 0 if is_home else 0
+    elif ratio_difference <= -3:
+        return 0 if is_home else 2
+    elif ratio_difference <= -2:
+        return 0 if is_home else 1
+    return 0
+
+def adjust_points_based_on_goal_ratio(goal_ratio_difference, is_home):
+    if goal_ratio_difference >= 3:
+        return 2 if is_home else -1
+    elif goal_ratio_difference >= 2:
+        return 1 if is_home else -1
+    elif goal_ratio_difference >= 1:
+        return 0
+    elif goal_ratio_difference <= -2:
+        return -1 if is_home else 1
+    elif goal_ratio_difference <= -3:
+        return -2 if is_home else 2
+    return 0
+
+def adjust_points_based_on_rank(rank_difference, is_home):
+    if rank_difference >= 10:
+        return 2 if is_home else 0
+    elif rank_difference >= 5:
+        return 1 if is_home else 0
+    elif rank_difference <= -10:
+        return 0 if is_home else 2
+    elif rank_difference <= -5:
+        return 0 if is_home else 1
+    return 0
+
+def adjust_points_based_on_points_difference(home_points, away_points):
+    points_difference = home_points - away_points
+    if points_difference >= 30:
+        return 2
+    elif points_difference >= 20:
+        return 1
+    elif points_difference >= 10:
+        return 0
+    return 0
+
+def adjust_points_based_on_goals_diff(goals_diff, is_home=True):
+    if goals_diff > 30:
+        return 3 if is_home else 2
+    elif goals_diff > 15:
+        return 2 if is_home else 1
+    elif goals_diff > 0:
+        return 1 if is_home else 1
+    elif goals_diff < 0:
+        return -1 if is_home else -1
+    return 0
+
+def adjust_points_based_on_form(form, is_home=True):
+    if form.endswith('WWWWW'):
+        return 2 if is_home else 0
+    elif form.endswith('WWW'):
+        return 1 if is_home else 0
+    elif form.endswith('LLLLL'):
+        return -2 if is_home else 0
+    elif form.endswith('LLL'):
+        return -1 if is_home else 0
+    return 0
+
+def determine_winner(home_team_points, away_team_points, home_team_name, away_team_name):
+    if home_team_points > away_team_points:
+        return home_team_name
+    elif away_team_points > home_team_points:
+        return away_team_name
+    else:
+        return "Draw"
+
+def determine_rating(home_team_points, away_team_points):
+    points_difference = abs(home_team_points - away_team_points)
     if points_difference > 6:
         return 'three_star'
     elif points_difference > 4:
@@ -246,52 +238,30 @@ def determine_rating(home_team_points, away_team_points):
         return 'no_star'
 
 def calculate_win_lose_ratio(wins, losses):
-    # Convert inputs to integers and handle division by zero
     wins = int(wins)
     losses = int(losses)
-    
-    if losses == 0:
-        return float('inf')  # or another indicator of an undefined ratio
-    else:
-        return wins / losses
-    
+    return wins / losses if losses > 0 else float('inf')
+
 def get_team_win_lose_ratios(home_team_item, away_team_item):
-    # Extract home team stats
-    home_total_wins = home_team_item['league']['fixtures']['wins']['total']
-    home_total_losses = home_team_item['league']['fixtures']['loses']['total']
-    
-    home_win_lose_ratio = calculate_win_lose_ratio(home_total_wins, home_total_losses)
-    
-    away_total_wins = away_team_item['league']['fixtures']['wins']['total']
-    away_total_losses = away_team_item['league']['fixtures']['loses']['total']
-    
-    away_win_lose_ratio = calculate_win_lose_ratio(away_total_wins, away_total_losses)
-    
-    return home_win_lose_ratio, away_win_lose_ratio
+    home_total_wins = home_team_item.get('league', {}).get('fixtures', {}).get('wins', {}).get('total', 0)
+    home_total_losses = home_team_item.get('league', {}).get('fixtures', {}).get('loses', {}).get('total', 0)
+    away_total_wins = away_team_item.get('league', {}).get('fixtures', {}).get('wins', {}).get('total', 0)
+    away_total_losses = away_team_item.get('league', {}).get('fixtures', {}).get('loses', {}).get('total', 0)
 
-def get_team_goals_ratios (home_team_item, away_team_item): 
-    home_total_goals_for = home_team_item['league']['goals']['for']['total']['total']
-    home_total_goals_against = home_team_item['league']['goals']['against']['total']['total']
+    return calculate_win_lose_ratio(home_total_wins, home_total_losses), calculate_win_lose_ratio(away_total_wins, away_total_losses)
 
-    if home_total_goals_against == 0:
-        home_goals_ratio = home_total_goals_for  # To avoid division by zero
-    else:
-        home_goals_ratio = home_total_goals_for / home_total_goals_against
+def get_team_goals_ratios(home_team_item, away_team_item):
+    home_total_goals_for = home_team_item.get('league', {}).get('goals', {}).get('for', {}).get('total', {}).get('total', 0)
+    home_total_goals_against = home_team_item.get('league', {}).get('goals', {}).get('against', {}).get('total', {}).get('total', 0)
+    away_total_goals_for = away_team_item.get('league', {}).get('goals', {}).get('for', {}).get('total', {}).get('total', 0)
+    away_total_goals_against = away_team_item.get('league', {}).get('goals', {}).get('against', {}).get('total', {}).get('total', 0)
 
-    away_total_goals_for = away_team_item['league']['goals']['for']['total']['total']
-    away_total_goals_against = away_team_item['league']['goals']['against']['total']['total']
+    home_goals_ratio = home_total_goals_for / home_total_goals_against if home_total_goals_against > 0 else home_total_goals_for
+    away_goals_ratio = away_total_goals_for / away_total_goals_against if away_total_goals_against > 0 else away_total_goals_for
 
-    if away_total_goals_against == 0:
-        away_goals_ratio = away_total_goals_for  # To avoid division by zero
-    else:
-        away_goals_ratio = away_total_goals_for / away_total_goals_against
+    return home_goals_ratio, away_goals_ratio
 
-    return (home_goals_ratio, away_goals_ratio)
-
-def get_team_rank_difference (home_team_data, away_team_data): 
-    home_rank = home_team_data['rank']
-    away_rank = away_team_data['rank']
-
-    rank_difference = away_rank - home_rank
-
-    return (rank_difference)
+def get_team_rank_difference(home_team_data, away_team_data):
+    home_rank = home_team_data.get('rank', 0)
+    away_rank = away_team_data.get('rank', 0)
+    return away_rank - home_rank
