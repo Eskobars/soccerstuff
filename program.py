@@ -57,44 +57,22 @@ def find_team_data_by_name(team_name, team_info):
             return team
     return None
 
-# Generic function to handle rate limiting and null values
-def fetch_data_with_rate_limit(fetch_function, *args, max_requests_per_minute=10):
-    request_count = 0
-    start_time = time.time()
-    time.sleep(6.1)
-
+# Simplified function to add a fixed delay between each request
+def fetch_data_with_rate_limit(fetch_function, *args, delay_seconds=6.1):
     @functools.wraps(fetch_function)
     def wrapper():
-        nonlocal request_count, start_time
         while True:
-            current_time = time.time()
-
-            # Check if the minute has passed and reset request count if necessary
-            if current_time - start_time >= 60:
-                request_count = 0
-                start_time = current_time
-
-            # Rate limit check
-            if request_count >= max_requests_per_minute:
-                print("Request limit reached. Waiting for 61 seconds...")
-                time.sleep(61)  # Wait for 61 seconds before retrying
-                request_count = 0  # Reset request count after waiting
-
-            # Attempt to fetch data
             try:
+                # Attempt to fetch data
                 data = fetch_function(*args)
-                request_count += 1
-                # Check for rate limit error in the response
-                if 'errors' in data and 'rateLimit' in data['errors']:
-                    print("Rate limit error detected. Waiting for 60 seconds...")
-                    time.sleep(61)  # Wait for 61 seconds if rate limit error is detected
-                    continue  # Retry fetching data
-                
                 return data  # Return data if no error is detected
             except Exception as e:
                 print(f"Error fetching data: {e}")
                 print("Retrying in 61 seconds...")
                 time.sleep(61)  # Wait before retrying in case of error
+            
+            # Delay between requests
+            time.sleep(delay_seconds)
 
     return wrapper()
 
