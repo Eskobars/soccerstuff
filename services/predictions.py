@@ -91,6 +91,8 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         home_team_win_ratio, away_team_win_ratio = get_team_win_lose_ratios(home_team_item, away_team_item)
         home_team_goal_ratio, away_team_goal_ratio = get_team_goals_ratios(home_team_item, away_team_item)
         rank_difference = get_team_rank_difference(home_team_data, away_team_data)
+        win_ratio_difference = home_team_win_ratio - away_team_win_ratio
+        goal_ratio_difference = away_team_win_ratio - home_team_goal_ratio
 
         # Extract comment and advice directly
         winner_data = predictions_item['winner']
@@ -113,47 +115,35 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         elif percent_away >= 45 and percent_draw >= 45:
             away_team_points += 0
 
-        # Adjust points based on win-to-lose ratio
-        if home_team_win_ratio >= 3:
+        # Adjust points based on the win/lose ratio difference
+        if win_ratio_difference >= 3:
             home_team_points += 2
-        elif home_team_win_ratio >= 2:
-            home_team_points += 1    
-        elif home_team_win_ratio >= 1:
+        elif win_ratio_difference >= 2:
+            home_team_points += 1
+        elif win_ratio_difference >= 1:
             home_team_points += 0
-        elif home_team_win_ratio <= -1:
-            home_team_points -= 1
-
-        if away_team_win_ratio >= 3:
-            home_team_points += 2
-        elif away_team_win_ratio >= 2:
+        elif win_ratio_difference <= -3:
+            away_team_points += 2
+        elif win_ratio_difference <= -2:
             away_team_points += 1
-        elif away_team_win_ratio >= 1:
+        else:
             away_team_points += 0
-        elif away_team_win_ratio <= -1:
+            home_team_points += 0
+
+        # Adjust points based on the goal ratio difference
+        if goal_ratio_difference >= 3:
+            home_team_points += 2
+        elif goal_ratio_difference >= 2:
+            home_team_points += 1
+        elif goal_ratio_difference >= 1:
+            home_team_points += 0
+        elif goal_ratio_difference <= -2:
             away_team_points -= 1
-
-        # Adjust points based on goals for/against ratio
-        if home_team_goal_ratio >= 2:
-            home_team_points += 2
-        elif home_team_goal_ratio >= 1.5:
-            home_team_points += 1
-        elif home_team_goal_ratio >= 1:
+        elif goal_ratio_difference <= -3:
+            away_team_points -= 2
+        else:
+            away_team_points += 0
             home_team_points += 0
-        elif home_team_goal_ratio <= 1:
-            home_team_points -= 1
-        elif home_team_goal_ratio <= -1:
-            home_team_points -= 2
-
-        if away_team_goal_ratio >= 2:
-            home_team_points += 2
-        elif away_team_goal_ratio >= 1.5:
-            home_team_points += 1
-        elif away_team_goal_ratio >= 1:
-            home_team_points += 0
-        elif away_team_goal_ratio <= 1:
-            home_team_points -= 1
-        elif away_team_goal_ratio <= -1:
-            home_team_points -= 2
 
         if rank_difference >= 10:
             home_team_points += 2
@@ -169,41 +159,24 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         # Use points and goalsDiff (goal difference) to rate the teams
         home_points = home_team_data['points'] if 'points' in home_team_data else 0
         away_points = away_team_data['points'] if 'points' in away_team_data else 0
-        # home_goals_diff = home_team_data['goalsDiff'] if 'goalsDiff' in home_team_data else 0
-        # away_goals_diff = away_team_data['goalsDiff'] if 'goalsDiff' in away_team_data else 0
 
-        # Additional points based on points and goals difference
-        if home_points >= (away_points + 30):
+        # Calculate the difference between the points of the two teams
+        points_difference = home_points - away_points
+
+        # Adjust points based on the points difference
+        if points_difference >= 30:
             home_team_points += 2
-        elif home_points >= (away_points + 20):
+        elif points_difference >= 20:
             home_team_points += 1
-        elif home_points >= (away_points + 10):
+        elif points_difference >= 10:
             home_team_points += 0
 
-        if away_points >= (home_points + 30):
+        if -points_difference >= 30:
             away_team_points += 2
-        elif away_points >= (home_points + 20):
+        elif -points_difference >= 20:
             away_team_points += 1
-        elif away_points >= (home_points + 10):
+        elif -points_difference >= 10:
             away_team_points += 0
-
-        # if home_goals_diff > 30:
-        #     home_team_points += 3
-        # elif home_goals_diff > 15:
-        #     home_team_points += 2
-        # elif home_goals_diff > 0:
-        #     home_team_points += 1
-        # elif home_goals_diff < 0:
-        #     home_team_points -1 
-
-        # if away_goals_diff > 30:
-        #     away_team_points += 2
-        # elif away_goals_diff > 15:
-        #     away_team_points += 1
-        # elif away_goals_diff > 0:
-        #     away_team_points += 1
-        # elif away_goals_diff < 0:
-        #     away_team_points -= 1
 
         home_team_points += 1
         away_team_points -= 1
