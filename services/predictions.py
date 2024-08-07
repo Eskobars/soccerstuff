@@ -82,7 +82,7 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         away_form = away_team_data.get('form', '')
 
         # Ensure form has at least five characters
-        if len(home_form) < 5 or len(away_form) < 5:
+        if not home_form or not away_form or len(home_form) < 5 or len(away_form) < 5:
             return 0, 0, 'no_star', "None", "None", "Not enough recent matches, skipping"
 
         # Calculate win/lose ratios and goal ratios

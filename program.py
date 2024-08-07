@@ -8,7 +8,7 @@ from services.standings import get_standings_data, extract_team_info, get_team_r
 from services.injuries import get_injury_data
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
 from services.players import get_player_data, get_key_players_by_team
-from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
+from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR, BETS_DIR
 
 # Create directories if they do not exist
 os.makedirs(PREDICTIONS_DIR, exist_ok=True)
@@ -17,6 +17,20 @@ os.makedirs(PLAYERS_DIR, exist_ok=True)
 os.makedirs(STANDINGS_DIR, exist_ok=True)
 os.makedirs(RATINGS_DIR, exist_ok=True)
 os.makedirs(TEAMS_DIR, exist_ok = True)
+
+def save_bets(bets):
+    """Save bets to a file."""
+    file_path = os.path.join(BETS_DIR, 'bets.json')
+    if os.path.exists(file_path):
+        with open(file_path, 'r') as file:
+            existing_bets = json.load(file)
+    else:
+        existing_bets = []
+
+    existing_bets.extend(bets)
+
+    with open(file_path, 'w') as file:
+        json.dump(existing_bets, file, indent=4)
 
 def find_latest_file(directory):
     files = [f for f in os.listdir(directory) if f.startswith('rated_fixtures_') and f.endswith('.json')]
@@ -59,6 +73,7 @@ def find_team_data_by_name(team_name, team_info):
 
 # Simplified function to add a fixed delay between each request
 def fetch_data_with_rate_limit(fetch_function, *args, delay_seconds=6.1):
+    time.sleep(delay_seconds)
     @functools.wraps(fetch_function)
     def wrapper():
         while True:
@@ -70,9 +85,6 @@ def fetch_data_with_rate_limit(fetch_function, *args, delay_seconds=6.1):
                 print(f"Error fetching data: {e}")
                 print("Retrying in 61 seconds...")
                 time.sleep(61)  # Wait before retrying in case of error
-            
-            # Delay between requests
-            time.sleep(delay_seconds)
 
     return wrapper()
 
@@ -349,35 +361,85 @@ def main():
         no_star_games.clear()
     
     load_rated_fixtures()
+
+    all_games = {
+    'three_star_games': rated_fixtures['three_star_games'],
+    'two_star_games': rated_fixtures['two_star_games'],
+    'one_star_games': rated_fixtures['one_star_games']
+    }
+
+    # Combine all games into a single list and keep track of indices
+    indexed_games = []
+    index_counter = 1
+
     print("\nThree Star Games:")
     for game in rated_fixtures['three_star_games']:
-        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
-              f"Home Team Points: {game['home_team_points']}, "
-              f"Away Team Points: {game['away_team_points']}, "
-              f"Predicted Winner: {game['winning_team']}, "
-              f"Comment: {game['comment']}, "
-              f"League: {game['league_name']}, "
-              f"Warning: {game['warning']}")
+        print(f"{index_counter}: {game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
+            f"Home Team Points: {game['home_team_points']}, "
+            f"Away Team Points: {game['away_team_points']}, "
+            f"Predicted Winner: {game['winning_team']}, "
+            f"Comment: {game['comment']}, "
+            f"League: {game['league_name']}, "
+            f"Warning: {game['warning']}")
+        indexed_games.append(game)
+        index_counter += 1
 
     print("\nTwo Star Games:")
     for game in rated_fixtures['two_star_games']:
-        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
-              f"Home Team Points: {game['home_team_points']}, "
-              f"Away Team Points: {game['away_team_points']}, "
-              f"Predicted Winner: {game['winning_team']}, "
-              f"Comment: {game['comment']}, "
-              f"League: {game['league_name']}, "
-              f"Warning: {game['warning']}")
+        print(f"{index_counter}: {game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
+            f"Home Team Points: {game['home_team_points']}, "
+            f"Away Team Points: {game['away_team_points']}, "
+            f"Predicted Winner: {game['winning_team']}, "
+            f"Comment: {game['comment']}, "
+            f"League: {game['league_name']}, "
+            f"Warning: {game['warning']}")
+        indexed_games.append(game)
+        index_counter += 1
 
     print("\nOne Star Games:")
     for game in rated_fixtures['one_star_games']:
-        print(f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
-              f"Home Team Points: {game['home_team_points']}, "
-              f"Away Team Points: {game['away_team_points']}, "
-              f"Predicted Winner: {game['winning_team']}, "
-              f"Comment: {game['comment']}, "
-              f"League: {game['league_name']}, "
-              f"Warning: {game['warning']}")
+        print(f"{index_counter}: {game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}, "
+            f"Home Team Points: {game['home_team_points']}, "
+            f"Away Team Points: {game['away_team_points']}, "
+            f"Predicted Winner: {game['winning_team']}, "
+            f"Comment: {game['comment']}, "
+            f"League: {game['league_name']}, "
+            f"Warning: {game['warning']}")
+        indexed_games.append(game)
+        index_counter += 1
+
+    # Ask user if they want to save any bets
+    bets = []
+    while True:
+        save_bet = input("\nWould you like to save a bet? ((yes (y) / no (n)): ").strip().lower()
+        if save_bet in ['no', 'n']:
+            break
+        if save_bet in ['yes', 'y']:
+            try:
+                game_number = int(input("Enter the game number: ").strip())
+                if 1 <= game_number < index_counter:
+                    selected_fixture = indexed_games[game_number - 1]
+                    multiplier = float(input("Enter the multiplier: ").strip())
+
+                    # Save the bet with the selected fixture's points
+                    bet = {
+                        'team_name': f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}",
+                        'multiplier': multiplier,
+                        'home_team_points': selected_fixture['home_team_points'],
+                        'away_team_points': selected_fixture['away_team_points'],
+                        'predicted_winner' : f"Predicted winner: {game['winning_team']}",
+                    }
+                    bets.append(bet)
+                else:
+                    print("Invalid game number.")
+            except ValueError:
+                print("Invalid input. Please enter a valid number.")
+
+    if bets:
+        save_bets(bets)
+        print("Bets have been saved.")
+    else:
+        print("No bets were saved.")
 
 if __name__ == "__main__":
     main()
