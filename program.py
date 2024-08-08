@@ -33,33 +33,21 @@ def save_bets(bets):
         json.dump(existing_bets, file, indent=4)
 
 def find_latest_file(directory):
+    # Get the current date as a string in the format 'YYYY-MM-DD'
+    current_date_str = datetime.now().strftime('%Y-%m-%d')
+    
+    # List all files in the directory that match the pattern
     files = [f for f in os.listdir(directory) if f.startswith('rated_fixtures_') and f.endswith('.json')]
-    if not files:
+    
+    # Filter files that match the current date
+    matching_files = [f for f in files if f[len('rated_fixtures_'): -len('.json')] == current_date_str]
+    
+    # Return the file if found, otherwise return None
+    if matching_files:
+        return matching_files[0]
+    else:
         return None
-
-    def extract_date(filename):
-        # Extract date part between 'rated_fixtures_' and '.json'
-        try:
-            # Extract the date part
-            date_str = filename[len('rated_fixtures_'): -len('.json')]
-            # Parse the date
-            return datetime.strptime(date_str, '%Y-%m-%d')
-        except ValueError:
-            print(f"Date extraction failed for filename: {filename}")
-            return None
-
-    # Create a list of (filename, date) tuples
-    files_with_dates = [(f, extract_date(f)) for f in files]
-    # Filter out files with invalid dates
-    valid_files_with_dates = [(f, d) for f, d in files_with_dates if d is not None]
-
-    if not valid_files_with_dates:
-        return None
-
-    # Find the file with the latest date
-    latest_file = max(valid_files_with_dates, key=lambda x: x[1])[0]
-    return latest_file
-
+    
 # Helper function to determine if data is valid (not None and not empty)
 def is_valid_data(data):
     return data is not None and len(data) > 0
