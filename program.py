@@ -50,7 +50,7 @@ def main():
     games_rated = 0
     games_skipped = 0
 
-    all_fixtures_data = fetch_data_with_rate_limit(get_fixtures_data)
+    all_fixtures_data = get_fixtures_data()
     filtered_fixtures = filter_fixtures(all_fixtures_data, statuses_to_search, trusted_countries)
 
     for fixture_data in filtered_fixtures:
@@ -92,7 +92,7 @@ def main():
         if league_id not in league_standings_cache:
             standings_data = load_standings_data(league_id)
             if not standings_data:
-                standings_data = fetch_data_with_rate_limit(get_standings_data, league_id)
+                standings_data = get_standings_data(league_id)
                 if not standings_data or not standings_data.get('response'):
                     print(f"Standings data is empty or invalid for league {league_id}. Skipping fixture {fixture_id}.")
                     failed_league_ids.add(league_id)

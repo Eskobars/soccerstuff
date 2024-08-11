@@ -1,8 +1,9 @@
 import json
 import http.client
-from config import API_KEY
-from config import BASE_URL
+
 from datetime import datetime
+
+from config import API_KEY, BASE_URL
 
 def fetch_league_standings(league_id):
     conn = http.client.HTTPSConnection(BASE_URL)
@@ -17,7 +18,6 @@ def fetch_league_standings(league_id):
     
     return json.loads(data.decode("utf-8"))
 
-
 def fetch_match_predictions(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
     headers = {
@@ -29,7 +29,6 @@ def fetch_match_predictions(fixture_id):
     res = conn.getresponse()
     data = res.read()
     return json.loads(data.decode("utf-8"))
-
 
 def fetch_players_for_fixture(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
@@ -52,7 +51,6 @@ def fetch_players_for_fixture(fixture_id):
     parsed_data = json.loads(data.decode("utf-8"))
     
     return parsed_data
-
 
 def fetch_injuries_for_fixture(fixture_id):
     conn = http.client.HTTPSConnection(BASE_URL)
@@ -78,7 +76,6 @@ def fetch_team_stats(team_id, league_id):
     res = conn.getresponse()
     data = res.read()
     return json.loads(data.decode("utf-8"))
-
 
 def fetch_fixtures_for_day():
     try:

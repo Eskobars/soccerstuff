@@ -4,6 +4,8 @@ import os
 from datetime import datetime
 from fetchers import fetch_fixtures_for_day
 from helpers.data.latest_file import find_latest_file
+from helpers.data.fetch_data import fetch_data_with_rate_limit
+
 from config import FIXTURES_DIR, RATINGS_DIR
 
 def get_fixtures_data():
@@ -34,7 +36,7 @@ def get_fixtures_data():
         with open(filename, 'r') as f:
             all_fixtures_data = json.load(f)
     else:
-        all_fixtures_data = fetch_fixtures_for_day()
+        all_fixtures_data = fetch_data_with_rate_limit(fetch_fixtures_for_day)
         
         # Save the new fixtures data
         with open(filename, 'w') as f:

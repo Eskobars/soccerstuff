@@ -3,6 +3,8 @@ import json
 
 from datetime import datetime, timedelta
 from fetchers import fetch_league_standings
+from helpers.data.fetch_data import fetch_data_with_rate_limit
+
 from config import STANDINGS_DIR
 
 def is_data_up_to_date(filename, current_date):
@@ -43,7 +45,7 @@ def get_standings_data(league_id):
             standings = json.load(f)
     else:
         print(f"Fetching new standings data for league {league_id}...")
-        standings = fetch_league_standings(league_id)
+        standings = fetch_data_with_rate_limit(fetch_league_standings, league_id)
         if standings and 'response' in standings and isinstance(standings['response'], list) and len(standings['response']) > 0:
             with open(filename, 'w') as f:
                 json.dump(standings, f, indent=4)
@@ -55,7 +57,6 @@ def get_standings_data(league_id):
             standings = {'response': []}
     
     return standings
-
 
 def extract_team_info(standings_data):
     """

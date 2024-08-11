@@ -3,6 +3,7 @@ import os
 
 from helpers.date_helper import is_data_up_to_date
 from fetchers import fetch_players_for_fixture
+
 from config import PLAYERS_DIR
 
 def get_player_data(fixture_id):
