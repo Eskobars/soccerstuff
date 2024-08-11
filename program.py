@@ -5,7 +5,6 @@ from services.standings import get_standings_data, extract_team_info, get_team_r
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
 from services.bets import save_bets
 from helpers.data.find_team_data import find_team_data_by_name
-from helpers.data.fetch_data import fetch_data_with_rate_limit
 from helpers.data.standings_data import save_standings_data, load_standings_data
 
 from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
