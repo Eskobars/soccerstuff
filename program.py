@@ -1,7 +1,6 @@
 import os
-import json
+
 from services.fetch_data import fetch_data_with_rate_limit
-from datetime import datetime
 from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures
 from services.standings import get_standings_data, extract_team_info, get_team_rank
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
