@@ -4,6 +4,7 @@ from datetime import datetime
 from config import PREDICTIONS_DIR
 from fetchers import fetch_match_predictions
 from services.teams import get_teams_data
+from services.fetch_data import fetch_data_with_rate_limit
 import logging
 
 # Configure logging
@@ -35,7 +36,7 @@ def get_fixture_prediction(fixture_id):
             predictions = json.load(f)
     else:
         logging.info(f"Fetching new predictions data for fixture {fixture_id}...")
-        predictions = fetch_match_predictions(fixture_id)
+        predictions = fetch_data_with_rate_limit(fetch_match_predictions, fixture_id)
         with open(filename, 'w') as f:
             json.dump(predictions, f, indent=4)
         logging.info("Predictions data fetched and stored successfully.")

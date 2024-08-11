@@ -1,7 +1,6 @@
 import os
-import time
 import json
-import functools
+from services.fetch_data import fetch_data_with_rate_limit
 from datetime import datetime
 from services.fixtures import filter_fixtures, get_fixtures_data
 from services.standings import get_standings_data, extract_team_info, get_team_rank
@@ -58,23 +57,6 @@ def find_team_data_by_name(team_name, team_info):
         if team['team_name'] == team_name:
             return team
     return None
-
-# Simplified function to add a fixed delay between each request
-def fetch_data_with_rate_limit(fetch_function, *args, delay_seconds=6.1):
-    time.sleep(delay_seconds)
-    @functools.wraps(fetch_function)
-    def wrapper():
-        while True:
-            try:
-                # Attempt to fetch data
-                data = fetch_function(*args)
-                return data  # Return data if no error is detected
-            except Exception as e:
-                print(f"Error fetching data: {e}")
-                print("Retrying in 61 seconds...")
-                time.sleep(61)  # Wait before retrying in case of error
-
-    return wrapper()
 
 def load_standings_data(league_id):
     """Load standings data from a file and ensure it contains valid content."""
@@ -159,14 +141,21 @@ def main():
     league_standings_cache = {}
     failed_league_ids = set()  # Set to track league IDs that failed
 
+    # Initialize counters
+    total_games_processed = 0
+    games_rated = 0
+    games_skipped = 0
+
     all_fixtures_data = fetch_data_with_rate_limit(get_fixtures_data)
 
     filtered_fixtures = filter_fixtures(all_fixtures_data, statuses_to_search, trusted_countries)
 
     for fixture_data in filtered_fixtures:
 
+        total_games_processed += 1  # Increment total games processed
         fixture_id = fixture_data['fixture']['id']
         if fixture_id in processed_fixture_ids:
+            games_skipped += 1  # Increment skipped games
             continue
         
         fixture_id = fixture_data['fixture']['id']
@@ -191,6 +180,7 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
+            games_skipped += 1  # Increment skipped games
             continue
 
         # Check if standings data is already cached or in files
@@ -210,6 +200,7 @@ def main():
                         'warning': warning
                     }
                     no_star_games.append(fixture_info)
+                    games_skipped += 1  # Increment skipped games
                     continue
                 # Save fetched standings data to file
                 save_standings_data(league_id, standings_data)
@@ -228,6 +219,7 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
+            games_skipped += 1  # Increment skipped games
             continue
 
         home_team_rank = get_team_rank(team_info, home_team_name)
@@ -244,10 +236,11 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
+            games_skipped += 1  # Increment skipped games
             continue
 
         if abs(home_team_rank - away_team_rank) >= 4:
-            predictions = fetch_data_with_rate_limit(get_fixture_prediction, fixture_id)
+            predictions = get_fixture_prediction(fixture_id)
             if not predictions:
                 print(f"No predictions available for fixture {fixture_id}. Skipping fixture {fixture_id}.")
                 fixture_info = {
@@ -258,57 +251,16 @@ def main():
                     'warning': warning
                 }
                 no_star_games.append(fixture_info)
+                games_skipped += 1  # Increment skipped games
                 continue
 
             # Parse from team_info to selected team
             home_team_data = find_team_data_by_name(home_team_name, team_info)
             away_team_data = find_team_data_by_name(away_team_name, team_info)
             home_team_points, away_team_points, rating, winner_name, points_winner_name, comment = rate_fixture(predictions, home_team_data, away_team_data)
-            # home_team_warning = ""
-            # away_team_warning = ""
-            # home_team_injuries = []
-            # away_team_injuries = []
-            # home_team_players = []
-            # away_team_players = []
 
-            # Fetch more data only for games rated one_star, two_star, or three_star
-            if rating in {'three_star', 'two_star', 'one_star'}: 
-                
-                ## This hasnt ever returned anything, maybe it should only be used for major league games? 
-
-
-                ## 1. I think this would be a good start for getting team data by teamId instead and passing the data to rate_fixture
-                
-
-                ## 2. Also, maybe keep the get_injuries part and add to ratings. Can use it later combined with team_id
-
-
-                # home_team_players, away_team_players = fetch_data_with_rate_limit(get_player_data, fixture_id) 
-
-                # if is_valid_data(home_team_players) and is_valid_data(away_team_players):
-                #     home_team_injuries, away_team_injuries = fetch_data_with_rate_limit(get_injury_data, fixture_id) 
-                #     home_team_key_players, away_team_key_players = get_key_players_by_team(home_team_players, away_team_players)
-
-                #     # Check for injured key players
-                #     if is_valid_data(home_team_key_players):
-                #         for player in home_team_key_players:
-                #             if any(injury['player'] == player['name'] for injury in home_team_injuries):
-                #                 home_team_warning = "Warning: Home team key player injured!"
-                #                 warning = home_team_warning
-                #                 away_team_points -= 1
-                #                 break
-
-                #     if is_valid_data(away_team_key_players):
-                #         for player in away_team_key_players:
-                #             if any(injury['player'] == player['name'] for injury in away_team_injuries):
-                #                 away_team_warning = "Warning: Away team key player injured!"
-                #                 if warning is None:
-                #                     warning = away_team_warning
-                #                     away_team_points -= 1
-                #                 break
-
-                # Recalculate the rating after adjusting for injuries
-                rating = determine_rating(home_team_points, away_team_points)
+            # Recalculate the rating after adjusting for injuries (if applicable)
+            rating = determine_rating(home_team_points, away_team_points)
             
             fixture_info = {
                 'fixture_data': fixture_data,
@@ -328,7 +280,8 @@ def main():
                 two_star_games.append(fixture_info)
             elif rating == 'one_star':
                 one_star_games.append(fixture_info)
-                
+
+            games_rated += 1  # Increment rated games
         else:
             print(f"Rank difference between {home_team_name} and {away_team_name} is 4 or less. Skipping fixture {fixture_id}.")
             fixture_info = {
@@ -341,6 +294,7 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
+            games_skipped += 1  # Increment skipped games
 
         save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games)
         one_star_games.clear()
@@ -351,9 +305,9 @@ def main():
     load_rated_fixtures()
 
     all_games = {
-    'three_star_games': rated_fixtures['three_star_games'],
-    'two_star_games': rated_fixtures['two_star_games'],
-    'one_star_games': rated_fixtures['one_star_games']
+        'three_star_games': rated_fixtures['three_star_games'],
+        'two_star_games': rated_fixtures['two_star_games'],
+        'one_star_games': rated_fixtures['one_star_games']
     }
 
     # Combine all games into a single list and keep track of indices
@@ -395,6 +349,10 @@ def main():
             f"Warning: {game['warning']}")
         indexed_games.append(game)
         index_counter += 1
+
+    print(f"Total games processed: {total_games_processed}")
+    print(f"Total games rated: {games_rated}")
+    print(f"Total games skipped: {games_skipped}")
 
     # Ask user if they want to save any bets
     bets = []
