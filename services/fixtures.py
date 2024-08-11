@@ -1,8 +1,10 @@
 import json
 import os
+
 from datetime import datetime
 from fetchers import fetch_fixtures_for_day
-from config import FIXTURES_DIR
+from helpers.data.latest_file import find_latest_file
+from config import FIXTURES_DIR, RATINGS_DIR
 
 def get_fixtures_data():
     filename = os.path.join(FIXTURES_DIR, 'fixtures_data.json')
@@ -91,3 +93,37 @@ def filter_fixtures(all_fixtures, statuses, countries):
             filtered_fixtures.append(fixture)
 
     return filtered_fixtures
+
+def load_rated_fixtures():
+    latest_file = find_latest_file(RATINGS_DIR)
+    if latest_file is None:
+        return {
+            'one_star_games': [],
+            'two_star_games': [],
+            'three_star_games': [],
+            'no_star_games': []
+        }
+
+    file_path = os.path.join(RATINGS_DIR, latest_file)
+    with open(file_path, 'r') as file:
+        data = json.load(file)
+        return {
+            'one_star_games': data.get('one_star_games', []),
+            'two_star_games': data.get('two_star_games', []),
+            'three_star_games': data.get('three_star_games', []),
+            'no_star_games': data.get('no_star_games', [])
+        }
+
+def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games):
+    date_str = datetime.now().strftime('%Y-%m-%d')
+    file_path = os.path.join(RATINGS_DIR, f'rated_fixtures_{date_str}.json')
+    
+    rated_fixtures = load_rated_fixtures()
+    
+    rated_fixtures.setdefault('one_star_games', []).extend(one_star_games)
+    rated_fixtures.setdefault('two_star_games', []).extend(two_star_games)
+    rated_fixtures.setdefault('three_star_games', []).extend(three_star_games)
+    rated_fixtures.setdefault('no_star_games', []).extend(no_star_games)
+    
+    with open(file_path, 'w') as file:
+        json.dump(rated_fixtures, file, indent=4)

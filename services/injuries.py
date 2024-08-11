@@ -1,6 +1,7 @@
 import json
-import os    
-from services.date_helper import is_data_up_to_date
+import os 
+
+from helpers.date_helper import is_data_up_to_date
 from fetchers import fetch_injuries_for_fixture
 from config import INJURIES_DIR
 

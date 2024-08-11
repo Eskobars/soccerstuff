@@ -1,11 +1,10 @@
 import json
 import os
-from datetime import datetime
-from config import PREDICTIONS_DIR
-from fetchers import fetch_match_predictions
-from services.teams import get_teams_data
-from services.fetch_data import fetch_data_with_rate_limit
 import logging
+
+from fetchers import fetch_match_predictions
+from services.fetch_data import fetch_data_with_rate_limit
+from config import PREDICTIONS_DIR
 
 # Configure logging
 logging.basicConfig(level=logging.INFO)

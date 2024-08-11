@@ -1,6 +1,7 @@
 import os
 import json
-from datetime import datetime, timezone, timedelta
+
+from datetime import datetime, timedelta
 from fetchers import fetch_league_standings
 from config import STANDINGS_DIR
 

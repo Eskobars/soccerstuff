@@ -2,12 +2,13 @@ import os
 import json
 from services.fetch_data import fetch_data_with_rate_limit
 from datetime import datetime
-from services.fixtures import filter_fixtures, get_fixtures_data
+from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures
 from services.standings import get_standings_data, extract_team_info, get_team_rank
-from services.injuries import get_injury_data
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
-from services.players import get_player_data, get_key_players_by_team
-from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR, BETS_DIR
+from helpers.data.find_team_data import find_team_data_by_name
+from services.bets import save_bets
+from helpers.data.standings_data import save_standings_data, load_standings_data
+from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
 
 # Create directories if they do not exist
 os.makedirs(PREDICTIONS_DIR, exist_ok=True)
@@ -16,102 +17,6 @@ os.makedirs(PLAYERS_DIR, exist_ok=True)
 os.makedirs(STANDINGS_DIR, exist_ok=True)
 os.makedirs(RATINGS_DIR, exist_ok=True)
 os.makedirs(TEAMS_DIR, exist_ok = True)
-
-def save_bets(bets):
-    """Save bets to a file."""
-    file_path = os.path.join(BETS_DIR, 'bets.json')
-    if os.path.exists(file_path):
-        with open(file_path, 'r') as file:
-            existing_bets = json.load(file)
-    else:
-        existing_bets = []
-
-    existing_bets.extend(bets)
-
-    with open(file_path, 'w') as file:
-        json.dump(existing_bets, file, indent=4)
-
-def find_latest_file(directory):
-    # Get the current date as a string in the format 'YYYY-MM-DD'
-    current_date_str = datetime.now().strftime('%Y-%m-%d')
-    
-    # List all files in the directory that match the pattern
-    files = [f for f in os.listdir(directory) if f.startswith('rated_fixtures_') and f.endswith('.json')]
-    
-    # Filter files that match the current date
-    matching_files = [f for f in files if f[len('rated_fixtures_'): -len('.json')] == current_date_str]
-    
-    # Return the file if found, otherwise return None
-    if matching_files:
-        return matching_files[0]
-    else:
-        return None
-    
-# Helper function to determine if data is valid (not None and not empty)
-def is_valid_data(data):
-    return data is not None and len(data) > 0
-
-# Function to find team data by team name
-def find_team_data_by_name(team_name, team_info):
-    for team in team_info:
-        if team['team_name'] == team_name:
-            return team
-    return None
-
-def load_standings_data(league_id):
-    """Load standings data from a file and ensure it contains valid content."""
-    file_path = os.path.join(STANDINGS_DIR, f'standings_{league_id}.json')
-    
-    if os.path.exists(file_path):
-        try:
-            with open(file_path, 'r') as file:
-                data = json.load(file)
-                if data and 'response' in data and isinstance(data['response'], list) and len(data['response']) > 0:
-                    return data
-        except (FileNotFoundError, KeyError, IndexError, ValueError, json.JSONDecodeError) as e:
-            print(f"Error reading standings data from {file_path}: {e}")
-    
-    return None
-
-def save_standings_data(league_id, data):
-    """Save standings data to a file."""
-    file_path = os.path.join(STANDINGS_DIR, f'standings_{league_id}.json')
-    with open(file_path, 'w') as file:
-        json.dump(data, file, indent=4)
-
-def load_rated_fixtures():
-    latest_file = find_latest_file(RATINGS_DIR)
-    if latest_file is None:
-        return {
-            'one_star_games': [],
-            'two_star_games': [],
-            'three_star_games': [],
-            'no_star_games': []
-        }
-
-    file_path = os.path.join(RATINGS_DIR, latest_file)
-    with open(file_path, 'r') as file:
-        data = json.load(file)
-        return {
-            'one_star_games': data.get('one_star_games', []),
-            'two_star_games': data.get('two_star_games', []),
-            'three_star_games': data.get('three_star_games', []),
-            'no_star_games': data.get('no_star_games', [])
-        }
-
-def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games):
-    date_str = datetime.now().strftime('%Y-%m-%d')
-    file_path = os.path.join(RATINGS_DIR, f'rated_fixtures_{date_str}.json')
-    
-    rated_fixtures = load_rated_fixtures()
-    
-    rated_fixtures.setdefault('one_star_games', []).extend(one_star_games)
-    rated_fixtures.setdefault('two_star_games', []).extend(two_star_games)
-    rated_fixtures.setdefault('three_star_games', []).extend(three_star_games)
-    rated_fixtures.setdefault('no_star_games', []).extend(no_star_games)
-    
-    with open(file_path, 'w') as file:
-        json.dump(rated_fixtures, file, indent=4)
 
 def main():
     print("Loading...")

@@ -1,6 +1,6 @@
 import json
 import os    
-from services.date_helper import is_data_up_to_date
+from helpers.date_helper import is_data_up_to_date
 from fetchers import fetch_team_stats
 from config import TEAMS_DIR
 
