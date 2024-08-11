@@ -3,7 +3,7 @@ import os
 import logging
 
 from fetchers import fetch_match_predictions
-from services.fetch_data import fetch_data_with_rate_limit
+from helpers.data.fetch_data import fetch_data_with_rate_limit
 from config import PREDICTIONS_DIR
 
 # Configure logging

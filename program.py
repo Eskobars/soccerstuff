@@ -1,12 +1,13 @@
 import os
 
-from services.fetch_data import fetch_data_with_rate_limit
 from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures
 from services.standings import get_standings_data, extract_team_info, get_team_rank
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
-from helpers.data.find_team_data import find_team_data_by_name
 from services.bets import save_bets
+from helpers.data.find_team_data import find_team_data_by_name
+from helpers.data.fetch_data import fetch_data_with_rate_limit
 from helpers.data.standings_data import save_standings_data, load_standings_data
+
 from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
 
 # Create directories if they do not exist
@@ -43,23 +44,21 @@ def main():
     three_star_games = []
     no_star_games = []
     league_standings_cache = {}
-    failed_league_ids = set()  # Set to track league IDs that failed
+    failed_league_ids = set()
 
-    # Initialize counters
     total_games_processed = 0
     games_rated = 0
     games_skipped = 0
 
     all_fixtures_data = fetch_data_with_rate_limit(get_fixtures_data)
-
     filtered_fixtures = filter_fixtures(all_fixtures_data, statuses_to_search, trusted_countries)
 
     for fixture_data in filtered_fixtures:
-
-        total_games_processed += 1  # Increment total games processed
+        total_games_processed += 1
         fixture_id = fixture_data['fixture']['id']
         if fixture_id in processed_fixture_ids:
-            games_skipped += 1  # Increment skipped games
+            games_skipped += 1
+            
             continue
         
         fixture_id = fixture_data['fixture']['id']
@@ -76,6 +75,7 @@ def main():
         # Skip fetching standings data if league_id is in the failed set
         if league_id in failed_league_ids:
             print(f"League ID {league_id} has previously failed. Skipping fixture {fixture_id}.")
+
             fixture_info = {
                 'fixture_data': fixture_data,
                 'winning_team': None,
@@ -84,7 +84,8 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
-            games_skipped += 1  # Increment skipped games
+            games_skipped += 1  
+
             continue
 
         # Check if standings data is already cached or in files
@@ -94,8 +95,8 @@ def main():
                 standings_data = fetch_data_with_rate_limit(get_standings_data, league_id)
                 if not standings_data or not standings_data.get('response'):
                     print(f"Standings data is empty or invalid for league {league_id}. Skipping fixture {fixture_id}.")
-                    # Add to failed set and continue
                     failed_league_ids.add(league_id)
+
                     fixture_info = {
                         'fixture_data': fixture_data,
                         'winning_team': None,
@@ -104,17 +105,17 @@ def main():
                         'warning': warning
                     }
                     no_star_games.append(fixture_info)
-                    games_skipped += 1  # Increment skipped games
+                    games_skipped += 1
+
                     continue
-                # Save fetched standings data to file
                 save_standings_data(league_id, standings_data)
             league_standings_cache[league_id] = extract_team_info(standings_data)
         
         team_info = league_standings_cache.get(league_id)
 
-        # If team info extraction fails, add to no_star_games and skip to next fixture
         if not team_info:
             print(f"No team info extracted for league {league_id}. Skipping fixture {fixture_id}.")
+
             fixture_info = {
                 'fixture_data': fixture_data,
                 'winning_team': None,
@@ -123,15 +124,16 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
-            games_skipped += 1  # Increment skipped games
+            games_skipped += 1
+
             continue
 
         home_team_rank = get_team_rank(team_info, home_team_name)
         away_team_rank = get_team_rank(team_info, away_team_name)
 
-        # If rank data is missing, add to no_star_games and skip to next fixture
         if home_team_rank is None or away_team_rank is None:
             print(f"Rank data missing for fixture {fixture_id}. Skipping fixture {fixture_id}.")
+
             fixture_info = {
                 'fixture_data': fixture_data,
                 'winning_team': None,
@@ -140,13 +142,15 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
-            games_skipped += 1  # Increment skipped games
+            games_skipped += 1
+
             continue
 
         if abs(home_team_rank - away_team_rank) >= 4:
             predictions = get_fixture_prediction(fixture_id)
             if not predictions:
                 print(f"No predictions available for fixture {fixture_id}. Skipping fixture {fixture_id}.")
+
                 fixture_info = {
                     'fixture_data': fixture_data,
                     'winning_team': None,
@@ -155,15 +159,15 @@ def main():
                     'warning': warning
                 }
                 no_star_games.append(fixture_info)
-                games_skipped += 1  # Increment skipped games
+                games_skipped += 1
+
                 continue
 
-            # Parse from team_info to selected team
             home_team_data = find_team_data_by_name(home_team_name, team_info)
             away_team_data = find_team_data_by_name(away_team_name, team_info)
             home_team_points, away_team_points, rating, winner_name, points_winner_name, comment = rate_fixture(predictions, home_team_data, away_team_data)
 
-            # Recalculate the rating after adjusting for injuries (if applicable)
+            # Recalculate the rating after adjusting for injuries (TODO)
             rating = determine_rating(home_team_points, away_team_points)
             
             fixture_info = {
@@ -185,7 +189,7 @@ def main():
             elif rating == 'one_star':
                 one_star_games.append(fixture_info)
 
-            games_rated += 1  # Increment rated games
+            games_rated += 1
         else:
             print(f"Rank difference between {home_team_name} and {away_team_name} is 4 or less. Skipping fixture {fixture_id}.")
             fixture_info = {
@@ -198,7 +202,7 @@ def main():
                 'warning': warning
             }
             no_star_games.append(fixture_info)
-            games_skipped += 1  # Increment skipped games
+            games_skipped += 1
 
         save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games)
         one_star_games.clear()
@@ -214,7 +218,6 @@ def main():
         'one_star_games': rated_fixtures['one_star_games']
     }
 
-    # Combine all games into a single list and keep track of indices
     indexed_games = []
     index_counter = 1
 
@@ -271,7 +274,6 @@ def main():
                     selected_fixture = indexed_games[game_number - 1]
                     multiplier = float(input("Enter the multiplier: ").strip())
 
-                    # Save the bet with the selected fixture's points
                     bet = {
                         'team_name': f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}",
                         'multiplier': multiplier,
