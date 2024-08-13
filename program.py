@@ -4,11 +4,11 @@ from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fix
 from services.standings import get_standings_data, extract_team_info, get_team_rank
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
 from services.bets import save_bets
+from services.players import get_key_players_by_team, get_player_data
+from services.injuries import filter_injuries_to_player_ids, get_injury_data
+
 from helpers.data.find_team_data import find_team_data_by_name
 from helpers.data.standings_data import save_standings_data, load_standings_data
-from services.players import get_key_players_by_team
-from services.injuries import filter_injuries_to_player_ids, get_injury_data
-from services.players import get_player_data
 
 from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
 
