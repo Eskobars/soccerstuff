@@ -10,7 +10,7 @@ from services.injuries import filter_injuries_to_player_ids, get_injury_data
 from helpers.data.find_team_data import find_team_data_by_name
 from helpers.data.standings_data import save_standings_data, load_standings_data
 
-from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
+from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR, BETS_DIR
 
 # Create directories if they do not exist
 os.makedirs(PREDICTIONS_DIR, exist_ok=True)
@@ -18,7 +18,8 @@ os.makedirs(INJURIES_DIR, exist_ok=True)
 os.makedirs(PLAYERS_DIR, exist_ok=True)
 os.makedirs(STANDINGS_DIR, exist_ok=True)
 os.makedirs(RATINGS_DIR, exist_ok=True)
-os.makedirs(TEAMS_DIR, exist_ok = True)
+os.makedirs(TEAMS_DIR, exist_ok=True)
+os.makedirs(BETS_DIR, exist_ok=True)
 
 def main():
     print("Loading...")
