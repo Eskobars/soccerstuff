@@ -231,21 +231,21 @@ def determine_rating(home_team_points, away_team_points):
     points_difference = abs(home_team_points - away_team_points)
     if away_team_points > home_team_points:
         # Adjust rating if away team wins
-        if points_difference > 6:
-            return 'four_star'  # Example: give a higher rating if the away team wins by a large margin
-        elif points_difference > 4:
-            return 'three_star'
-        elif points_difference > 2:
+        if points_difference >= 6:
+            return 'three_star'  # Example: give a higher rating if the away team wins by a large margin
+        elif points_difference >= 4:
             return 'two_star'
-        else:
+        elif points_difference >= 2:
             return 'one_star'
+        else:
+            return 'no_star'
     else:
         # Original rating if the home team wins or it's a close game
-        if points_difference > 6:
+        if points_difference >= 6:
             return 'three_star'
-        elif points_difference > 4:
+        elif points_difference >= 4:
             return 'two_star'
-        elif points_difference > 2:
+        elif points_difference >= 2:
             return 'one_star'
         else:
             return 'no_star'

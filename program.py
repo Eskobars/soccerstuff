@@ -6,6 +6,9 @@ from services.predictions import rate_fixture, get_fixture_prediction, determine
 from services.bets import save_bets
 from helpers.data.find_team_data import find_team_data_by_name
 from helpers.data.standings_data import save_standings_data, load_standings_data
+from services.players import get_key_players_by_team
+from services.injuries import filter_injuries_to_player_ids, get_injury_data
+from services.players import get_player_data
 
 from config import PREDICTIONS_DIR, INJURIES_DIR, PLAYERS_DIR, STANDINGS_DIR, RATINGS_DIR, TEAMS_DIR
 
@@ -187,8 +190,8 @@ def main():
                 two_star_games.append(fixture_info)
             elif rating == 'one_star':
                 one_star_games.append(fixture_info)
-
             games_rated += 1
+            
         else:
             print(f"Rank difference between {home_team_name} and {away_team_name} is 4 or less. Skipping fixture {fixture_id}.")
             fixture_info = {
@@ -260,10 +263,69 @@ def main():
     print(f"Total games rated: {games_rated}")
     print(f"Total games skipped: {games_skipped}")
 
-    # Ask user if they want to save any bets
+    # This loop handles retrieving injury data for selected matches
+    while True:
+        get_injuries = input("\nWould you like to get injury data for any game? (yes (y) / no (n)): ").strip().lower()
+        if get_injuries in ['no', 'n']:
+            break
+        if get_injuries in ['yes', 'y']:
+            try:
+                game_number = int(input("Enter the game number: ").strip())
+                if 1 <= game_number < index_counter:
+                    selected_fixture = indexed_games[game_number - 1]
+                    fixture_id = selected_fixture['fixture_data']['fixture']['id']
+
+                    # Fetch the player data for the home and away teams
+                    players_home, players_away = get_player_data(fixture_id)
+
+                    # Determine the key players for both teams
+                    key_players_home, key_players_away = get_key_players_by_team(players_home, players_away)
+
+                    # Extract the player IDs from the key players for filtering injuries
+                    key_player_ids_home = {player['id'] for player in key_players_home}
+                    key_player_ids_away = {player['id'] for player in key_players_away}
+
+                    # Fetch injury data for the fixture
+                    home_injuries, away_injuries = get_injury_data(fixture_id)
+
+                    # Filter injuries to include only key players' injuries
+                    key_home_injuries = filter_injuries_to_player_ids({'response': home_injuries}, key_player_ids_home)
+                    key_away_injuries = filter_injuries_to_player_ids({'response': away_injuries}, key_player_ids_away)
+
+                    # Print injury information
+                    print(f"Injuries for {selected_fixture['fixture_data']['teams']['home']['name']}:")
+                    for injury in home_injuries:
+                        print(f"- {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']}")
+                    
+                    # Print key player injuries for the home team if any
+                    if key_home_injuries:
+                        print("Key Injured Players:")
+                        for injury in home_injuries:
+                            if injury['player']['id'] in key_home_injuries:
+                                print(f"*** {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']} ***")
+
+                    print(f"Injuries for {selected_fixture['fixture_data']['teams']['away']['name']}:")
+                    for injury in away_injuries:
+                        print(f"- {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']}")
+                    
+                    # Print key player injuries for the away team if any
+                    if key_away_injuries:
+                        print("Key Injured Players:")
+                        for injury in away_injuries:
+                            if injury['player']['id'] in key_away_injuries:
+                                print(f"*** {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']} ***")
+
+                else:
+                    print("Invalid game number.")
+            except ValueError:
+                print("Please enter a valid number.")
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
+
+    # This loop handles saving bets for selected matches
     bets = []
     while True:
-        save_bet = input("\nWould you like to save a bet? ((yes (y) / no (n)): ").strip().lower()
+        save_bet = input("\nWould you like to save a bet? (yes (y) / no (n)): ").strip().lower()
         if save_bet in ['no', 'n']:
             break
         if save_bet in ['yes', 'y']:
@@ -274,11 +336,11 @@ def main():
                     multiplier = float(input("Enter the multiplier: ").strip())
 
                     bet = {
-                        'team_name': f"{game['fixture_data']['teams']['home']['name']} vs {game['fixture_data']['teams']['away']['name']}",
+                        'team_name': f"{selected_fixture['fixture_data']['teams']['home']['name']} vs {selected_fixture['fixture_data']['teams']['away']['name']}",
                         'multiplier': multiplier,
                         'home_team_points': selected_fixture['home_team_points'],
                         'away_team_points': selected_fixture['away_team_points'],
-                        'predicted_winner' : f"Predicted winner: {game['winning_team']}",
+                        'predicted_winner': f"Predicted winner: {selected_fixture['winning_team']}",
                     }
                     bets.append(bet)
                 else:
@@ -286,6 +348,7 @@ def main():
             except ValueError:
                 print("Invalid input. Please enter a valid number.")
 
+    # Save the bets if there are any
     if bets:
         save_bets(bets)
         print("Bets have been saved.")

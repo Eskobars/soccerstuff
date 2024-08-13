@@ -24,7 +24,7 @@ def get_injury_data(fixture_id):
 
     return home_team_injuries, away_team_injuries
 
-def get_injured_players(injury_data, player_ids):
+def filter_injuries_to_player_ids(injury_data, player_ids):
     injured_players = set()
     for injury in injury_data.get('response', []):
         player_id = injury['player']['id']
