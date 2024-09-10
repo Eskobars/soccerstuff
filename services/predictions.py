@@ -79,8 +79,10 @@ def rate_fixture(predictions, home_team_data, away_team_data):
         home_team_name = home_team_data.get('team_name', 'Unknown')
         away_team_name = away_team_data.get('team_name', 'Unknown')
 
-        home_form = home_team_data.get('form', '')
-        away_form = away_team_data.get('form', '')
+        home_team_item.get('league').get('form')
+
+        home_form = home_team_item.get('league').get('form', '')
+        away_form = away_team_item.get('league').get('form', '')
 
         # Ensure form has at least five characters
         if not home_form or not away_form or len(home_form) < 5 or len(away_form) < 5:
@@ -228,11 +230,10 @@ def determine_winner(home_team_points, away_team_points, home_team_name, away_te
         return "Draw"
 
 def determine_rating(home_team_points, away_team_points):
-    points_difference = abs(home_team_points - away_team_points)
     if away_team_points > home_team_points:
-        # Adjust rating if away team wins
+        points_difference = abs(away_team_points - home_team_points)
         if points_difference >= 6:
-            return 'three_star'  # Example: give a higher rating if the away team wins by a large margin
+            return 'three_star'
         elif points_difference >= 4:
             return 'two_star'
         elif points_difference >= 2:
@@ -240,7 +241,7 @@ def determine_rating(home_team_points, away_team_points):
         else:
             return 'no_star'
     else:
-        # Original rating if the home team wins or it's a close game
+        points_difference = abs(home_team_points - away_team_points)
         if points_difference >= 6:
             return 'three_star'
         elif points_difference >= 4:

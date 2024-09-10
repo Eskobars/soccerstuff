@@ -31,15 +31,14 @@ def main():
         'Brasileirão Serie A', 'Argentine Primera División'
     }
     trusted_countries = {
-        'England', 'Spain', 'Italy', 'Germany', 'France', 'Portugal',
-        'Netherlands', 'USA', 'Brazil', 'Argentina'
+        'England', 'Spain', 'Italy', 'Germany', 'France', 'Portugal', 'Netherlands'
     }
 
     rated_fixtures = load_rated_fixtures()
     processed_fixture_ids = {
         fixture['fixture_data']['fixture']['id']
         for rating in rated_fixtures.values()
-        for fixture in rating
+        for fixture in rating 
     }
 
     one_star_games = []
