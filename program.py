@@ -5,8 +5,7 @@ from services.standings import get_standings_data, extract_team_info, get_team_r
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
 from services.bets import save_bets
 from services.players import get_key_players_by_team, get_player_data
-from services.injuries import filter_injuries_to_player_ids, get_injury_data
-
+from services.injuries import filter_injuries_by_player_ids, get_injury_data
 from helpers.data.find_team_data import find_team_data_by_name
 from helpers.data.standings_data import save_standings_data, load_standings_data
 
@@ -285,32 +284,20 @@ def main():
                     home_injuries, away_injuries = get_injury_data(fixture_id)
 
                     # Filter injuries to include only key players' injuries
-                    key_home_injuries = filter_injuries_to_player_ids({'response': home_injuries}, key_player_ids_home)
-                    key_away_injuries = filter_injuries_to_player_ids({'response': away_injuries}, key_player_ids_away)
+                    key_home_injuries = filter_injuries_by_player_ids({'response': home_injuries}, key_player_ids_home)
+                    key_away_injuries = filter_injuries_by_player_ids({'response': away_injuries}, key_player_ids_away)
 
-                    # Print injury information
+                    # Print injury information for the home team
                     print(f"Injuries for {selected_fixture['fixture_data']['teams']['home']['name']}:")
-                    for injury in home_injuries:
-                        print(f"- {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']}")
-                    
-                    # Print key player injuries for the home team if any
-                    if key_home_injuries:
-                        print("Key Injured Players:")
-                        for injury in home_injuries:
-                            if injury['player']['id'] in key_home_injuries:
-                                print(f"*** {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']} ***")
+                    for injury in key_home_injuries:  # key_home_injuries now contains full injury data
+                        player = injury['player']
+                        print(f"- {player['name']} ({player['position']}) - {injury['type']} - {injury['status']}")
 
+                    # Print injury information for the away team
                     print(f"Injuries for {selected_fixture['fixture_data']['teams']['away']['name']}:")
-                    for injury in away_injuries:
-                        print(f"- {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']}")
-                    
-                    # Print key player injuries for the away team if any
-                    if key_away_injuries:
-                        print("Key Injured Players:")
-                        for injury in away_injuries:
-                            if injury['player']['id'] in key_away_injuries:
-                                print(f"*** {injury['player_name']} ({injury['position']}) - {injury['type']} - {injury['status']} ***")
-
+                    for injury in key_away_injuries:  # key_away_injuries now contains full injury data
+                        player = injury['player']
+                        print(f"- {player['name']} ({player['position']}) - {injury['type']} - {injury['status']}")
                 else:
                     print("Invalid game number.")
             except ValueError:

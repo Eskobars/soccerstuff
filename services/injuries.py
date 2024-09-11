@@ -24,10 +24,11 @@ def get_injury_data(fixture_id):
 
     return home_team_injuries, away_team_injuries
 
-def filter_injuries_to_player_ids(injury_data, player_ids):
-    injured_players = set()
+def filter_injuries_by_player_ids(injury_data, player_ids):
+    # Filter and return injury data for players whose IDs are in player_ids
+    injured_players = []
     for injury in injury_data.get('response', []):
         player_id = injury['player']['id']
         if player_id in player_ids:
-            injured_players.add(player_id)
+            injured_players.append(injury)  # Append the full injury data
     return injured_players
