@@ -207,18 +207,14 @@ def main():
             games_skipped += 1
 
         save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games)
-        one_star_games.clear()
-        two_star_games.clear()
-        three_star_games.clear()
-        no_star_games.clear()
-    
-    load_rated_fixtures()
 
-    all_games = {
-        'three_star_games': rated_fixtures['three_star_games'],
-        'two_star_games': rated_fixtures['two_star_games'],
-        'one_star_games': rated_fixtures['one_star_games']
-    }
+    rated_fixtures = load_rated_fixtures()
+
+    # all_games = {
+    #     'three_star_games': rated_fixtures['three_star_games'],
+    #     'two_star_games': rated_fixtures['two_star_games'],
+    #     'one_star_games': rated_fixtures['one_star_games']
+    # }
 
     indexed_games = []
     index_counter = 1

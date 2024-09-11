@@ -96,6 +96,17 @@ def filter_fixtures(all_fixtures, statuses, countries):
 
     return filtered_fixtures
 
+def remove_duplicates(game_list):
+    seen = set()
+    unique_games = []
+    for game in game_list:
+        # Serialize the dictionary to a JSON string (which is hashable) to track uniqueness
+        game_str = json.dumps(game, sort_keys=True)  # sort_keys ensures consistent order for comparison
+        if game_str not in seen:
+            seen.add(game_str)
+            unique_games.append(game)
+    return unique_games
+
 def load_rated_fixtures():
     latest_file = find_latest_file(RATINGS_DIR)
     if latest_file is None:
@@ -110,10 +121,10 @@ def load_rated_fixtures():
     with open(file_path, 'r') as file:
         data = json.load(file)
         return {
-            'one_star_games': data.get('one_star_games', []),
-            'two_star_games': data.get('two_star_games', []),
-            'three_star_games': data.get('three_star_games', []),
-            'no_star_games': data.get('no_star_games', [])
+            'one_star_games': remove_duplicates(data.get('one_star_games', [])),
+            'two_star_games': remove_duplicates(data.get('two_star_games', [])),
+            'three_star_games': remove_duplicates(data.get('three_star_games', [])),
+            'no_star_games': remove_duplicates(data.get('no_star_games', []))
         }
 
 def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_star_games):
@@ -121,11 +132,18 @@ def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_sta
     file_path = os.path.join(RATINGS_DIR, f'rated_fixtures_{date_str}.json')
     
     rated_fixtures = load_rated_fixtures()
-    
-    rated_fixtures.setdefault('one_star_games', []).extend(one_star_games)
-    rated_fixtures.setdefault('two_star_games', []).extend(two_star_games)
-    rated_fixtures.setdefault('three_star_games', []).extend(three_star_games)
-    rated_fixtures.setdefault('no_star_games', []).extend(no_star_games)
-    
+
+    # Combine new and old data, removing duplicates
+    rated_fixtures['one_star_games'] = remove_duplicates(rated_fixtures.get('one_star_games', []) + one_star_games)
+    rated_fixtures['two_star_games'] = remove_duplicates(rated_fixtures.get('two_star_games', []) + two_star_games)
+    rated_fixtures['three_star_games'] = remove_duplicates(rated_fixtures.get('three_star_games', []) + three_star_games)
+    rated_fixtures['no_star_games'] = remove_duplicates(rated_fixtures.get('no_star_games', []) + no_star_games)
+
+    # Sort the games (optional, for consistency)
+    rated_fixtures['one_star_games'].sort(key=lambda x: str(x))
+    rated_fixtures['two_star_games'].sort(key=lambda x: str(x))
+    rated_fixtures['three_star_games'].sort(key=lambda x: str(x))
+    rated_fixtures['no_star_games'].sort(key=lambda x: str(x))
+
     with open(file_path, 'w') as file:
         json.dump(rated_fixtures, file, indent=4)
