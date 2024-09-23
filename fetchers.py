@@ -116,3 +116,40 @@ def fetch_fixtures_for_day():
     except Exception as e:
         print(f"An error occurred while fetching fixtures: {e}")
         return None
+    
+def fetch_fixture(fixture_id):
+    try:
+        conn = http.client.HTTPSConnection(BASE_URL)
+        
+        headers = {
+            'x-rapidapi-host': BASE_URL,
+            'x-rapidapi-key': API_KEY
+        }
+
+        # Create the request URL for a specific fixture's score
+        url = f"/fixtures?id={fixture_id}"
+        conn.request("GET", url, headers=headers)
+
+        res = conn.getresponse()
+        data = res.read()
+
+        # Check the response status
+        if res.status != 200:
+            print(f"Error fetching fixture score: {res.status} - {res.reason}")
+            return None
+
+        # Decode the JSON data
+        parsed_data = json.loads(data.decode("utf-8"))
+
+        # Check for the expected structure in the data
+        if 'response' not in parsed_data or not parsed_data['response']:
+            print("No 'response' field or fixture data found in the response.")
+            return None
+
+        # Extract the fixture score
+        fixture = parsed_data['response'][0]  # Assuming first element is the fixture data
+        return fixture
+
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return None

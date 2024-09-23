@@ -1,14 +1,11 @@
 import os
 import json
 
+from helpers.data.latest_file import find_latest_file
+
 from config import BETS_DIR
 
 def save_bets(bets):
-    """Save bets to a file."""
-    
-    ### To solve issue with saving when running from .exe
-    ## file_path = r'C:\absolute\path\to\folder\data.txt'
-
     file_path = os.path.join(BETS_DIR, 'bets.json')
     os.makedirs(BETS_DIR, exist_ok=True)
 
@@ -25,3 +22,14 @@ def save_bets(bets):
 
     except Exception as e:
         print(f"Error saving bets: {e}")
+
+def load_saved_bets():
+    latest_file = find_latest_file(BETS_DIR)
+    if latest_file is None:
+        return [] 
+    
+    file_path = os.path.join(BETS_DIR, latest_file)
+    with open(file_path, 'r') as file:
+        bets_data = json.load(file)
+        return bets_data 
+    

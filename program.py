@@ -1,9 +1,9 @@
 import os
 
-from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures
+from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures, check_bets_success_rate
 from services.standings import get_standings_data, extract_team_info, get_team_rank
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
-from services.bets import save_bets
+from services.bets import save_bets, load_saved_bets
 from services.players import get_key_players_by_team, get_player_data
 from services.injuries import filter_injuries_by_player_ids, get_injury_data
 from helpers.data.find_team_data import find_team_data_by_name
@@ -25,10 +25,11 @@ def main():
 
     statuses_to_search = ['NS', 'TBD']
     trusted_leagues = {
-        'Premier League', 'La Liga', 'Serie A', 'Bundesliga', 'Ligue 1',
-        'Primeira Liga', 'Eredivisie', 'Major League Soccer',
-        'Brasileirão Serie A', 'Argentine Primera División'
+        'Allsvenskan', 'Ettan - Norra', 'Ettan - S\u00f6dra', 'Superettan', 'Primera B', 'Primeira Liga', 'Eliteserien',  'Eredivisie',
+        'Primera Divisi\u00f3n RFEF - Group 1', 'Primera Divisi\u00f3n RFEF - Group 2', 'Ligue 1', '2. Bundesliga', 'Bundesliga', 'Serie A', 'Serie B',
+        'La Liga', 'Segunda Divisi\u00f3n', 'Championship', 'Premier League'
     }
+
     trusted_countries = {
         'England', 'Spain', 'Italy', 'Germany', 'France', 'Portugal', 'Netherlands'
     }
@@ -319,11 +320,12 @@ def main():
                     multiplier = float(input("Enter the multiplier: ").strip())
 
                     bet = {
+                        'fixture_id': selected_fixture['fixture_data']['fixture']['id'],
                         'team_name': f"{selected_fixture['fixture_data']['teams']['home']['name']} vs {selected_fixture['fixture_data']['teams']['away']['name']}",
                         'multiplier': multiplier,
                         'home_team_points': selected_fixture['home_team_points'],
                         'away_team_points': selected_fixture['away_team_points'],
-                        'predicted_winner': f"Predicted winner: {selected_fixture['winning_team']}",
+                        'predicted_winner': f"Predicted winner: {selected_fixture['winning_team']}"
                     }
                     bets.append(bet)
                 else:
@@ -337,6 +339,16 @@ def main():
         print("Bets have been saved.")
     else:
         print("No bets were saved.")
+
+    while True:
+        check_bets = input("\nWould you like to check the percentage of successful bets? (yes (y) / no (n)): ").strip().lower()
+        if check_bets in ['no', 'n']:
+            break
+        if check_bets in ['yes', 'y']:
+            bets = load_saved_bets() 
+            check_bets_success_rate(bets)
+        else:
+            print("Invalid input. Please enter 'yes' or 'no'.")
 
 if __name__ == "__main__":
     main()

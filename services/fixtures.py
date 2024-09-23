@@ -2,8 +2,8 @@ import json
 import os
 
 from datetime import datetime
-from fetchers import fetch_fixtures_for_day
-from helpers.data.latest_file import find_latest_file
+from fetchers import fetch_fixtures_for_day, fetch_fixture
+from helpers.data.latest_file import find_latest_rated_fixtures
 from helpers.data.fetch_data import fetch_data_with_rate_limit
 
 from config import FIXTURES_DIR, RATINGS_DIR
@@ -50,6 +50,48 @@ def get_fixtures_data():
     
     return all_fixtures_data
 
+def get_fixture(fixture_id):
+    """
+    Fetch the fixture score for a specific fixture ID.
+    Fetches from local storage or an external API if data is missing or outdated.
+    """
+    filename = os.path.join(FIXTURES_DIR, f'fixture_{fixture_id}_score.json')
+    metadata_file = os.path.join(FIXTURES_DIR, f'metadata_{fixture_id}.json')
+    
+    os.makedirs(FIXTURES_DIR, exist_ok=True)
+    
+    current_date = datetime.now().strftime('%Y-%m-%d')
+    
+    def is_data_valid():
+        if not os.path.isfile(filename) or not os.path.isfile(metadata_file):
+            return False
+        
+        # Check if the score file is empty
+        if os.path.getsize(filename) == 0:
+            return False
+        
+        with open(metadata_file, 'r') as f:
+            metadata = json.load(f)
+        stored_date = metadata.get('date')
+        return stored_date == current_date
+    
+    if is_data_valid():
+        with open(filename, 'r') as f:
+            fixture_score_data = json.load(f)
+    else:
+        fixture_score_data = fetch_data_with_rate_limit(fetch_fixture, fixture_id)
+        
+        with open(filename, 'w') as f:
+            json.dump(fixture_score_data, f, indent=4)
+        
+        # Update metadata file with the current date
+        with open(metadata_file, 'w') as f:
+            json.dump({'date': current_date}, f, indent=4)
+        
+        print(f"Fixture score data for fixture {fixture_id} fetched and stored successfully")
+    
+    return fixture_score_data
+
 def filter_fixtures(all_fixtures, statuses, countries):
     """
     Filters fixtures based on provided statuses and countries.
@@ -61,9 +103,7 @@ def filter_fixtures(all_fixtures, statuses, countries):
     """
     filtered_fixtures = []
 
-    # Check if data is a dictionary
     if isinstance(all_fixtures, dict):
-        # Extract fixtures from the 'response' key if it exists
         if 'response' in all_fixtures:
             all_fixtures = all_fixtures['response']
         else:
@@ -74,18 +114,15 @@ def filter_fixtures(all_fixtures, statuses, countries):
         return filtered_fixtures
 
     for fixture in all_fixtures:
-        # Ensure 'league' and 'fixture' keys exist
         if 'league' not in fixture or 'fixture' not in fixture:
             print(f"Fixture missing league or fixture data: {fixture}")
             continue
         
         league_country = fixture['league'].get('country', '')
 
-        # Check if the country matches the filtering criteria
         if league_country not in countries:
             continue
         
-        # Ensure 'status' key exists in fixture data
         if 'status' not in fixture['fixture']:
             print(f"Fixture missing status data: {fixture}")
             continue
@@ -100,15 +137,14 @@ def remove_duplicates(game_list):
     seen = set()
     unique_games = []
     for game in game_list:
-        # Serialize the dictionary to a JSON string (which is hashable) to track uniqueness
-        game_str = json.dumps(game, sort_keys=True)  # sort_keys ensures consistent order for comparison
+        game_str = json.dumps(game, sort_keys=True)
         if game_str not in seen:
             seen.add(game_str)
             unique_games.append(game)
     return unique_games
 
 def load_rated_fixtures():
-    latest_file = find_latest_file(RATINGS_DIR)
+    latest_file = find_latest_rated_fixtures(RATINGS_DIR)
     if latest_file is None:
         return {
             'one_star_games': [],
@@ -133,13 +169,11 @@ def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_sta
     
     rated_fixtures = load_rated_fixtures()
 
-    # Combine new and old data, removing duplicates
     rated_fixtures['one_star_games'] = remove_duplicates(rated_fixtures.get('one_star_games', []) + one_star_games)
     rated_fixtures['two_star_games'] = remove_duplicates(rated_fixtures.get('two_star_games', []) + two_star_games)
     rated_fixtures['three_star_games'] = remove_duplicates(rated_fixtures.get('three_star_games', []) + three_star_games)
     rated_fixtures['no_star_games'] = remove_duplicates(rated_fixtures.get('no_star_games', []) + no_star_games)
 
-    # Sort the games (optional, for consistency)
     rated_fixtures['one_star_games'].sort(key=lambda x: str(x))
     rated_fixtures['two_star_games'].sort(key=lambda x: str(x))
     rated_fixtures['three_star_games'].sort(key=lambda x: str(x))
@@ -147,3 +181,67 @@ def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_sta
 
     with open(file_path, 'w') as file:
         json.dump(rated_fixtures, file, indent=4)
+
+def check_bets_success_rate(bets):
+    successful_bets = 0
+    total_bets = len(bets)
+
+    if total_bets == 0:
+        print("No bets available to check.")
+        return
+
+    for bet in bets:
+        if 'actual_home_team_points' in bet and 'actual_away_team_points' in bet:
+            print(f"Bet for {bet['team_name']} already has the actual score. Skipping...")
+            continue
+
+        fixture_id = bet['fixture_id']
+        predicted_winner = bet['predicted_winner'].split(": ")[1]
+
+        actual_home_score, actual_away_score = get_fixture_score(fixture_id)
+
+        if actual_home_score is None or actual_away_score is None:
+            print(f"Score data not available for fixture {fixture_id}. Skipping this bet.")
+            continue
+
+        if actual_home_score > actual_away_score:
+            actual_winner = bet['team_name'].split(" vs ")[0]
+        elif actual_away_score > actual_home_score:
+            actual_winner = bet['team_name'].split(" vs ")[1]
+        else:
+            actual_winner = "Draw"
+
+        success = (predicted_winner == actual_winner)
+        
+        bet['actual_home_team_points'] = actual_home_score
+        bet['actual_away_team_points'] = actual_away_score
+        bet['correct'] = success
+
+        if success:
+            print(f"Bet for {bet['team_name']} was successful! Actual winner: {actual_winner}")
+            successful_bets += 1
+        else:
+            print(f"Bet for {bet['team_name']} failed. Actual winner: {actual_winner}")
+
+    success_rate = (successful_bets / total_bets) * 100
+    print(f"\nTotal bets: {total_bets}")
+    print(f"Successful bets: {successful_bets}")
+    print(f"Success rate: {success_rate:.2f}%")
+
+    save_updated_bets(bets)
+
+def get_fixture_score(fixture_id):
+    fixture_data = get_fixture(fixture_id)
+    
+    actual_home_score = fixture_data['score']['fulltime']['home']
+    actual_away_score = fixture_data['score']['fulltime']['away']
+    
+    if actual_home_score is None or actual_away_score is None:
+        print(f"Score data not available for fixture {fixture_id}")
+        return None, None  
+
+    return actual_home_score, actual_away_score
+
+def save_updated_bets(bets):
+    with open('bets.json', 'w') as f:
+        json.dump(bets, f, indent=4)
