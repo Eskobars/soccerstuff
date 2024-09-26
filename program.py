@@ -1,9 +1,9 @@
 import os
 
-from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures, check_bets_success_rate
+from services.fixtures import filter_fixtures, get_fixtures_data, load_rated_fixtures, save_rated_fixtures
 from services.standings import get_standings_data, extract_team_info, get_team_rank
 from services.predictions import rate_fixture, get_fixture_prediction, determine_rating
-from services.bets import save_bets, load_saved_bets
+from services.bets import save_bets, load_saved_bets, check_bets_success_rate
 from services.players import get_key_players_by_team, get_player_data
 from services.injuries import filter_injuries_by_player_ids, get_injury_data
 from helpers.data.find_team_data import find_team_data_by_name
@@ -31,7 +31,7 @@ def main():
     }
 
     trusted_countries = {
-        'England', 'Spain', 'Italy', 'Germany', 'France', 'Portugal', 'Netherlands'
+        'England', 'Spain', 'Italy', 'Germany', 'France', 'Portugal', 'Netherlands', 'Sweden', 'Norway'
     }
 
     rated_fixtures = load_rated_fixtures()

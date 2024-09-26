@@ -5,6 +5,9 @@
         "multiplier": 2.63,
         "home_team_points": 3,
         "away_team_points": 1,
-        "predicted_winner": "Predicted winner: Huesca"
+        "predicted_winner": "Predicted winner: Huesca",
+        "actual_home_team_points": 4,
+        "actual_away_team_points": 1,
+        "correct": true
     }
 ]

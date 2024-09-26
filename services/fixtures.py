@@ -3,10 +3,10 @@ import os
 
 from datetime import datetime
 from fetchers import fetch_fixtures_for_day, fetch_fixture
-from helpers.data.latest_file import find_latest_rated_fixtures
+from helpers.data.latest_file import find_latest_rated_fixtures, find_latest_file
 from helpers.data.fetch_data import fetch_data_with_rate_limit
 
-from config import FIXTURES_DIR, RATINGS_DIR
+from config import FIXTURES_DIR, RATINGS_DIR, BETS_DIR
 
 def get_fixtures_data():
     filename = os.path.join(FIXTURES_DIR, 'fixtures_data.json')
@@ -182,54 +182,6 @@ def save_rated_fixtures(one_star_games, two_star_games, three_star_games, no_sta
     with open(file_path, 'w') as file:
         json.dump(rated_fixtures, file, indent=4)
 
-def check_bets_success_rate(bets):
-    successful_bets = 0
-    total_bets = len(bets)
-
-    if total_bets == 0:
-        print("No bets available to check.")
-        return
-
-    for bet in bets:
-        if 'actual_home_team_points' in bet and 'actual_away_team_points' in bet:
-            print(f"Bet for {bet['team_name']} already has the actual score. Skipping...")
-            continue
-
-        fixture_id = bet['fixture_id']
-        predicted_winner = bet['predicted_winner'].split(": ")[1]
-
-        actual_home_score, actual_away_score = get_fixture_score(fixture_id)
-
-        if actual_home_score is None or actual_away_score is None:
-            print(f"Score data not available for fixture {fixture_id}. Skipping this bet.")
-            continue
-
-        if actual_home_score > actual_away_score:
-            actual_winner = bet['team_name'].split(" vs ")[0]
-        elif actual_away_score > actual_home_score:
-            actual_winner = bet['team_name'].split(" vs ")[1]
-        else:
-            actual_winner = "Draw"
-
-        success = (predicted_winner == actual_winner)
-        
-        bet['actual_home_team_points'] = actual_home_score
-        bet['actual_away_team_points'] = actual_away_score
-        bet['correct'] = success
-
-        if success:
-            print(f"Bet for {bet['team_name']} was successful! Actual winner: {actual_winner}")
-            successful_bets += 1
-        else:
-            print(f"Bet for {bet['team_name']} failed. Actual winner: {actual_winner}")
-
-    success_rate = (successful_bets / total_bets) * 100
-    print(f"\nTotal bets: {total_bets}")
-    print(f"Successful bets: {successful_bets}")
-    print(f"Success rate: {success_rate:.2f}%")
-
-    save_updated_bets(bets)
-
 def get_fixture_score(fixture_id):
     fixture_data = get_fixture(fixture_id)
     
@@ -242,6 +194,3 @@ def get_fixture_score(fixture_id):
 
     return actual_home_score, actual_away_score
 
-def save_updated_bets(bets):
-    with open('bets.json', 'w') as f:
-        json.dump(bets, f, indent=4)
