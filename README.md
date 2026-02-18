@@ -1,7 +1,5 @@
 ## Info
-This project is a simplistic betting assistant made with python for training purposes. 
-
-Football.api provided endpoints.
+A Python tool that fetches current match data from the Football.api endpoints. It parses the JSON data to rank upcoming games based on calculated odds.
 
 
 ## Setup
